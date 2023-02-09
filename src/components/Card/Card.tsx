@@ -1,6 +1,6 @@
 import { css, cx } from '@emotion/css';
 import { forwardRef, HTMLAttributes } from 'react';
-import { colorPalette, theme } from '../../theme';
+import { colorPalette, shadow, theme } from '../../theme';
 
 type CustomProps = {
   header?: React.ReactNode;
@@ -15,8 +15,8 @@ function getCardStyles() {
     border: `1px solid ${colorPalette.grey200}`,
     padding: theme.spacing.lg,
     backgroundColor: colorPalette.white,
-    boxShadow: `${colorPalette.grey200} 0px 1px 4px`,
     fontFamily: theme.fontFamily.sansSerif,
+    boxShadow: shadow.card,
   });
 }
 

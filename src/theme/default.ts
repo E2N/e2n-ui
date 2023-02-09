@@ -15,14 +15,6 @@ export const theme: Theme = {
     lg: '18px',
     subtitle2: '14px',
   },
-  heading: {
-    h1: '32px',
-    h2: '24px',
-    h3: '21px',
-    h4: '18px',
-    h5: '16px',
-    h6: '14px',
-  },
   weight: {
     regular: 400,
     semibold: 600,

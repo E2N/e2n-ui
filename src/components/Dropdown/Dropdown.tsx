@@ -2,7 +2,7 @@ import { css, cx } from '@emotion/css';
 import { Placement } from '@popperjs/core';
 import { cloneElement, ReactElement, useEffect, useRef } from 'react';
 import { usePopper } from 'react-popper';
-import { colorPalette, theme } from '../../theme';
+import { colorPalette, shadow, theme } from '../../theme';
 
 export type DropdownProps = {
   content: ReactElement;
@@ -17,9 +17,9 @@ function getStyles(width?: number) {
   return {
     popover: css({
       backgroundColor: colorPalette.white,
-      boxShadow: '0px 3px 16px #e0e1e7',
       width: width ? width : 'auto',
       borderRadius: theme.borderRadius.md,
+      boxShadow: shadow.dropdown,
     }),
   };
 }
