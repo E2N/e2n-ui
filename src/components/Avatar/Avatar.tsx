@@ -1,6 +1,6 @@
 import { css, cx } from '@emotion/css';
 import { forwardRef, HTMLAttributes } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 type SizeVariants = 'small' | 'medium';
 

@@ -3,7 +3,7 @@ import { NavItem } from './NavItem';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { ReactNode } from 'react';
 import { css, cx } from '@emotion/css';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 export interface SideNavItem {
   name: string;

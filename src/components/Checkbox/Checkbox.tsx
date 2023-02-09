@@ -1,6 +1,6 @@
 import { cx, css } from '@emotion/css';
 import { useEffect, useRef, useState } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 type CustomProps = {
   className?: string;

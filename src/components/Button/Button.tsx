@@ -1,6 +1,6 @@
 import { css, CSSObject, cx } from '@emotion/css';
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 type ButtonFill = 'outline';
 

@@ -2,7 +2,7 @@ import { css, cx } from '@emotion/css';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { forwardRef, HTMLAttributes, ReactElement } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 type BadgeVariants = 'secondary' | 'error' | 'success';
 

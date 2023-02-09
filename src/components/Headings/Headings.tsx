@@ -1,6 +1,6 @@
 import { cx, css } from '@emotion/css';
 import { forwardRef, HTMLAttributes, ReactNode } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 type CustomProps = {
   children: ReactNode;
@@ -12,7 +12,10 @@ export type HeadingProps = CustomProps & HTMLAttributes<HTMLHeadingElement>;
 function getHeadingStyles(variant?: string) {
   return css({
     fontFamily: theme.fontFamily.sansSerif,
-    color: variant === 'primaryMain' ? colorPalette.primaryMain : colorPalette.primaryDarker,
+    color:
+      variant === 'primaryMain'
+        ? colorPalette.primaryMain
+        : colorPalette.primaryDarker,
   });
 }
 

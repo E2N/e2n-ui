@@ -2,7 +2,7 @@ import { css, cx } from '@emotion/css';
 import { IconDefinition, SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ButtonHTMLAttributes, forwardRef } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 type CustomProps = {
   icon: IconDefinition;
@@ -24,9 +24,7 @@ function getIconButtonStyles(disabled?: boolean) {
     transition: '0.3s',
     cursor: !disabled ? 'pointer' : 'not-allowed',
     ':hover': {
-      color: !disabled
-        ? colorPalette.grey500
-        : colorPalette.grey200,
+      color: !disabled ? colorPalette.grey500 : colorPalette.grey200,
     },
   });
 }

@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 import { ReactNode } from 'react';
 import { usePreventScroll } from 'react-aria';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 export type ModalDialogProps = {
   title: string;

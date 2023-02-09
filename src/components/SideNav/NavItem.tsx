@@ -8,7 +8,7 @@ import {
   useNavigate,
   useResolvedPath,
 } from 'react-router-dom';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 import { LinkSideNavItem, ReactRouterSideNavItem } from './SideNav';
 
 export type NavItem = {
@@ -31,9 +31,7 @@ function navItemWrapperStyles({
       fontFamily: theme.fontFamily.sansSerif,
       transition: '0.2s',
       ':hover, :focus': {
-        backgroundColor: match
-          ? colorPalette.white
-          : colorPalette.grey200,
+        backgroundColor: match ? colorPalette.white : colorPalette.grey200,
         cursor: 'pointer',
       },
     }),

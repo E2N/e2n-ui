@@ -1,6 +1,6 @@
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { colorPalette } from '../../theme/default';
+import { colorPalette } from '../../theme';
 
 export function Loading() {
   return (

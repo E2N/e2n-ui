@@ -5,7 +5,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { IconButton } from '..';
-import { colorPalette } from '../../theme/default';
+import { colorPalette } from '../../theme';
 
 function getStyle(open: boolean) {
   return {

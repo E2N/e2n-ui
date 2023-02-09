@@ -1,6 +1,6 @@
 import { css, cx } from '@emotion/css';
 import { ChangeEvent, HTMLAttributes } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 import { RadioButton } from './RadioButton';
 
 function getStyles(disabled?: boolean) {

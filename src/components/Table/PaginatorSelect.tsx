@@ -1,4 +1,4 @@
-import { colorPalette } from '../../theme/default';
+import { colorPalette } from '../../theme';
 import { Select } from '../Select';
 
 interface PaginatorSelectProps {

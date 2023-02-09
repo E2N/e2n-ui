@@ -2,7 +2,7 @@ import { css, cx } from '@emotion/css';
 import { Placement } from '@popperjs/core';
 import { cloneElement, ReactElement, useEffect, useRef } from 'react';
 import { usePopper } from 'react-popper';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 export type DropdownProps = {
   content: ReactElement;

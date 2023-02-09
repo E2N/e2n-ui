@@ -2,7 +2,7 @@ import { cx } from '@emotion/css';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { forwardRef, TextareaHTMLAttributes } from 'react';
-import { colorPalette } from '../../theme/default';
+import { colorPalette } from '../../theme';
 import { getStyles } from './styles';
 
 type CustomProps = {

@@ -1,5 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 import { Badge } from '../Badge';
 import { Table } from './Table';
 

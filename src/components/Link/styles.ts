@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 export function getLinkStyles() {
   return css({

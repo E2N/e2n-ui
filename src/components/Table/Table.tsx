@@ -12,7 +12,7 @@ import {
   getExpandedRowModel,
 } from '@tanstack/react-table';
 import { useMemo, useState, ReactNode, useEffect } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 import { TableNoData } from './TableNoData';
 import { TableBody } from './TableBody';
 import { TableCell } from './TableCell';

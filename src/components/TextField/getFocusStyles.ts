@@ -1,6 +1,6 @@
 import { CSSObject } from '@emotion/css';
 import chroma from 'chroma-js';
-import { colorPalette } from '../../theme/default';
+import { colorPalette } from '../../theme';
 
 export function getFocusStyles(
   isValid?: boolean,

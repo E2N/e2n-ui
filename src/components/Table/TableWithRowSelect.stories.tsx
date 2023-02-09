@@ -1,6 +1,6 @@
 import { ColumnDef, Row, RowSelectionState } from '@tanstack/react-table';
 import { ReactNode, useState } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 import { Badge } from '../Badge';
 import { Button } from '../Button';
 import { IndeterminateCheckbox } from './IndeterminateCheckbox';

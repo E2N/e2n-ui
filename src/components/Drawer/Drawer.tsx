@@ -2,7 +2,7 @@ import { css, cx } from '@emotion/css';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { CSSTransition } from 'react-transition-group';
 import { IconButton } from '..';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 import { H3 } from '../Headings';
 import './drawer.scss';
 

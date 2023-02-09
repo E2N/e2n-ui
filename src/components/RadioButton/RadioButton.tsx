@@ -1,6 +1,6 @@
 import { css, cx, keyframes } from '@emotion/css';
 import { InputHTMLAttributes } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 type RadioButtonProps = {
   label: string;
@@ -57,9 +57,7 @@ function getStyles({
       border: `2px solid ${
         !disabled ? colorPalette.grey200 : colorPalette.grey500
       }`,
-      backgroundColor: !disabled
-        ? colorPalette.white
-        : colorPalette.grey200,
+      backgroundColor: !disabled ? colorPalette.white : colorPalette.grey200,
       borderRadius: '50%',
       '&:after': {
         display: 'block',

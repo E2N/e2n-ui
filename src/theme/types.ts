@@ -61,6 +61,7 @@ export interface ColorPalette {
   primaryMain: string;
   primaryDark: string;
   primaryDarker: string;
+
   //PRIMARY Transparent
   primaryTransparent8: string;
   primaryTransparent12: string;
@@ -75,6 +76,7 @@ export interface ColorPalette {
   secondaryMain: string;
   secondaryDark: string;
   secondaryDarker: string;
+
   //SECONDARY Transparent
   secondaryTransparent8: string;
   secondaryTransparent12: string;
@@ -89,6 +91,7 @@ export interface ColorPalette {
   infoMain: string;
   infoDark: string;
   infoDarker: string;
+
   //INFO Transparent
   infoTransparent8: string;
   infoTransparent12: string;
@@ -103,6 +106,7 @@ export interface ColorPalette {
   successMain: string;
   successDark: string;
   successDarker: string;
+
   //SUCCESS Transparent
   successTransparent8: string;
   successTransparent12: string;
@@ -117,6 +121,7 @@ export interface ColorPalette {
   warningMain: string;
   warningDark: string;
   warningDarker: string;
+
   //WARNING Transparent
   warningTransparent8: string;
   warningTransparent12: string;
@@ -131,6 +136,7 @@ export interface ColorPalette {
   errorMain: string;
   errorDark: string;
   errorDarker: string;
+
   //ERROR Transparent
   errorTransparent8: string;
   errorTransparent12: string;
@@ -149,6 +155,7 @@ export interface ColorPalette {
   grey700: string;
   grey800: string;
   grey900: string;
+
   //GREY Transparent
   greyTransparent8: string;
   greyTransparent12: string;
@@ -160,6 +167,7 @@ export interface ColorPalette {
   //COMMON
   commonBlack: string;
   commonWhite: string;
+
   //COMMON BLACK Transparent
   commonBlackTransparent8: string;
   commonBlackTransparent12: string;
@@ -167,6 +175,7 @@ export interface ColorPalette {
   commonBlackTransparent24: string;
   commonBlackTransparent32: string;
   commonBlackTransparent48: string;
+
   //COMMON WHITE Transparent
   commonWhiteTransparent8: string;
   commonWhiteTransparent12: string;
@@ -174,25 +183,4 @@ export interface ColorPalette {
   commonWhiteTransparent24: string;
   commonWhiteTransparent32: string;
   commonWhiteTransparent48: string;
-
-  //TEXT on Light
-  textOnLightPrimary: string;
-  textOnlIghtSecondary: string;
-  textOnLightDisabled: string;
-  //TEXT on Dark
-  textOnDarkPrimary: string;
-  textOnDarkSecondary: string;
-  textOnDarkDisabled: string;
-
-  //DIVIDER
-  divider: string;
-
-  //Background on light
-  backgroundOnLightDefault: string;
-  backgroundOnLightPaper: string;
-  backgroundOnLightNeutral: string;
-  //Background on dark
-  backgroundOnDarkDefault: string;
-  backgroundOnDarkPaper: string;
-  backgroundOnDarkNeutral: string;
 }

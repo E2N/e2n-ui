@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 import { useMemo } from 'react';
 import Select, { GroupBase, Props, StylesConfig } from 'react-select';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 import makeAnimated from 'react-select/animated';
 
 function getStyles() {
@@ -50,7 +50,7 @@ export function CustomSelect<
         return {
           ...styles,
           fontSize: theme.size.md,
-          fontWeight: theme.weight.light,
+          fontWeight: theme.weight.regular,
           color: colorPalette.grey500,
           opacity: 0.5,
         };
@@ -82,7 +82,7 @@ export function CustomSelect<
               ? 'none'
               : `0px 0px 0px 4px ${colorPalette.grey200}`,
           fontSize: theme.size.base,
-          fontWeight: theme.weight.light,
+          fontWeight: theme.weight.regular,
           ':hover': {
             border: `2px solid ${colorPalette.grey500}`,
           },

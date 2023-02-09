@@ -1,5 +1,5 @@
 import { css, cx } from '@emotion/css';
-import { colorPalette } from '../../theme/default';
+import { colorPalette } from '../../theme';
 
 function getReadonlyFieldStyles({
   textAvailable,

@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 import { getFocusStyles } from './getFocusStyles';
 
 export function getStyles({
@@ -29,17 +29,15 @@ export function getStyles({
       width: '100%',
       fontFamily: 'inherit',
       fontSize: theme.size.md,
-      fontWeight: theme.weight.light,
+      fontWeight: theme.weight.regular,
       ':hover': {
         cursor: disabled ? 'not-allowed' : 'default',
       },
       '::placeholder': {
-        fontWeight: theme.weight.light,
+        fontWeight: theme.weight.regular,
         color: colorPalette.grey500,
       },
-      backgroundColor: disabled
-        ? colorPalette.grey100
-        : colorPalette.white,
+      backgroundColor: disabled ? colorPalette.grey100 : colorPalette.white,
       ...focusStyles,
     }),
     textArea: css({

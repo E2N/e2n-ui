@@ -7,7 +7,7 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HTMLAttributes, ReactNode, useState } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 export type Variant = 'success' | 'error';
 
@@ -24,8 +24,8 @@ export const calloutColor = {
 };
 
 export const calloutBackgroundColor = {
-  success: colorPalette.successLighter,
-  error: colorPalette.errorLighter,
+  success: colorPalette.successTransparent12,
+  error: colorPalette.errorTransparent12,
 };
 
 export const calloutIcon = {

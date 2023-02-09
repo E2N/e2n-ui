@@ -1,6 +1,6 @@
 import { css, cx } from '@emotion/css';
 import { HTMLAttributes } from 'react';
-import { colorPalette, theme } from '../../theme/default';
+import { colorPalette, theme } from '../../theme';
 
 type CustomProps = {
   children: React.ReactNode;
