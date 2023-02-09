@@ -1,9 +1,9 @@
 import { ColorPalette, Theme } from './types';
+import '../main.scss';
 
 const SPACING_BASE = 8;
 
 export const colorPalette: ColorPalette = {
-
   // Neutral colors
   white: '#ffffff',
   black: '#000000',
@@ -66,95 +66,95 @@ export const colorPalette: ColorPalette = {
   successTransparent32: '#46BE8A52',
   successTransparent48: '#46BE8A7A',
 
- //WARNING
- warningLighter: '#FFCFA7',
- warningLight: '#FFB97F',
- warningMain: '#FC904A',
- warningDark: '#B56B2D',
- warningDarker: '#6B3F1B',
- //WARNING Transparent
- warningTransparent8: '#FC904A14',
- warningTransparent12: '#FC904A1F',
- warningTransparent16: '#FC904A29',
- warningtransparent24: '#FC904A3D',
- warningTransparent32: '#FC904A52',
- warningTransparent48: '#FC904A7A',
+  //WARNING
+  warningLighter: '#FFCFA7',
+  warningLight: '#FFB97F',
+  warningMain: '#FC904A',
+  warningDark: '#B56B2D',
+  warningDarker: '#6B3F1B',
+  //WARNING Transparent
+  warningTransparent8: '#FC904A14',
+  warningTransparent12: '#FC904A1F',
+  warningTransparent16: '#FC904A29',
+  warningtransparent24: '#FC904A3D',
+  warningTransparent32: '#FC904A52',
+  warningTransparent48: '#FC904A7A',
 
- //ERROR
-errorLighter: '#FFADAD',
-errorLight: '#FE7170',
-errorMain: '#FE4D4C',
-errorDark: '#B43736',
-errorDarker: '#6B2020',
-//ERROR Transparent
-errorTransparent8: '#FE4D4C14',
-errorTransparent12: '#FE4D4C1F',
-errorTransparent16: '#FE4D4C29',
-errorTransparent24: '#FE4D4C3D',
-errorTransparent32: '#FE4D4C52',
-errorTransparent48: '#FE4D4C7A',
+  //ERROR
+  errorLighter: '#FFADAD',
+  errorLight: '#FE7170',
+  errorMain: '#FE4D4C',
+  errorDark: '#B43736',
+  errorDarker: '#6B2020',
+  //ERROR Transparent
+  errorTransparent8: '#FE4D4C14',
+  errorTransparent12: '#FE4D4C1F',
+  errorTransparent16: '#FE4D4C29',
+  errorTransparent24: '#FE4D4C3D',
+  errorTransparent32: '#FE4D4C52',
+  errorTransparent48: '#FE4D4C7A',
 
-//GREY
-grey100: '#F2F4F7',
-grey200: '#E4E7EC',
-grey300: '#D0D5DD',
-grey400: '#98A2B3',
-grey500: '#667085',
-grey600: '#475467',
-grey700: '#344054',
-grey800: '#1D2939',
-grey900: '#1D2939',
-//GREY Transparent
-greyTransparent8: '#66708514',
-greyTransparent12: '#6670851F',
-greyTransparent16: '#66708529',
-greyTransparent24: '#6670853D',
-greyTransparent32: '#66708552',
-greyTransparent48: '#6670857A',
+  //GREY
+  grey100: '#F2F4F7',
+  grey200: '#E4E7EC',
+  grey300: '#D0D5DD',
+  grey400: '#98A2B3',
+  grey500: '#667085',
+  grey600: '#475467',
+  grey700: '#344054',
+  grey800: '#1D2939',
+  grey900: '#1D2939',
+  //GREY Transparent
+  greyTransparent8: '#66708514',
+  greyTransparent12: '#6670851F',
+  greyTransparent16: '#66708529',
+  greyTransparent24: '#6670853D',
+  greyTransparent32: '#66708552',
+  greyTransparent48: '#6670857A',
 
-//COMMON
-commonBlack: '#000000',
-commonWhite: '#FFFFFF',
-//COMMON BLACK Transparent
-commonBlackTransparent8: '#00000014',
-commonBlackTransparent12: '#0000001F',
-commonBlackTransparent16: '#00000029',
-commonBlackTransparent24: '#0000003D',
-commonBlackTransparent32: '#00000052',
-commonBlackTransparent48: '#0000007A',
-//COMMON WHITE Transparent
-commonWhiteTransparent8: '#FFFFFF14',
-commonWhiteTransparent12: '#FFFFFF1F',
-commonWhiteTransparent16: '#FFFFFF29',
-commonWhiteTransparent24: '#FFFFFF3D',
-commonWhiteTransparent32: '#FFFFFF52',
-commonWhiteTransparent48: '#FFFFFF7A',
+  //COMMON
+  commonBlack: '#000000',
+  commonWhite: '#FFFFFF',
+  //COMMON BLACK Transparent
+  commonBlackTransparent8: '#00000014',
+  commonBlackTransparent12: '#0000001F',
+  commonBlackTransparent16: '#00000029',
+  commonBlackTransparent24: '#0000003D',
+  commonBlackTransparent32: '#00000052',
+  commonBlackTransparent48: '#0000007A',
+  //COMMON WHITE Transparent
+  commonWhiteTransparent8: '#FFFFFF14',
+  commonWhiteTransparent12: '#FFFFFF1F',
+  commonWhiteTransparent16: '#FFFFFF29',
+  commonWhiteTransparent24: '#FFFFFF3D',
+  commonWhiteTransparent32: '#FFFFFF52',
+  commonWhiteTransparent48: '#FFFFFF7A',
 
-//TEXT on light
-textOnLightPrimary: '#1D2939',
-textOnlIghtSecondary: '#475467',
-textOnLightDisabled: '#667085',
-//TEXT on dark
-textOnDarkPrimary: '#FFFFFF',
-textOnDarkSecondary: '#667085',
-textOnDarkDisabled: '#475467',
+  //TEXT on light
+  textOnLightPrimary: '#1D2939',
+  textOnlIghtSecondary: '#475467',
+  textOnLightDisabled: '#667085',
+  //TEXT on dark
+  textOnDarkPrimary: '#FFFFFF',
+  textOnDarkSecondary: '#667085',
+  textOnDarkDisabled: '#475467',
 
-//DIVIDER
-divider: '#6670853D',
+  //DIVIDER
+  divider: '#6670853D',
 
-//Background on light
-backgroundOnLightDefault: '#FFFFFF',
-backgroundOnLightPaper: '#FFFFFF',
-backgroundOnLightNeutral: '#F2F4F7',
-//Background on dark
-backgroundOnDarkDefault: '#161C24',
-backgroundOnDarkPaper: '#1D2939',
-backgroundOnDarkNeutral: '#66708529',
+  //Background on light
+  backgroundOnLightDefault: '#FFFFFF',
+  backgroundOnLightPaper: '#FFFFFF',
+  backgroundOnLightNeutral: '#F2F4F7',
+  //Background on dark
+  backgroundOnDarkDefault: '#161C24',
+  backgroundOnDarkPaper: '#1D2939',
+  backgroundOnDarkNeutral: '#66708529',
 };
 
 export const theme: Theme = {
   fontFamily: {
-    sansSerif: 'Public sans, sans-serif',
+    sansSerif: 'PublicSans',
   },
   size: {
     base: '16px',
