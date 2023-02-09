@@ -184,3 +184,37 @@ export interface ColorPalette {
   commonWhiteTransparent32: string;
   commonWhiteTransparent48: string;
 }
+
+type TypographyAttributes = {
+  fontSize: string;
+  lineHeight: string;
+  fontWeight: number;
+};
+
+export type Typography = {
+  fontFamily: string;
+  header1: TypographyAttributes;
+  header2: TypographyAttributes;
+  header3: TypographyAttributes;
+  header4: TypographyAttributes;
+  header5: TypographyAttributes;
+  header6: TypographyAttributes;
+  subtitle1: TypographyAttributes;
+  subtitle2: TypographyAttributes;
+  body1: TypographyAttributes;
+  body2: TypographyAttributes;
+  caption: TypographyAttributes;
+  overline: TypographyAttributes;
+};
+
+export type Shadow = {
+  z1: string;
+  z8: string;
+  z12: string;
+  z16: string;
+  z20: string;
+  z24: string;
+  card: string;
+  dialog: string;
+  dropdown: string;
+};
