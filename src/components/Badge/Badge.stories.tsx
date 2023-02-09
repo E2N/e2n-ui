@@ -1,14 +1,14 @@
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { ComponentMeta, ComponentStory, Meta, Story } from '@storybook/react';
-import { Badge, BadgeProps } from './Badge';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Badge } from './Badge';
 
 export default {
   title: 'Components/Badge',
   component: Badge,
   argTypes: {
-    backgroundColor: {control:'color'},
-    textColor: {control: 'color'}
-  }
+    backgroundColor: { control: 'color' },
+    textColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Badge>;
 
 const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
