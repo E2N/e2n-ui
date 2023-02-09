@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { forwardRef, HTMLAttributes, ReactElement } from 'react';
 import { colorPalette, theme } from '../../theme/default';
 
-type BadgeVariants = 'secondary' | 'error' | 'success'| 'info1' | 'warning';
+type BadgeVariants = 'secondary' | 'error' | 'success' | 'info1' | 'warning';
 
 type CustomProps = {
   text?: string | ReactElement;
@@ -30,7 +30,7 @@ const colorStyleMap = {
     textColor: colorPalette.successDarker,
   },
   info1: {
-    backgroundColor: colorPalette.infoLighter, 
+    backgroundColor: colorPalette.infoLighter,
     textColor: colorPalette.infoDarker,
   },
   warning: {
@@ -39,7 +39,7 @@ const colorStyleMap = {
   },
 };
 
-function getBadgeStyles(variant: BadgeVariants, backgroundColor:string, textColor: string) {
+function getBadgeStyles(variant: BadgeVariants, backgroundColor: string | undefined, textColor: string | undefined) {
   return css({
     padding: `${theme.spacing.xs} ${theme.spacing.sm}`,
     fontSize: theme.size.sm,
