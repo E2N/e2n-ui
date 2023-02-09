@@ -5,6 +5,10 @@ import { Badge, BadgeProps } from './Badge';
 export default {
   title: 'Components/Badge',
   component: Badge,
+  argTypes: {
+    backgroundColor: {control:'color'},
+    textColor: {control: 'color'}
+  }
 } as ComponentMeta<typeof Badge>;
 
 const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;

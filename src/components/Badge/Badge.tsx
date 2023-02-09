@@ -10,6 +10,8 @@ type CustomProps = {
   text?: string | ReactElement;
   icon?: IconDefinition;
   variant?: BadgeVariants;
+  backgroundColor?: string,
+  textColor?: string,
 };
 
 export type BadgeProps = CustomProps & HTMLAttributes<HTMLDivElement>;
@@ -34,10 +36,10 @@ const colorStyleMap = {
   warning: {
     backgroundColor: colorPalette.warningLighter,
     textColor: colorPalette.warningDarker,
-  }
+  },
 };
 
-function getBadgeStyles(variant: BadgeVariants) {
+function getBadgeStyles(variant: BadgeVariants, backgroundColor:string, textColor: string) {
   return css({
     padding: `${theme.spacing.xs} ${theme.spacing.sm}`,
     fontSize: theme.size.sm,
@@ -48,14 +50,14 @@ function getBadgeStyles(variant: BadgeVariants) {
     gap: theme.spacing.xs,
     borderRadius: theme.borderRadius.sm,
     fontFamily: theme.fontFamily.sansSerif,
-    backgroundColor: colorStyleMap[variant].backgroundColor,
-    color: colorStyleMap[variant].textColor,
+    backgroundColor: backgroundColor ? backgroundColor : colorStyleMap[variant].backgroundColor,
+    color: textColor ? textColor : colorStyleMap[variant].textColor,
   });
 }
 
 export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
-  ({ icon, text, variant = 'secondary', className, ...otherProps }, ref) => {
-    const badgeStyles = getBadgeStyles(variant);
+  ({ icon, text, variant = 'secondary', backgroundColor, textColor, className, ...otherProps }, ref) => {
+    const badgeStyles = getBadgeStyles(variant, backgroundColor, textColor);
 
     return (
       <div
