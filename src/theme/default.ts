@@ -162,6 +162,7 @@ export const theme: Theme = {
     sm: '12px',
     md: '14px',
     lg: '18px',
+    subtitle2: '14px',
   },
   heading: {
     h1: '32px',
@@ -172,16 +173,17 @@ export const theme: Theme = {
     h6: '14px',
   },
   weight: {
-    light: 300,
     regular: 400,
-    semibold: 500,
-    bold: 600,
+    semibold: 600,
+    bold: 700,
+    extraBold: 800,
   },
   lineHeight: {
     xs: 1,
     sm: 1.1,
     md: 1.5,
     lg: 2,
+    subtitle2: '22px',
   },
   link: {
     decoration: 'none',
