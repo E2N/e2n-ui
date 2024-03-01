@@ -1,6 +1,5 @@
 {
   "name": "@e2n/e2n-ui",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "index.ts",
