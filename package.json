@@ -1,14 +1,19 @@
 {
   "name": "@e2n/e2n-ui",
-  "version": "0.0.0",
+  "version": "0.0.5",
   "type": "module",
-  "main": "index.ts",
-  "private": "false",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/e2n.ui.umd.cjs",
+  "module": "./dist/e2n.ui.js",
   "exports": {
     ".": {
-      "import": "./src/index.ts"
+      "import": "./dist/e2n-ui.js",
+      "require": "./dist/e2n-ui.umd.cjs"
     }
   },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -64,7 +69,8 @@
     "sass": "^1.71.1",
     "storybook": "^7.6.17",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3"
   },
   "eslintConfig": {
     "extends": [
