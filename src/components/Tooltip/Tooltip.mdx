@@ -1,0 +1,98 @@
+import { Tooltip } from './Tooltip';
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+import * as TooltipStories from './Tooltip.stories';
+import { DocumentationBlock } from '../../helpers/DocumentationBlock.tsx';
+import { cx } from '@emotion/css';
+
+<Meta of={TooltipStories} />
+
+# Tooltips
+
+Ein Tooltip ist eine kurze, informative Nachricht, die angezeigt wird, wenn ein Benutzer mit einem User Interface (z.B. Tabelle) interagiert. Sein Hauptzweck ist es, dem Benutzer zusätzliche Informationen über ein Element oder eine Funktion zur Verfügung zu stellen.
+Tooltips werden vom Benutzer ausgelöst und erscheinen am häufigsten, wenn Benutzer mit der Maus über ein aktives Element (Button, Symbol usw.) fahren. Tooltips verbinden sich nicht mit dem gesamten Task Flow, sie sollen nur Details erklären oder zusätzliche Anleitungen zu einer bestimmten Aktion geben.
+Da Tooltips durch eine Hover-Geste ausgelöst werden, können sie nur auf Geräten angezeigt werden, die eine Maus haben und sind normalerweise nicht auf Touchscreens zu finden.
+
+<Canvas of={TooltipStories.Default} />
+
+## Verwendung
+
+### ✅ Use
+
+- Verwende Tooltips, um zusätzliche Informationen anzuzeigen, die dem Benutzer helfen könnten:
+
+- ”Wir senden Ihnen hier Ihre Auftragsbestätigung.”
+
+### ❌ Don't use
+
+- Zeige mit Tooltips nicht die erforderlichen Informationen an :“Passwörter sollten mindestens 10 sein Zeichen lang und enthalten 1 Großbuchstaben und 1 Kleinbuchstaben Alphazeichen, 1 Zahl und 1 Sonderzeichen. Passwörter unterscheiden zwischen Groß- und Kleinschreibung.”
+
+## Best Practice
+
+### ✅ Use
+
+Gebe dem Tooltip zusätzliche und hilfreiche Informationen an. Stelle sicher, dass der bereits sichtbare Text nicht wiederholt wird.
+Durch das Anzeigen eines Tooltips sollen wichtige Teile der Seite nicht abgedeckt werden.
+Wenn mehrere Elemente nahe beieinander liegen, füge Pfeile (Tooltip-Nase) hinzu, damit die Benutzer verstehen, auf welches Element sich der Tooltip bezieht.
+
+### Content
+
+- Der Inhalt des Tooltips kann je nach Element nur ein Wort bis zu mehreren Sätzen beinhalten
+
+### Beispiel
+
+```tsx
+import React from 'react';
+import Tooltip from '@e2n/e2n-ui';
+
+export funktion TooltipExample() = {
+    return
+    <Tooltip
+        variant="default" // Wählen Sie die gewünschte Variante ('default', 'darkmode', 'withoutArrow')
+        side="bottom" // Position der Tooltip-Anzeige ('top', 'bottom', 'left', 'right')
+        trigger={<button>Hover over me</button>} // Das Element, das den Tooltip auslöst
+        > Dies ist der Tooltip-Inhalt.
+    </Tooltip>
+}
+```
+
+## Props
+
+Die Tooltip-Komponente akzeptiert die folgenden Props:
+
+<Controls />
+
+# Tooltip Typen
+
+## Varianten
+
+Die Tooltips kommen in 5 verschiedenen Varianten:
+
+- None (default Right)
+- Bottom
+- Top
+- Left
+- Right
+
+Die Property Direction gibt an in welche Richtung der Pfeil (Nase) des Tooltips zum Element zeigen soll.
+
+### Color
+
+Die Buttons sind in Light- und Dark-Mode unterteilt:
+DarkMode → False, True
+
+### Size
+
+Die Größe eines Tooltips hat eine maximale Länge des Inhaltes angepasst.
+
+## Tooltip VS Label
+
+Ein Tooltip mit wenig Inhalt kann leicht mit einem Label verwechselt werden da sie ein ähnliches Aussehen besitzen. Ein Tooltip erscheint aber nur durch eine Hover-Geste auf ein einen Button oder ein Label.
+
+## Tooltip VS Alert
+
+Die Komponente Tooltip enthält im Gegensatz zum Alert kein Icon, Close-Button oder Aktions-Button. Tooltips zeigen Informationen an bevor eine Aktion ausgeführt wird oder beschreiben die Aktion genauer. Alters geben Auskunft über den Status einer Aktion nach dem oder während sie ausgeführt wurde.
+
+## Weitere Informationen
+
+Für weitere Informationen und erweiterte Anpassungen kann die offizielle
+Dokumentation von [Radix-UI](https://www.radix-ui.com/docs/primitives/components/tooltip) gelesen werden.

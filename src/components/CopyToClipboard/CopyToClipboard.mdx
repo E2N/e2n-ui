@@ -1,0 +1,21 @@
+import { CopyToClipboard } from './CopyToClipboard';
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+import * as CopyToClipboardStories from './CopyToClipboard.stories';
+import { DocumentationBlock } from '../../helpers/DocumentationBlock.tsx';
+import { cx } from '@emotion/css';
+
+<Meta of={CopyToClipboardStories} />{' '}
+
+# Copy To Clipboard
+
+Eine CopyToClipboard-Komponente ist eine Komponente, die es Benutzern ermöglicht, Text oder andere Inhalte aus einer bestimmten Quelle zu kopieren und
+in eine andere Umgebung einzufügen, in der Regel die Zwischenablage des Betriebssystems oder der Anwendung.
+Diese Komponenten sind oft nützlich, wenn Benutzer Inhalte von einer Webseite oder Anwendung in eine andere übertragen möchten, ohne sie erneut eingeben zu müssen.
+
+<Canvas of={CopyToClipboardStories.Default} />
+
+## Props
+
+Die CopyToClipboard-Komponente akzeptiert die folgenden Props:
+
+<Controls />

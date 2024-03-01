@@ -1,0 +1,18 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as TableStories from './DefaultTable.stories';
+
+<Meta of={TableStories} />
+
+## Default Table
+
+### Usage
+
+- Jede Table wird innerhalb einer Card-Komponente gerendert, die Tabelle bringt die Card selbst mit
+- Die Breite der Card berechnet sich anhand der verfügbaren Breite auf der Page wo die Tabelle angezeigt wird
+- Die Tabelle selbst nimmt zu 100 Prozent die Breite der Card angezeigt
+- wenn die Spalten nicht anders definiert sind, werden die Spalten gleichmäßig auf die Tabelle verteilt
+- jeder Spalte kann man in den columns.tsx eine size geben, diese size darf nicht kleiner als 20 sein, wenn doch, dann wird der Wert von react-Table
+  immer auf 20 geändert
+- restliche Spalten ohne festgelegte size teilen sich gleichermaßen den noch verfügbaren platz
+
+### Props of default
