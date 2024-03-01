@@ -1,6 +1,6 @@
-import { cx, css } from '@emotion/css';
-import { forwardRef, HTMLAttributes } from 'react';
-import { theme } from '../../theme/default';
+import { cx, css } from "@emotion/css";
+import { forwardRef, HTMLAttributes } from "react";
+import { theme } from "../theme/default";
 
 type CustomProps = {
   children?: React.ReactNode;
@@ -11,16 +11,16 @@ type ButtonGroupProps = CustomProps & HTMLAttributes<HTMLDivElement>;
 
 function getButtonGroupStyles() {
   return css({
-    display: 'flex',
+    display: "flex",
     button: {
       borderRadius: 0,
       borderRightWidth: 0,
     },
-    'button:first-child': {
+    "button:first-child": {
       borderTopLeftRadius: theme.borderRadius.xs,
       borderBottomLeftRadius: theme.borderRadius.xs,
     },
-    'button:last-child': {
+    "button:last-child": {
       borderTopRightRadius: theme.borderRadius.xs,
       borderBottomRightRadius: theme.borderRadius.xs,
       borderRightWidth: 2,
@@ -34,12 +34,13 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
     return (
       <div
         ref={ref}
-        className={cx('e2n-button-group', buttonGroupStyles, className)}
-        {...otherProps}>
+        className={cx("e2n-button-group", buttonGroupStyles, className)}
+        {...otherProps}
+      >
         {children}
       </div>
     );
-  },
+  }
 );
 
-ButtonGroup.displayName = 'ButtonGroup';
+ButtonGroup.displayName = "ButtonGroup";
