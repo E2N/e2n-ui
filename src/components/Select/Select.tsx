@@ -1,160 +1,75 @@
-import { css, cx } from '@emotion/css';
-import { useMemo } from 'react';
-import Select, { GroupBase, Props, StylesConfig } from 'react-select';
-import {
-  Theme,
-  colorPalette,
-  lightTheme,
-  theme as e2nTheme,
-  typography,
-} from '../../theme';
+import { cx } from '@emotion/css';
+import Select, { GroupBase } from 'react-select';
+import { colorPalette, lightTheme } from '../../theme';
 import makeAnimated from 'react-select/animated';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import { SelectProps } from '.';
+import { IndicatorSeparator } from './IndicatorSeparator';
+import { getStyles } from './getStyles';
+import { ForwardedRef, forwardRef } from 'react';
 
-function getStyles(theme: Theme) {
-  return {
-    wrapper: css({
-      display: 'flex',
-      flexDirection: 'column',
-      fontFamily: e2nTheme.fontFamily.sansSerif,
-    }),
-    label: css({
-      color: theme.text.primary,
-      paddingBottom: e2nTheme.spacing.xs,
-      ...typography.textFieldLabel,
-    }),
-  };
-}
-
-const IndicatorSeparator = () => {
-  return <></>;
-};
-
-export function CustomSelect<
+function CustomSelectInner<
   Option,
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>,
->({
-  components,
-  styles: customStyles,
-  label,
-  isAnimated,
-  theme = lightTheme,
-  ...otherProps
-}: Omit<Props<Option, IsMulti, Group>, 'theme'> & {
-  label?: string;
-  isAnimated?: boolean;
-  theme?: Theme;
-  'data-testid'?: string;
-}) {
-  const customSelectStyles = getStyles(theme);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+>(props: SelectProps<Option, IsMulti, Group>, ref: any) {
+  const {
+    isAnimated,
+    isValid = true,
+    theme = lightTheme,
+    label,
+    components,
+    description,
+    styles: customStyles,
+    ...otherProps
+  } = props;
+
+  const { wrapperStyles, selectStyles } = getStyles<Option, IsMulti, Group>(
+    isValid,
+    theme,
+  );
 
   const animatedComponents = isAnimated ? makeAnimated() : undefined;
 
-  const styles: StylesConfig<Option, IsMulti, Group> = useMemo(() => {
-    return {
-      container: (styles) => {
-        return {
-          ...styles,
-          fontFamily: e2nTheme.fontFamily.sansSerif,
-        };
-      },
-      placeholder: (styles) => {
-        return {
-          ...styles,
-          color: colorPalette.grey500,
-          opacity: 0.5,
-          ...typography.textField,
-          lineHeight: undefined,
-        };
-      },
-      input: (styles) => {
-        return {
-          ...styles,
-          fontSize: e2nTheme.size.md,
-          fontWeight: e2nTheme.weight.regular,
-        };
-      },
-      singleValue: (styles) => {
-        return {
-          ...styles,
-          ...typography.textField,
-          lineHeight: undefined,
-        };
-      },
-      valueContainer: (styles) => {
-        return {
-          ...styles,
-          padding: '0 2px',
-        };
-      },
-      clearIndicator: (styles) => {
-        return {
-          ...styles,
-          padding: '0 2px',
-        };
-      },
-      dropdownIndicator: (styles) => {
-        return {
-          ...styles,
-          padding: '0 2px',
-          color: colorPalette.textLightPrimary,
-        };
-      },
-      control: (styles, state) => {
-        return {
-          ...styles,
-          padding: 3,
-          border:
-            !state.isFocused && !state.menuIsOpen
-              ? `1px solid ${colorPalette.grey300} `
-              : `1px solid ${colorPalette.grey500}`,
-          borderRadius: e2nTheme.borderRadius.sm,
-          boxShadow: 'none',
-          ':hover': {
-            border: `1px solid ${colorPalette.grey500}`,
-          },
-          ...typography.textField,
-          lineHeight: undefined,
-        };
-      },
-      menu: (styles) => {
-        return {
-          ...styles,
-          color: theme.text.secondary,
-          backgroundColor: theme.background.paper,
-          boxShadow: theme.shadow.dropdown,
-          borderRadius: e2nTheme.borderRadius.sm,
-        };
-      },
-      option: (styles) => {
-        return {
-          ...styles,
-          backgroundColor: theme.background.paper,
-          color: theme.text.secondary,
-          cursor: 'pointer',
-          ':hover': {
-            backgroundColor: theme.actionState.hover,
-            color: theme.text.primary,
-          },
-        };
-      },
-    };
-  }, [theme]);
-
   return (
     <div
-      className={cx(customSelectStyles.wrapper, otherProps.className)}
+      className={cx(wrapperStyles.wrapper, otherProps.className)}
       data-testid={otherProps['data-testid']}>
-      {label && <div className={cx(customSelectStyles.label)}>{label}</div>}
+      {label && (
+        <div className={cx(wrapperStyles.label)}>
+          <div>{label}</div>
+          {!isValid && (
+            <FontAwesomeIcon
+              icon={faExclamationCircle}
+              color={colorPalette.errorLight}
+            />
+          )}
+        </div>
+      )}
       <Select
+        ref={ref}
         components={{
           ...components,
           ...animatedComponents,
           IndicatorSeparator,
         }}
-        styles={{ ...styles, ...customStyles }}
+        styles={{ ...selectStyles, ...customStyles }}
         {...otherProps}
       />
+      {description && (
+        <span className={cx(wrapperStyles.description)}>{description}</span>
+      )}
     </div>
   );
 }
+
+export const CustomSelect = forwardRef(CustomSelectInner) as <
+  Option,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+>(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  props: SelectProps<Option, IsMulti, Group> & { ref?: ForwardedRef<any> },
+) => ReturnType<typeof CustomSelectInner>;

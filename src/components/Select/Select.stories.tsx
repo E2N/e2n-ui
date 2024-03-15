@@ -12,7 +12,7 @@ const options: Array<{ value: string; label: string }> = [
 ];
 
 export const Default = {
-  render: () => <Select options={options} label="Label" value={options[0]} />,
+  render: () => <Select options={options} label="Label" />,
 };
 
 export const Multi = {
