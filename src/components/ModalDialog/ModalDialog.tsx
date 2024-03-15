@@ -57,21 +57,18 @@ function getModalSizeStyles({ size }: { size?: string }) {
   }
 }
 
-export const ModalDialog = forwardRef<HTMLDialogElement, ModalDialogProps>(
-  ({
-    title,
-    children,
-    size,
-    onClose,
-    isDismissable = false,
-    ...otherProps
-  }) => {
+export const ModalDialog = forwardRef<HTMLDivElement, ModalDialogProps>(
+  (
+    { title, children, size, onClose, isDismissable = false, ...otherProps },
+    ref,
+  ) => {
     const styles = getModalStyles({ size });
     usePreventScroll();
 
     return (
       <div
         className={cx(styles.overlay)}
+        ref={ref}
         {...otherProps}
         onClick={() => {
           if (isDismissable) {
