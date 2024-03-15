@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# e2n design system
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> This UI components are currently in beta.
 
-Currently, two official plugins are available:
+### Our vision
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+We at E2N want to transform the design guidelines and identity of our brand into unique and beautiful UI components. With this, we want to create a software the reflects our brand and experience for our users. To achieve this, we have been working in a small team for several months to build our own design system and component library with React.
 
-## Expanding the ESLint configuration
+### Get started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+[Here](https://ui.e2n.dev) you can explore the current status of our component library.
 
-- Configure the top-level `parserOptions` property like this:
+The state of the library is work-in-progress. We are still working on the development of an optimal workflow to bring our Figma templates and code closer together. Feel free to contribute if you are interested in this topic.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Run the following command to start Storybook and inspect the components locally:
+
 ```
+# Install dependencies
+yarn install
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Start storybook
+yarn storybook
+```
