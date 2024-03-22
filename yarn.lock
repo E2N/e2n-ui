@@ -1531,6 +1531,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     autoprefixer: "npm:^10.4.19"
     chroma-js: "npm:^2.4.2"
+    class-variance-authority: "npm:^0.7.0"
     eslint: "npm:^8.56.0"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.5"
@@ -1547,6 +1548,7 @@ __metadata:
     react-transition-group: "npm:^4.4.5"
     sass: "npm:^1.71.1"
     storybook: "npm:^7.6.17"
+    storybook-tailwind-dark-mode: "npm:^1.0.22"
     tailwind-merge: "npm:^2.2.2"
     tailwindcss: "npm:^3.4.1"
     typescript: "npm:^5.2.2"
@@ -7492,6 +7494,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"class-variance-authority@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "class-variance-authority@npm:0.7.0"
+  dependencies:
+    clsx: "npm:2.0.0"
+  checksum: 10c0/e11c57edf4bf50ef1c97bae41d68885afbaaedba26c48b7cc5dfb033390fed7012147e9532168d8c4f3497fce4dff15e20e6e60b8c9c9a4b0fe26b0e804513db
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -7543,6 +7554,13 @@ __metadata:
   version: 1.0.4
   resolution: "clone@npm:1.0.4"
   checksum: 10c0/2176952b3649293473999a95d7bebfc9dc96410f6cbd3d2595cf12fd401f63a4bf41a7adbfd3ab2ff09ed60cb9870c58c6acdd18b87767366fabfc163700f13b
+  languageName: node
+  linkType: hard
+
+"clsx@npm:2.0.0":
+  version: 2.0.0
+  resolution: "clsx@npm:2.0.0"
+  checksum: 10c0/c09f43b3144a0b7826b6b11b6a111b2c7440831004eecc02d333533c5e58ef0aa5f2dce071d3b25fbb8c8ea97b45df96c74bcc1d51c8c2027eb981931107b0cd
   languageName: node
   linkType: hard
 
@@ -13496,6 +13514,26 @@ __metadata:
   version: 2.14.3
   resolution: "store2@npm:2.14.3"
   checksum: 10c0/22e1096e6d69590672ca0b7f891d82b060837ef4c3e5df0d4563e6cbed14c52ddf2589fa94b79f4311b6ec41d95d6142e5d01d194539e0175c3fb4090cca8244
+  languageName: node
+  linkType: hard
+
+"storybook-tailwind-dark-mode@npm:^1.0.22":
+  version: 1.0.22
+  resolution: "storybook-tailwind-dark-mode@npm:1.0.22"
+  peerDependencies:
+    "@storybook/addons": ^7.0.0
+    "@storybook/api": ^7.0.0
+    "@storybook/components": ^7.0.0
+    "@storybook/core-events": ^7.0.0
+    "@storybook/theming": ^7.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/50c3c5190af13aecfdeaca7128bd05cb3a240caff9b440f370fa43c9f06cb9de60bc5964cefb0cda89cf81d3d6e0b75b0f3144f3cbe64a27c95770abfa7ba5d3
   languageName: node
   linkType: hard
 
