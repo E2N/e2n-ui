@@ -16,7 +16,7 @@ const preview: Preview = {
     },
     // Optional (Default: 'dark')
     className: {
-      defaultValue: 'dark', // Set your custom dark mode class name
+      defaultValue: "dark", // Set your custom dark mode class name
     },
   },
 };
