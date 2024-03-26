@@ -1,9 +1,9 @@
-import { Table } from '../Table';
-import { defaultColumns } from './columns';
-import { Data, defaultDataWithManyEntries } from './data';
+import { Table } from "../Table";
+import { defaultColumns } from "./columns";
+import { Data, defaultDataWithManyEntries } from "./data";
 
 export default {
-  title: 'Components/Table',
+  title: "Components/Table",
 };
 
 export const Default = {

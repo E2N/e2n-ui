@@ -1,8 +1,8 @@
-import { faPeopleRoof } from '@fortawesome/free-solid-svg-icons';
-import { MenuItem } from './MenuItem';
+import { faPeopleRoof } from "@fortawesome/free-solid-svg-icons";
+import { MenuItem } from "./MenuItem";
 
 export default {
-  title: 'Components/MenuItem',
+  title: "Components/MenuItem",
   component: MenuItem,
 };
 

@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { Tab } from './Tab';
-import { TabContent } from './TabContent';
-import { TabsBar } from './TabsBar';
+import { useState } from "react";
+import { Tab } from "./Tab";
+import { TabContent } from "./TabContent";
+import { TabsBar } from "./TabsBar";
 
 export default {
-  title: 'Layout/Tab',
+  title: "Layout/Tab",
   component: TabsBar,
 };
 
 const tabs = [
-  { label: 'Zahlungsdaten', key: 'first', active: true },
-  { label: 'Vertragsdaten', key: 'second', active: false },
-  { label: 'Terminal', key: 'third', active: false },
+  { label: "Zahlungsdaten", key: "first", active: true },
+  { label: "Vertragsdaten", key: "second", active: false },
+  { label: "Terminal", key: "third", active: false },
 ];
 
 export const Default = {
@@ -33,7 +33,8 @@ export const Default = {
                         active: idx === index,
                       })),
                     )
-                  }>
+                  }
+                >
                   {tab.label}
                 </Tab>
               </>

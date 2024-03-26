@@ -16,5 +16,8 @@ export const Default = {
     label: "Die Richtigkeit der Angaben wurde bestätigt",
     value: "Option 1",
     disabled: true,
+    onChange: () => {
+      console.log("Change");
+    },
   },
 };

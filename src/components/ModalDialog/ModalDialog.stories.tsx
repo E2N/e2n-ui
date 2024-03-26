@@ -1,10 +1,10 @@
-import { ModalDialog } from './ModalDialog';
-import { Button } from '../Button';
-import { theme } from '../../theme/default';
-import { useState } from 'react';
+import { ModalDialog } from "./ModalDialog";
+import { Button } from "../Button";
+import { theme } from "../../theme/default";
+import { useState } from "react";
 
 export default {
-  title: 'Layout/ModalDialog',
+  title: "Layout/ModalDialog",
   component: ModalDialog,
 };
 
@@ -17,24 +17,27 @@ export const Default = () => {
         <ModalDialog
           size="small"
           title="E-Mail-Adresse löschen"
-          onClose={() => setIsOpen(false)}>
+          onClose={() => setIsOpen(false)}
+        >
           <div
             style={{
-              display: 'flex',
-              flexDirection: 'column',
+              display: "flex",
+              flexDirection: "column",
               gap: theme.spacing.md,
-            }}>
+            }}
+          >
             <div>
-              Bist Du Dir sicher, dass Du die E-Mail-Adresse{' '}
+              Bist Du Dir sicher, dass Du die E-Mail-Adresse{" "}
               <strong>foo@example.com</strong> von der Blacklist löschen
               möchtest?
             </div>
             <div
               style={{
-                display: 'flex',
-                justifyContent: 'end',
+                display: "flex",
+                justifyContent: "end",
                 gap: theme.spacing.md,
-              }}>
+              }}
+            >
               <Button fill="outline" onClick={() => setIsOpen(false)}>
                 Abbrechen
               </Button>

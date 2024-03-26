@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { Button } from '..';
-import { Drawer } from './Drawer';
+import { useState } from "react";
+import { Button } from "..";
+import { Drawer } from "./Drawer";
 
 export default {
-  title: 'Components/Drawer',
+  title: "Components/Drawer",
   component: Drawer,
 };
 
@@ -24,8 +24,9 @@ export const Default = {
               <Button>Speichern</Button>
             </div>
           }
-          position="right">
-          <p>The drawer content!</p> <input type="text" />{' '}
+          position="right"
+        >
+          <p>The drawer content!</p> <input type="text" />{" "}
         </Drawer>
       </div>
     );

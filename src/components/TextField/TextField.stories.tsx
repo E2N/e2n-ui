@@ -1,13 +1,13 @@
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { TextField } from './TextField';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { TextField } from "./TextField";
 
 export default {
-  title: 'Components/TextField/Default',
+  title: "Components/TextField/Default",
   component: TextField,
   parameters: {
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/dytYKVyXYobjZXq0BDPFsK/e2n-admin.18.04.23?node-id=85%3A8567&t=tOdmpeO4QYOISGNJ-1',
+      type: "figma",
+      url: "https://www.figma.com/file/dytYKVyXYobjZXq0BDPFsK/e2n-admin.18.04.23?node-id=85%3A8567&t=tOdmpeO4QYOISGNJ-1",
     },
   },
 };

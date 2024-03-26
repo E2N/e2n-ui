@@ -1,12 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { ContentWithSidenav } from './ContentWithSidenav';
-import { ContentWithHeader } from '../ContentWithHeader';
+import { Meta, StoryObj } from "@storybook/react";
+import { ContentWithSidenav } from "./ContentWithSidenav";
+import { ContentWithHeader } from "../ContentWithHeader";
 
 const meta: Meta<typeof ContentWithSidenav> = {
-  title: 'Layout/Pages/ContentWithSidenav',
+  title: "Layout/Pages/ContentWithSidenav",
   component: ContentWithSidenav,
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
   argTypes: {
     Sidenav: {
