@@ -1,5 +1,5 @@
 import { Checkbox, CheckboxProps } from "./Checkbox";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
@@ -18,8 +18,7 @@ export const Default = {
       <Checkbox id="default" {...args} />
       <label
         htmlFor="default"
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
+        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
         Accept terms and conditions
       </label>
     </div>
@@ -34,8 +33,7 @@ export const Disabled = {
       <Checkbox id="disabled" {...args} />
       <label
         htmlFor="disabled"
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
+        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
         Accept terms and conditions
       </label>
     </div>
@@ -52,8 +50,7 @@ export const Checked = {
       <Checkbox id="disabled" {...args} />
       <label
         htmlFor="disabled"
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
+        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
         Accept terms and conditions
       </label>
     </div>
