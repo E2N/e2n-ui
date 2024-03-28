@@ -1,11 +1,11 @@
-import { Dropdown2 } from './Dropdown2';
-import { Avatar } from '../Avatar';
-import { DropdownMenuItem } from './DropdownMenuItem';
-import { DropdownMenuLabel } from '.';
-import { darkTheme } from '../..';
+import { Dropdown2 } from "./Dropdown2";
+import { Avatar } from "../Avatar";
+import { DropdownMenuItem } from "./DropdownMenuItem";
+import { DropdownMenuLabel } from ".";
+import { darkTheme } from "../..";
 
 export default {
-  title: 'Layout/Dropdown2',
+  title: "Layout/Dropdown2",
   component: Dropdown2,
 };
 

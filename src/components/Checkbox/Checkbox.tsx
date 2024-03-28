@@ -1,131 +1,36 @@
-import { cx, css } from '@emotion/css';
-import { useEffect, useRef, useState } from 'react';
-import { colorPalette, theme } from '../../theme';
+"use client";
 
-type CustomProps = {
-  className?: string;
-  isValid?: boolean;
-  label: string;
-  onChange?: (value: string | undefined) => void;
-  value: any;
-  defaultChecked?: boolean;
-  disabled?: boolean;
-};
+import * as React from "react";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { Check } from "lucide-react";
+import { cn } from "../../lib/utils";
 
-export type CheckboxProps = CustomProps;
+export type CheckboxProps = React.ComponentPropsWithoutRef<
+  typeof CheckboxPrimitive.Root
+>;
 
-function getStyles({
-  checked,
-  isValid,
-  disabled,
-}: {
-  checked: boolean;
-  isValid?: boolean;
-  disabled?: boolean;
-}) {
-  return {
-    input: css({
-      border: 0,
-      clip: 'rect(0 0 0 0)',
-      height: 1,
-      margin: -1,
-      overflow: 'hidden',
-      padding: 0,
-      position: 'absolute',
-      whiteSpace: 'nowrap',
-      width: 1,
-    }),
-    checkbox: css({
-      width: theme.spacing.md,
-      height: theme.spacing.md,
-      background: checked
-        ? !disabled
-          ? colorPalette.primaryDarker
-          : colorPalette.grey500
-        : colorPalette.white,
-      borderRadius: 3,
-      border: `2px solid ${
-        isValid
-          ? checked
-            ? !disabled
-              ? colorPalette.primaryDarker
-              : colorPalette.grey500
-            : colorPalette.grey200
-          : colorPalette.errorLight
-      }`,
-    }),
-    wrapper: css({
-      display: 'inline-block',
-      verticalAlign: 'middle',
-      '&:hover': {
-        cursor: !disabled ? 'pointer' : 'not-allowed',
-      },
-    }),
-    icon: css({
-      fill: 'none',
-      stroke: colorPalette.white,
-      strokeWidth: 4,
-      visibility: checked ? 'visible' : 'hidden',
-    }),
-    container: css({
-      display: 'flex',
-      gap: theme.spacing.sm,
-      alignItems: 'center',
-    }),
-    label: css({
-      paddingTop: 1,
-      fontSize: theme.size.md,
-      fontWeight: theme.weight.semibold,
-      fontFamily: theme.fontFamily.sansSerif,
-    }),
-  };
-}
+/** Eine Checkbox die zwei Werte repräsentiert */
+const Checkbox = React.forwardRef<
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <CheckboxPrimitive.Root
+    ref={ref}
+    className={cn(
+      "peer h-4 w-4 shrink-0 rounded-sm border-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ",
+      "data-[state=checked]:bg-primary-main data-[state=checked]:text-white data-[state=checked]:border-0",
+      "dark:data-[state=checked]:bg-primary-light",
+      className
+    )}
+    {...props}
+  >
+    <CheckboxPrimitive.Indicator
+      className={cn("flex items-center justify-center text-current")}
+    >
+      <Check className="h-4 w-4" />
+    </CheckboxPrimitive.Indicator>
+  </CheckboxPrimitive.Root>
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
-export function Checkbox({
-  className,
-  isValid = true,
-  label,
-  value,
-  onChange,
-  disabled,
-  defaultChecked = false,
-  ...otherProps
-}: CheckboxProps) {
-  const [checked, setChecked] = useState(defaultChecked);
-  const styles = getStyles({ checked, isValid, disabled });
-  const wrapperRef = useRef<HTMLDivElement>(null);
-
-  // To Do: das sollte eigentlich so gar nicht funktionieren, unbedingt aufräumen
-  useEffect(() => {
-    onChange && onChange(!checked ? undefined : value);
-  }, [checked, value]);
-
-  return (
-    <div className={cx('checkbox-container', styles.container, className)}>
-      <div
-        ref={wrapperRef}
-        className={cx('checkbox-wrapper', styles.wrapper)}
-        onClick={() => {
-          if (!disabled) {
-            setChecked(!checked);
-            wrapperRef.current?.focus();
-          }
-        }}>
-        <input
-          className={cx('checkbox-hidden', styles.input)}
-          type="checkbox"
-          defaultChecked={checked}
-          value={value}
-          disabled={disabled}
-          {...otherProps}
-        />
-        <div className={cx('checkbox', styles.checkbox)}>
-          <svg viewBox="0 0 24 24" className={cx(styles.icon)}>
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-        </div>
-      </div>
-      <div className={cx('label', styles.label)}>{label}</div>
-    </div>
-  );
-}
+export { Checkbox };

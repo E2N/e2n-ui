@@ -1,23 +1,23 @@
-import { CopyToClipboard, CopyToClipboardProps } from './CopyToClipboard';
-import { StoryObj } from '@storybook/react';
-import { userEvent, within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { CopyToClipboard, CopyToClipboardProps } from "./CopyToClipboard";
+import { StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/test";
+import { expect } from "@storybook/test";
 
 export default {
-  title: 'Components/CopyToClipboard',
+  title: "Components/CopyToClipboard",
   component: CopyToClipboard,
 };
 
 export const Default: StoryObj<CopyToClipboardProps> = {
   render: (args: CopyToClipboardProps) => <CopyToClipboard {...args} />,
   args: {
-    value: 'Diesen Text kannst du Zwischenspeichern.',
+    value: "Diesen Text kannst du Zwischenspeichern.",
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    await step('CopyToClipboard container', async () => {
+    await step("CopyToClipboard container", async () => {
       const copyToClipboardComponent = canvas.getByTestId(
-        'copyToClipboardContainer',
+        "copyToClipboardContainer",
       );
       await expect(copyToClipboardComponent).toBeInTheDocument();
       await userEvent.hover(copyToClipboardComponent);

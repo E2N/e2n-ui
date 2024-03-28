@@ -1,7 +1,7 @@
-import { Card } from './Card';
+import { Card } from "./Card";
 
 export default {
-  title: 'Layout/Container',
+  title: "Layout/Container",
   component: Card,
 };
 

@@ -1,7 +1,7 @@
-import { Loading } from './Loading';
+import { Loading } from "./Loading";
 
 export default {
-  title: 'Components/Loading',
+  title: "Components/Loading",
   component: Loading,
 };
 

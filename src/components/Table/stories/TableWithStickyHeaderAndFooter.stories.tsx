@@ -1,10 +1,10 @@
-import { TextField } from '../../TextField';
-import { Table } from '../Table';
-import { defaultColumns } from './columns';
-import { Data, defaultData } from './data';
+import { TextField } from "../../TextField";
+import { Table } from "../Table";
+import { defaultColumns } from "./columns";
+import { Data, defaultData } from "./data";
 
 export default {
-  title: 'Components/Table',
+  title: "Components/Table",
 };
 
 export const WithStickyHeaderAndFooter = {

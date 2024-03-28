@@ -1,14 +1,14 @@
-import { Select } from '.';
+import { Select } from ".";
 
 export default {
-  title: 'components/Select',
+  title: "components/Select",
   component: Select,
 };
 
 const options: Array<{ value: string; label: string }> = [
-  { value: 'successMain', label: 'successMain' },
-  { value: 'errorLight', label: 'errorLight' },
-  { value: 'primaryMain', label: 'primaryMain' },
+  { value: "successMain", label: "successMain" },
+  { value: "errorLight", label: "errorLight" },
+  { value: "primaryMain", label: "primaryMain" },
 ];
 
 export const Default = {
