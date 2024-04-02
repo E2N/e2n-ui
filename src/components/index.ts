@@ -3,6 +3,7 @@ export * from "./Badge";
 export * from "./Button";
 export * from "./Callout";
 export * from "./Card";
+export * from "./Carousel";
 export * from "./CopyToClipboard";
 export * from "./Drawer";
 export * from "./Dropdown";
