@@ -1,12 +1,11 @@
-"use client";
-
 import * as React from "react";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { Button } from "../Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -40,7 +39,6 @@ function useCarousel() {
 
   return context;
 }
-
 const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & CarouselProps
@@ -200,10 +198,8 @@ const CarouselPrevious = React.forwardRef<
   return (
     <Button
       ref={ref}
-      variant={"grey"}
-      size={"small"}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "absolute h-8 w-8",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -212,7 +208,7 @@ const CarouselPrevious = React.forwardRef<
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}>
-      <ArrowLeft className="h-4 w-4" />
+      <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -228,10 +224,8 @@ const CarouselNext = React.forwardRef<
   return (
     <Button
       ref={ref}
-      variant={"grey"}
-      size={"small"}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "absolute h-8 w-8",
         orientation === "horizontal"
           ? "-right-12 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -240,7 +234,7 @@ const CarouselNext = React.forwardRef<
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}>
-      <ArrowRight className="h-4 w-4" />
+      <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
       <span className="sr-only">Next slide</span>
     </Button>
   );
