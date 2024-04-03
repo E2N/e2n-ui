@@ -1,6 +1,6 @@
 {
   "name": "@e2n/e2n-ui",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "type": "module",
   "files": [
     "dist"
@@ -36,8 +36,9 @@
     "@tanstack/react-table": "^8.13.2",
     "chroma-js": "^2.4.2",
     "class-variance-authority": "^0.7.0",
+    "embla-carousel-autoplay": "^8.0.0",
+    "embla-carousel-react": "^8.0.0",
     "jotai": "^2.7.0",
-    "lucide-react": "^0.363.0",
     "react": "^18.2.0",
     "react-aria": "^3.32.1",
     "react-dom": "^18.2.0",

@@ -1,9 +1,8 @@
-"use client";
-
 import * as React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import { Check } from "lucide-react";
 import { cn } from "../../lib/utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 export type CheckboxProps = React.ComponentPropsWithoutRef<
   typeof CheckboxPrimitive.Root
@@ -22,12 +21,10 @@ const Checkbox = React.forwardRef<
       "dark:data-[state=checked]:bg-primary-light",
       className
     )}
-    {...props}
-  >
+    {...props}>
     <CheckboxPrimitive.Indicator
-      className={cn("flex items-center justify-center text-current")}
-    >
-      <Check className="h-4 w-4" />
+      className={cn("flex items-center justify-center text-current")}>
+      <FontAwesomeIcon icon={faCheck} className="fa-xs h-3 w-3" />
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
 ));
