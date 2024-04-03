@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.1.1 (03-04-2024)
+
+- fix export statement
+
 ### 1.1.0 (03-04-2024)
 
 - Add Carousel Component
