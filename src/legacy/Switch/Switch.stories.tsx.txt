@@ -1,10 +1,11 @@
 import { StoryObj } from "@storybook/react";
 import { Switch } from "./Switch";
+import { SwitchProps } from "./types";
 import { userEvent, within } from "@storybook/test";
 import { expect } from "@storybook/test";
 
 export default {
-  title: "Components/Switch",
+  title: "Legacy/Components/Switch",
   component: Switch,
   parameters: {
     design: {
@@ -14,12 +15,15 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof Switch> = {
-  render: (args) => <Switch />,
-  // args: {
-  //   disabled: false,
-  //   onCheckedChange: () => console.log("changed"),
-  // },
+export const Default: StoryObj<SwitchProps> = {
+  render: (args) => <Switch {...args} />,
+  args: {
+    variant: "default",
+    disabled: false,
+    size: "medium",
+    onCheckedChange: () => console.log("changed"),
+    label: "My Switch",
+  },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     await step("Toggle between states", async () => {

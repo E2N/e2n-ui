@@ -1,68 +1,27 @@
-import * as RadixUISwitch from '@radix-ui/react-switch';
-import { SwitchProps } from './types';
-import { cx } from '@emotion/css';
-import { useRef } from 'react';
-import { getStyles } from './styles';
+import * as React from "react";
+import * as SwitchPrimitives from "@radix-ui/react-switch";
 
-/**
- * React component that renders a switch. It is used to toggle between two different states, for example
- * something is turned on or off instantly. It is recommended to use a pairing label. Furthermore display a message
- * in order to let people know what happens when the switch is pressed.
- */
-export function Switch({
-  disabled = false,
-  variant = 'default',
-  size = 'medium',
-  onCheckedChange,
-  checked,
-  label,
-  htmlFor,
-  className,
-  ...otherProps
-}: SwitchProps) {
-  const styles = getStyles(variant, size, disabled);
-  const ref = useRef<HTMLSpanElement>(null);
+import { cn } from "../../lib/utils";
 
-  /**
-   * Workarround der dafür sorgt, dass die Animation des Thumbs nur nach einem Click-Event und nicht nach dem initalen
-   * Rendering der Komponente oder Veränderung des States (z.B. Size oder Variant) ausgeführt wird.
-   */
-  function handleClick(checked: boolean) {
-    const state = ref.current?.getAttribute('data-state') ?? '';
-    if (state === 'checked' && ref.current) {
-      ref.current.classList.add('animation-unchecked');
-      ref.current.classList.remove('animation-checked');
-    }
-    if (state === 'unchecked' && ref.current) {
-      ref.current.classList.add('animation-checked');
-      ref.current.classList.remove('animation-unchecked');
-    }
-    if (onCheckedChange) {
-      onCheckedChange(checked);
-    }
-  }
-
-  return (
-    <div className={cx(styles.container, className)}>
-      <RadixUISwitch.Root
-        id={label}
-        data-testid="switch"
-        disabled={disabled}
-        onClick={() => {
-          handleClick(!checked);
-        }}
-        className={cx(styles.button, styles.root, 'switch-root')}
-        {...otherProps}>
-        <RadixUISwitch.Thumb
-          ref={ref}
-          className={cx(styles.thumb, 'switch-thumb')}
-        />
-      </RadixUISwitch.Root>
-      {label && (
-        <label className={cx(styles.label)} htmlFor={htmlFor}>
-          {label}
-        </label>
+const Switch = React.forwardRef<
+  React.ElementRef<typeof SwitchPrimitives.Root>,
+  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
+>(({ className, ...props }, ref) => (
+  <SwitchPrimitives.Root
+    className={cn(
+      "peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
+      className
+    )}
+    {...props}
+    ref={ref}
+  >
+    <SwitchPrimitives.Thumb
+      className={cn(
+        "pointer-events-none block h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
       )}
-    </div>
-  );
-}
+    />
+  </SwitchPrimitives.Root>
+));
+Switch.displayName = SwitchPrimitives.Root.displayName;
+
+export { Switch };
