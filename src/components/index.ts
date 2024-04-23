@@ -10,6 +10,7 @@ export * from "./Drawer";
 export * from "./Dropdown";
 export * from "./Dropdown2";
 export * from "./Headings";
+export * from "./Input";
 export * from "./Link";
 export * from "./Loading";
 export * from "./Navigation";
