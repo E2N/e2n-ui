@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.2.0 (23-04-2024)
+
+- add Switch component
+
 ### 1.1.1 (03-04-2024)
 
 - fix export statement

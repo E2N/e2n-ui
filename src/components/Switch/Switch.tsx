@@ -1,68 +1,68 @@
-import * as RadixUISwitch from '@radix-ui/react-switch';
-import { SwitchProps } from './types';
-import { cx } from '@emotion/css';
-import { useRef } from 'react';
-import { getStyles } from './styles';
+import * as React from "react";
+import * as SwitchPrimitives from "@radix-ui/react-switch";
 
-/**
- * React component that renders a switch. It is used to toggle between two different states, for example
- * something is turned on or off instantly. It is recommended to use a pairing label. Furthermore display a message
- * in order to let people know what happens when the switch is pressed.
- */
-export function Switch({
-  disabled = false,
-  variant = 'default',
-  size = 'medium',
-  onCheckedChange,
-  checked,
-  label,
-  htmlFor,
-  className,
-  ...otherProps
-}: SwitchProps) {
-  const styles = getStyles(variant, size, disabled);
-  const ref = useRef<HTMLSpanElement>(null);
+import { cn } from "../../lib/utils";
+import { cva, type VariantProps } from "class-variance-authority";
 
-  /**
-   * Workarround der dafür sorgt, dass die Animation des Thumbs nur nach einem Click-Event und nicht nach dem initalen
-   * Rendering der Komponente oder Veränderung des States (z.B. Size oder Variant) ausgeführt wird.
-   */
-  function handleClick(checked: boolean) {
-    const state = ref.current?.getAttribute('data-state') ?? '';
-    if (state === 'checked' && ref.current) {
-      ref.current.classList.add('animation-unchecked');
-      ref.current.classList.remove('animation-checked');
-    }
-    if (state === 'unchecked' && ref.current) {
-      ref.current.classList.add('animation-checked');
-      ref.current.classList.remove('animation-unchecked');
-    }
-    if (onCheckedChange) {
-      onCheckedChange(checked);
-    }
-  }
+const switchVariants = cva("", {
+  variants: {
+    size: {
+      default: "h-6 w-11",
+      sm: "h-4 w-7",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
 
-  return (
-    <div className={cx(styles.container, className)}>
-      <RadixUISwitch.Root
-        id={label}
-        data-testid="switch"
-        disabled={disabled}
-        onClick={() => {
-          handleClick(!checked);
-        }}
-        className={cx(styles.button, styles.root, 'switch-root')}
-        {...otherProps}>
-        <RadixUISwitch.Thumb
-          ref={ref}
-          className={cx(styles.thumb, 'switch-thumb')}
-        />
-      </RadixUISwitch.Root>
-      {label && (
-        <label className={cx(styles.label)} htmlFor={htmlFor}>
-          {label}
-        </label>
-      )}
-    </div>
-  );
+const thumbVariants = cva("", {
+  variants: {
+    size: {
+      default: "h-5 w-5 data-[state=checked]:translate-x-5",
+      sm: "h-3 w-3 data-[state=checked]:translate-x-3",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+
+export interface SwitchProps
+  extends React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>,
+    VariantProps<typeof switchVariants> {
+  asChild?: boolean;
 }
+
+const Switch = React.forwardRef<
+  React.ElementRef<typeof SwitchPrimitives.Root>,
+  SwitchProps
+>(({ className, size, ...props }, ref) => (
+  <SwitchPrimitives.Root
+    className={cn(
+      "peer inline-flex shrink-0 cursor-pointer items-center",
+      "rounded-full border-2 border-transparent transition-colors",
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-main focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+      "disabled:cursor-not-allowed disabled:opacity-50",
+      "data-[state=checked]:bg-primary-main data-[state=unchecked]:bg-slate-200",
+      "dark:focus-visible:ring-slate-300 dark:focus-visible:ring-offset-primary-main dark:data-[state=checked]:bg-slate-50 dark:data-[state=unchecked]:bg-primary-main",
+      switchVariants({ size }),
+      className
+    )}
+    {...props}
+    data-testid="switch"
+    ref={ref}
+  >
+    <SwitchPrimitives.Thumb
+      className={cn(
+        "pointer-events-none block rounded-full",
+        "bg-white shadow-lg ring-0 dark:bg-primary-main",
+        "transition-transform data-[state=unchecked]:translate-x-0",
+        thumbVariants({ size })
+      )}
+    />
+  </SwitchPrimitives.Root>
+));
+Switch.displayName = SwitchPrimitives.Root.displayName;
+
+export { Switch };
