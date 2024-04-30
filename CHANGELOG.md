@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.0.0 (30-04-2024)
+
+- adjust imports for checkbox
+- import old switch and checkbox as renamed components
+
 ### 1.2.0 (23-04-2024)
 
 - add Switch component
