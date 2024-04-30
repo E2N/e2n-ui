@@ -4,6 +4,7 @@ export * from "./Button";
 export * from "./Callout";
 export * from "./Card";
 export * from "./Carousel";
+export * from "./Checkbox";
 export * from "./CopyToClipboard";
 export * from "./Drawer";
 export * from "./Dropdown";
@@ -26,3 +27,4 @@ export * from "./TextField";
 export * from "./Tooltip";
 
 export * from "./../legacy/Checkbox";
+export * from "./../legacy/Switch";
