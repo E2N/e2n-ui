@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.0.4 (02-05-2024)
+
+- adjust type export for switch component
+
 ### 2.0.0 (30-04-2024)
 
 - adjust imports for checkbox
