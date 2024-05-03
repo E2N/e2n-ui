@@ -22,7 +22,7 @@ export const Basic: StoryObj<ButtonProps> = {
     </Button>
   ),
   args: {
-    variant: "destructive",
+    variant: "secondary",
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
