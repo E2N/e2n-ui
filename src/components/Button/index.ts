@@ -1,3 +1,2 @@
-export { Button } from './Button';
-export { ButtonGroup } from './ButtonGroup';
-export { IconButton } from './IconButton';
+export * from "./Button";
+export * from "./IconButton";

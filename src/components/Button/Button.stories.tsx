@@ -2,7 +2,7 @@ import { userEvent, within } from "@storybook/test";
 import { Button } from "./Button";
 import { StoryObj } from "@storybook/react";
 import { expect } from "@storybook/test";
-import { ButtonProps } from "./types";
+import { ButtonProps } from "./Button";
 
 export default {
   title: "Components/Buttons/Button",
@@ -22,7 +22,7 @@ export const Basic: StoryObj<ButtonProps> = {
     </Button>
   ),
   args: {
-    variant: "primary",
+    variant: "destructive",
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
@@ -48,7 +48,7 @@ export const Basic: StoryObj<ButtonProps> = {
 
       /**  Simulate a hover event on the button element. */
       userEvent.hover(
-        await within(canvasElement).getByTestId("button-container"),
+        await within(canvasElement).getByTestId("button-container")
       );
       /**  Simulate a click event on the button element. */
       await userEvent.click(button);
