@@ -1,5 +1,10 @@
 # Changelog
 
+### 3.0.0 (06-05-2024)
+
+- replace old button + iconButton by shadcn component
+- buttonGroup component is no longer available
+
 ### 2.0.4 (02-05-2024)
 
 - adjust type export for switch component
