@@ -1,0 +1,215 @@
+{/* Checkbox.mdx */}
+
+import { Canvas, Meta, Controls } from "@storybook/blocks";
+import * as ButtonStories from "./Button.stories";
+import { Button } from "./Button";
+import { Badge } from "../../components/Badge";
+import { DocumentationBlock } from "../../helpers/DocumentationBlock.tsx";
+import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
+import { colorPalette } from "../../theme";
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Ein Button führt eine Aktion über Tap oder Klick aus.
+
+<Canvas of={ButtonStories.Basic} />
+
+## Verwendung
+
+### ✅ Use
+
+- Wenn der Benutzer eine Aktion ausführen möchte z. B. etwas bestätigt.
+
+### ❌ Don't use
+
+- Wenn Du auf andere Seiten oder externe Ressourcen verlinken möchtest <br/> (verwende stattdessen eine Link-Komponente)
+- Für eine hierarchische Navigation, bei der der Benutzer zu einem Unterthema <br /> navigiert und tiefer in das Menü eindringt (verwende stattdessen die Navigations-Elemente)
+
+## Code
+
+### Beispiel
+
+```tsx
+import React from 'react';
+
+import Button from '@e2n/e2n-ui';
+
+export function ButtonExample() => {
+    return <Button variant="primary" onClick={() => handleClick()}>Primary Button</Button>
+}
+```
+
+### Props
+
+<Controls />
+
+# Button Typen
+
+## Variant
+
+Die Buttons kommen in 4 verschiedenen Varianten:
+
+### Contained (Prioritätsstufe 1)
+
+<DocumentationBlock
+  component={<Button>Contained button</Button>}
+  description="Benutze Contained um die wichtigsten Aktionen anzuzeigen, z. B. etwas zu
+    bestätigen oder etwas Neues anzulegen."
+/>
+
+### Outlined (Prioritätsstufe 2)
+
+<DocumentationBlock
+  component={<Button fill="outline">Outlined button</Button>}
+  description=" Benutze Outlined um eine Sekundäre Aktion auszuführen, z.B. etwas zu
+    schließen oder zurückzukehren. Wird oft in Verbindung mit Contained für eine
+    weitere Aktionsoption verwendet."
+/>
+
+### Text (Prioritätsstufe 3)
+
+<DocumentationBlock
+  component={<Badge icon={faScrewdriverWrench} text="Coming soon" />}
+  description="Benutze Text z.B. in Tabellen, Karten meist in Verbindung mit Icons um dafür
+    spezifische Aktionen auszuführen."
+/>
+
+### Soft (Prioritätsstufe 4)
+
+<DocumentationBlock
+  component={<Badge icon={faScrewdriverWrench} text="Coming soon" />}
+  description="Benutze Soft für eine Aktion innerhalb einer Tabelle z. B. Änderung des
+    Datums oder Filtertypen anzuzeigen."
+/>
+
+## Color
+
+Die Buttons sind farblich nach den ihren Aktionen unterteilt:
+
+### Inherit
+
+<DocumentationBlock
+  component={<Badge icon={faScrewdriverWrench} text="Coming soon" />}
+  description="Default Farbe, für die meisten Aktionen ohne farbliche Hervorhebung."
+/>
+
+### Primary
+
+<DocumentationBlock
+  component={<Button>Primary button</Button>}
+  description="Der Primärbutton wird verwendet, um die wichtigsten Aktionen auf der Seite hervorzuheben. Als Anlehnung an unsere CI hat er die Farbe e2n blue.
+"
+/>
+
+### Info
+
+<DocumentationBlock
+  component={<Button variant="info">Info button</Button>}
+  description="Für Infos an den Benutzer"
+/>
+
+### Success
+
+<DocumentationBlock
+  component={<Button variant="success">Success button</Button>}
+  description="Für erfolgreiche Bestätigungen"
+/>
+
+### Warning
+
+<DocumentationBlock
+  component={<Button variant="warning">Warning button</Button>}
+  description="Upgrade Plan"
+/>
+
+### Error
+
+<DocumentationBlock
+  component={<Button variant="error">Error button</Button>}
+  description="Der Button mit der Variante error wird als Bestätigung für eine gefährliche Aktion wie zum Beispiel Löschen verwenden.
+"
+/>
+
+## Size
+
+Die Buttons gibt es 3 Größen. Die Wahl des Buttons hängt vom Weißraum des Screens oder der Komponente ab. Auf Proportionen von Button zu Screen/Komponente achten.
+
+### Large (L)
+
+<Button size="large">Large button</Button>
+
+### Medium (M)
+
+<Button size="medium">Medium button</Button>
+
+### Small (S)
+
+<Button size="small">Small button</Button>
+
+## States
+
+Die Buttons verfügen über 3 verschiedene Zustände:
+
+### Enabled
+
+<DocumentationBlock
+  component={<Button variant="primary">Enabled button</Button>}
+  description="Der normale, Default-Zustand wenn der Button noch nicht gedrückt wurde."
+/>
+
+### Hovered / Focused
+
+<DocumentationBlock
+  component={
+    <Button
+      variant="error"
+      variant="primary"
+      style={{
+        backgroundColor: colorPalette.primaryDark,
+        borderColor: colorPalette.primaryDark,
+      }}
+    >
+      Hovered button
+    </Button>
+  }
+  description="Der Zustand wenn über den Button gehovered bzw. der Button gedrückt wurde."
+/>
+
+### Disabled
+
+<DocumentationBlock
+  component={
+    <Button variant="primary" disabled>
+      Disabled button
+    </Button>
+  }
+  description="Der Button kann nicht gedrückt werden, da dieser durch eine Aktion oder einen Fehler nicht verwendet werden kann."
+/>
+
+# Button vs. Icon Button
+
+Die Komponente Button kann auch ein Icon enthalten jedoch immer nur vor oder hinter einem Text. Außerdem ist ein Button immer als Rechteck mit abgerundeten Ecken zu sehen, wobei hingegen das Icon Button immer einen Kreis umschließt.
+
+# Button vs. Label
+
+Die Komponente Button kann leicht mit einem Label verwechselt werden da sie ein ähnliches Aussehen besitzen. Ein Button besitzt im Gegensatz zum Label die 3 verschiedenen Zustände mit denen interagiert werden kann.
+
+# Best Practice
+
+✅ Verwende nach Möglichkeit Buttons nach ihren Typen (Variant, Color, Size, State)
+
+✅ Benutze als Titel nur ein paar Wörter (idealerweise 1 oder 2)
+
+✅ Starte mit einem Großgeschriebenen Verben, wie “Senden”
+
+✅ Beschreibe die Aktion (Wenn jemand nur den Button liest, sollte er verstehen was danach folgt)
+
+✅ Verwende die gleichen Worte wie der Titel des Kontexts
+
+❌ Es gibt in der Regel in einer Ansicht nur einen Button als Variante Contained, da dieser die höchste Priorität besitzt und nur einmal vorkommt.
+
+❌ Wähle für eine Bestätigung den Button nicht in den Farben Warning oder Error
+
+❌ Weniger ist mehr, verwende nicht zu viele Buttons auf einem Screen

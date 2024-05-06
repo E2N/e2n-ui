@@ -2,10 +2,10 @@ import { Button } from "./Button";
 import { StoryObj } from "@storybook/react";
 import { ButtonProps } from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCogs, faSave } from "@fortawesome/free-solid-svg-icons";
+import { faCogs } from "@fortawesome/free-solid-svg-icons";
 
 export default {
-  title: "Components/Buttons/Button",
+  title: "Components/Button",
   tags: ["autodocs"],
   component: Button,
   parameters: {
