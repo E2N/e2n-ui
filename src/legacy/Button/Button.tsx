@@ -1,12 +1,12 @@
-import { css, CSSObject, cx } from '@emotion/css';
-import { forwardRef } from 'react';
+import { css, CSSObject, cx } from "@emotion/css";
+import { forwardRef } from "react";
 import {
   colorPalette,
   lightTheme,
   theme as e2nTheme,
   Theme,
-} from '../../theme';
-import { ButtonVariant, ButtonFill, ButtonSize, ButtonProps } from './types';
+} from "../../theme";
+import { ButtonVariant, ButtonFill, ButtonSize, ButtonProps } from "./types";
 
 const backgroundColor: Record<ButtonVariant, string> = {
   grey: colorPalette.grey300,
@@ -62,7 +62,7 @@ export const getButtonStyles = ({
   fill,
   size,
   disabled,
-  variant = 'primary',
+  variant = "primary",
   theme,
   stretch,
 }: {
@@ -91,21 +91,21 @@ export const getButtonStyles = ({
       color: !disabled ? textColor[variant] : colorPalette.grey400,
       border: !disabled
         ? `1px solid ${borderColor[variant]}`
-        : '1px solid transparent',
-      display: 'inline-flex',
-      alignItems: 'center',
-      width: !stretch ? 'fit-content' : '100%',
-      justifyContent: stretch ? 'center' : 'unset',
-      fontSize: '14px',
+        : "1px solid transparent",
+      display: "inline-flex",
+      alignItems: "center",
+      width: !stretch ? "fit-content" : "100%",
+      justifyContent: stretch ? "center" : "unset",
+      fontSize: "14px",
       fontFamily: e2nTheme.fontFamily.sansSerif,
       fontWeight: e2nTheme.weight.bold,
-      padding: '6px 16px',
-      lineHeight: '24px',
-      cursor: !disabled ? 'pointer' : 'not-allowed',
+      padding: "6px 16px",
+      lineHeight: "24px",
+      cursor: !disabled ? "pointer" : "not-allowed",
       borderRadius: e2nTheme.borderRadius.sm,
-      transition: '0.3s',
-      whiteSpace: 'nowrap',
-      '&:hover': !disabled
+      transition: "0.3s",
+      whiteSpace: "nowrap",
+      "&:hover": !disabled
         ? {
             backgroundColor: hoverColor[variant],
             borderColor: hoverColor[variant],
@@ -121,7 +121,7 @@ export const getButtonStyles = ({
 function getButtonVariantStyles({
   fill,
   disabled,
-  variant = 'primary',
+  variant = "primary",
   theme,
 }: {
   fill?: ButtonFill;
@@ -129,27 +129,27 @@ function getButtonVariantStyles({
   variant?: ButtonVariant;
   theme?: Theme;
 }): CSSObject | undefined {
-  if (fill === 'outline') {
+  if (fill === "outline") {
     return {
-      background: !disabled ? 'transparent' : colorPalette.grey200,
+      background: !disabled ? "transparent" : colorPalette.grey200,
       color: !disabled ? backgroundColor[variant] : colorPalette.grey400,
-      '&:hover': !disabled
+      "&:hover": !disabled
         ? {
             backgroundColor: backgroundColor[variant],
             color: textColor[variant],
           }
         : {},
     };
-  } else if (fill === 'text') {
+  } else if (fill === "text") {
     return {
-      background: 'none',
-      border: 'none',
+      background: "none",
+      border: "none",
       color: !disabled
-        ? variant === 'grey'
+        ? variant === "grey"
           ? theme?.text.primary
           : backgroundColor[variant]
         : colorPalette.grey400,
-      '&:hover': !disabled
+      "&:hover": !disabled
         ? {
             backgroundColor: softHoverColor[variant],
           }
@@ -159,22 +159,25 @@ function getButtonVariantStyles({
 }
 
 function getButtonSizeStyles({ size }: { size?: string }) {
-  if (size === 'small') {
+  if (size === "small") {
     return {
-      fontSize: '13px',
-      lineHeight: '22px',
-      padding: '4px 10px',
+      fontSize: "13px",
+      lineHeight: "22px",
+      padding: "4px 10px",
     };
   }
-  if (size === 'large') {
+  if (size === "large") {
     return {
-      fontSize: '15px',
-      lineHeight: '26px',
-      padding: '11px 22px',
+      fontSize: "15px",
+      lineHeight: "26px",
+      padding: "11px 22px",
     };
   }
 }
 
+/**
+ * @deprecated
+ */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -188,7 +191,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       stretch,
       ...otherProps
     },
-    ref,
+    ref
   ) => {
     const styles = getButtonStyles({
       fill,
@@ -203,13 +206,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         data-testid="button-container"
         ref={ref}
-        className={cx('e2n-button', styles.button, className)}
+        className={cx("e2n-button", styles.button, className)}
         disabled={disabled}
-        {...otherProps}>
+        {...otherProps}
+      >
         {children}
       </button>
     );
-  },
+  }
 );
 
-Button.displayName = 'Button';
+Button.displayName = "Button";

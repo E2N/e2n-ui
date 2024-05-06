@@ -5,7 +5,7 @@ import { userEvent, within } from "@storybook/test";
 import { expect } from "@storybook/test";
 
 export default {
-  title: "Legacy/Components/Switch",
+  title: "Legacy/Switch",
   component: Switch,
   parameters: {
     design: {

@@ -26,5 +26,4 @@ export * from "./Table";
 export * from "./TextField";
 export * from "./Tooltip";
 
-export * from "./../legacy/Checkbox";
-export * from "./../legacy/Switch";
+export * from "./../legacy";

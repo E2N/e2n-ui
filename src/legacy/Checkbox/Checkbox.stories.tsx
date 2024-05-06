@@ -1,7 +1,7 @@
 import { Checkbox, CheckboxProps } from "./Checkbox";
 
 export default {
-  title: "Legacy/Components/Checkbox",
+  title: "Legacy/Checkbox",
   component: Checkbox,
   paramters: {
     controls: {

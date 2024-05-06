@@ -3,7 +3,7 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { IconButton, IconButtonProps } from "./IconButton";
 
 export default {
-  title: "Components/Buttons/IconButton",
+  title: "Legacy/Buttons/IconButton",
   component: IconButton,
   parameters: {
     design: {

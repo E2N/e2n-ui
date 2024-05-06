@@ -8,7 +8,7 @@ import { Button } from "./Button";
 import { ButtonGroup } from "./ButtonGroup";
 
 export default {
-  title: "Components/Buttons/ButtonGroup",
+  title: "Legacy/Buttons/ButtonGroup",
   component: ButtonGroup,
 };
 
