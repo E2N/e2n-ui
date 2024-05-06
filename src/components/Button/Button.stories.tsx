@@ -1,11 +1,12 @@
-import { userEvent, within } from "@storybook/test";
 import { Button } from "./Button";
 import { StoryObj } from "@storybook/react";
-import { expect } from "@storybook/test";
 import { ButtonProps } from "./Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCogs, faSave } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   title: "Components/Buttons/Button",
+  tags: ["autodocs"],
   component: Button,
   parameters: {
     design: {
@@ -15,43 +16,72 @@ export default {
   },
 };
 
-export const Basic: StoryObj<ButtonProps> = {
-  render: (args: ButtonProps) => (
-    <Button type="button" {...args}>
-      Click me
-    </Button>
-  ),
+export const Default: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <Button {...args}>Default</Button>,
+  args: {
+    variant: "default",
+  },
+};
+
+export const Secondary: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <Button {...args}>Secondary</Button>,
   args: {
     variant: "secondary",
   },
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByTestId("button-container");
+};
 
-    await step("Button container", async () => {
-      /** Check the text content of the button. */
-      expect(button.textContent).toBe("Click me");
-      /**  Check that the button element is in the document. */
-      expect(button).toBeInTheDocument();
+export const Destructive: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <Button {...args}>Destructive</Button>,
+  args: {
+    variant: "destructive",
+  },
+};
 
-      /**  Check that the button element contains a "button" tag. */
-      expect(button).toContainHTML("button");
+export const Outline: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <Button {...args}>Outline</Button>,
+  args: {
+    variant: "outline",
+  },
+};
 
-      /**  Check that the button element has the expected CSS class. */
-      expect(button).toHaveClass("e2n-button");
+export const Ghost: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <Button {...args}>Ghost</Button>,
+  args: {
+    variant: "ghost",
+  },
+};
 
-      /**  Check that the button element has a "className" property. */
-      expect(button).toHaveProperty("className");
+export const Link: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <Button {...args}>Link</Button>,
+  args: {
+    variant: "link",
+  },
+};
 
-      /**  Check that the button element has a "type" attribute. */
-      expect(button).toHaveAttribute("type");
+export const Large: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <Button {...args}>Large button</Button>,
+  args: {
+    variant: "default",
+    size: "lg",
+  },
+};
 
-      /**  Simulate a hover event on the button element. */
-      userEvent.hover(
-        await within(canvasElement).getByTestId("button-container")
-      );
-      /**  Simulate a click event on the button element. */
-      await userEvent.click(button);
-    });
+export const Small: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <Button {...args}>Small button</Button>,
+  args: {
+    variant: "default",
+    size: "sm",
+  },
+};
+
+export const IconButton: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => (
+    <Button {...args}>
+      <FontAwesomeIcon fixedWidth icon={faCogs} />
+    </Button>
+  ),
+  args: {
+    variant: "outline",
+    size: "icon",
   },
 };
