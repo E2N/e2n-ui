@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.0.5 (06-05-2024)
+
+- fix wrong background of switch in darkmode
+
 ### 2.0.4 (02-05-2024)
 
 - adjust type export for switch component
