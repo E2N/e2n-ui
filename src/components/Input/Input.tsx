@@ -1,6 +1,15 @@
 import * as React from "react";
-
+import { IconDefinition, SizeProp } from "@fortawesome/fontawesome-svg-core";
 import { cn } from "../../lib/utils";
+import { Theme, lightTheme, theme as e2nTheme } from "../../theme";
+
+type CustomProps = {
+  icon: IconDefinition;
+  className?: string;
+  spin?: boolean;
+  size?: SizeProp;
+  theme?: Theme;
+};
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
