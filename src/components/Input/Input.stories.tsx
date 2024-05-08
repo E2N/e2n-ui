@@ -1,6 +1,8 @@
 import { Input } from "./Input";
 import { Button } from "../Button";
 import type { Meta } from "@storybook/react";
+import { faEdit, faRainbow } from "@fortawesome/free-solid-svg-icons";
+import { icon } from "@fortawesome/fontawesome-svg-core";
 
 const meta: Meta<typeof Input> = {
   component: Input,
@@ -51,4 +53,30 @@ export const WithLabel = {
       <Input type="email" id="email" placeholder="Email" />
     </div>
   ),
+};
+
+export const WithIconStart = {
+  name: "Mit Icon am Anfang",
+  render: () => {
+    return (
+      <>
+        <div className="mb-4 w-1/2">
+          <Input type="email" placeholder="Email" startIcon={faEdit} />
+        </div>
+      </>
+    );
+  },
+};
+
+export const WithIconEnd = {
+  name: "Mit Icon am Ende",
+  render: () => {
+    return (
+      <>
+        <div className="mb-4 w-1/2">
+          <Input type="email" placeholder="Email" endIcon={faRainbow} />
+        </div>
+      </>
+    );
+  },
 };
