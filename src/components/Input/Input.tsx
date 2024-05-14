@@ -1,22 +1,7 @@
 import * as React from "react";
-import {
-  FontawesomeObject,
-  IconDefinition,
-  SizeProp,
-} from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { cn } from "../../lib/utils";
-import { Theme } from "../../theme";
-import {
-  FontAwesomeIcon,
-  FontAwesomeIconProps,
-} from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
-type CustomProps = {
-  className?: string;
-  size?: SizeProp;
-  theme?: Theme;
-};
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -33,10 +18,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {StartIcon ? (
           <>
             <div className="absolute left-2.5 top-1/2 transform -translate-y-1/2">
-              <FontAwesomeIcon
-                icon={startIcon}
-                className="text-muted-foreground"
-              />
+              <FontAwesomeIcon icon={startIcon} className="text-gray-400" />
             </div>
 
             <input
@@ -62,7 +44,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         {EndIcon && (
           <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-            <FontAwesomeIcon className="text-muted-foreground" icon={endIcon} />
+            <FontAwesomeIcon className="text-gray-400" icon={endIcon} />
           </div>
         )}
       </div>
