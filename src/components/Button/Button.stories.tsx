@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 import { StoryObj } from "@storybook/react";
 import { ButtonProps } from "./Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconButton, IconButtonProps } from "./IconButton";
 import { faCogs } from "@fortawesome/free-solid-svg-icons";
 
 export default {
@@ -74,14 +74,9 @@ export const Small: StoryObj<ButtonProps> = {
   },
 };
 
-export const IconButton: StoryObj<ButtonProps> = {
-  render: (args: ButtonProps) => (
-    <Button {...args}>
-      <FontAwesomeIcon fixedWidth icon={faCogs} />
-    </Button>
-  ),
+export const Icon: StoryObj<IconButtonProps> = {
+  render: (args: IconButtonProps) => <IconButton {...args} />,
   args: {
-    variant: "outline",
-    size: "icon",
+    icon: faCogs,
   },
 };
