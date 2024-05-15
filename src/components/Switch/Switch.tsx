@@ -45,7 +45,7 @@ const Switch = React.forwardRef<
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-main focus-visible:ring-offset-2 focus-visible:ring-offset-white",
       "disabled:cursor-not-allowed disabled:opacity-50",
       "data-[state=checked]:bg-primary-main data-[state=unchecked]:bg-slate-200",
-      "dark:focus-visible:ring-slate-300 dark:focus-visible:ring-offset-primary-main dark:data-[state=checked]:bg-slate-50 dark:data-[state=unchecked]:bg-primary-main",
+      "dark:focus-visible:ring-slate-300 dark:focus-visible:ring-offset-primary-main dark:data-[state=checked]:bg-slate-50 dark:data-[state=unchecked]:bg-primary-light",
       switchVariants({ size }),
       className
     )}
