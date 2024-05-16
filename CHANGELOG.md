@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.0.0 (16-05-2024)
+
+- add Input component
+
 ### 2.0.4 (02-05-2024)
 
 - adjust type export for switch component
