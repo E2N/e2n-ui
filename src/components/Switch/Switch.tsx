@@ -50,7 +50,6 @@ const Switch = React.forwardRef<
       className
     )}
     {...props}
-    data-testid="switch"
     ref={ref}
   >
     <SwitchPrimitives.Thumb

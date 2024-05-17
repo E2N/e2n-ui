@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.0.6 (17-05-2024)
+
+- fix missing data-testid in switch component
+
 ### 2.0.5 (06-05-2024)
 
 - fix wrong background of switch in darkmode
