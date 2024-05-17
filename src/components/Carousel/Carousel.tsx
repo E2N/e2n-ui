@@ -3,7 +3,7 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
 import { cn } from "../../lib/utils";
-import { Button } from "../Button";
+import { Button, IconButton } from "../Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -129,14 +129,16 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
-        }}>
+        }}
+      >
         <div
           ref={ref}
           onKeyDownCapture={handleKeyDown}
           className={cn("relative", className)}
           role="region"
           aria-roledescription="carousel"
-          {...props}>
+          {...props}
+        >
           {children}
         </div>
       </CarouselContext.Provider>
@@ -196,9 +198,8 @@ const CarouselPrevious = React.forwardRef<
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
   return (
-    <Button
+    <IconButton
       ref={ref}
-      size={"small"}
       className={cn(
         "absolute",
         orientation === "horizontal"
@@ -208,10 +209,11 @@ const CarouselPrevious = React.forwardRef<
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
-      {...props}>
-      <FontAwesomeIcon icon={faArrowLeft} />
+      icon={faArrowLeft}
+      {...props}
+    >
       <span className="sr-only">Previous slide</span>
-    </Button>
+    </IconButton>
   );
 });
 CarouselPrevious.displayName = "CarouselPrevious";
@@ -223,9 +225,9 @@ const CarouselNext = React.forwardRef<
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
   return (
-    <Button
+    <IconButton
       ref={ref}
-      size={"small"}
+      icon={faArrowRight}
       className={cn(
         "absolute",
         orientation === "horizontal"
@@ -235,10 +237,10 @@ const CarouselNext = React.forwardRef<
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
-      {...props}>
-      <FontAwesomeIcon icon={faArrowRight} />
+      {...props}
+    >
       <span className="sr-only">Next slide</span>
-    </Button>
+    </IconButton>
   );
 });
 CarouselNext.displayName = "CarouselNext";
