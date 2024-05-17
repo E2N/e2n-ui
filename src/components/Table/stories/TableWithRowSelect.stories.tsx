@@ -19,7 +19,6 @@ const HeaderSlot = ({
   return (
     <div style={{ display: "flex", justifyContent: "flex-end" }}>
       <Button
-        size="small"
         disabled={disabled}
         onClick={() => alert(JSON.stringify(originalRow))}
       >
