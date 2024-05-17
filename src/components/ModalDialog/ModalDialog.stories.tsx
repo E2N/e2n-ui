@@ -38,7 +38,7 @@ export const Default = () => {
                 gap: theme.spacing.md,
               }}
             >
-              <Button fill="outline" onClick={() => setIsOpen(false)}>
+              <Button variant="outline" onClick={() => setIsOpen(false)}>
                 Abbrechen
               </Button>
               <Button>Löschen</Button>
