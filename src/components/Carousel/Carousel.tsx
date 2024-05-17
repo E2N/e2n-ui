@@ -4,7 +4,6 @@ import useEmblaCarousel, {
 } from "embla-carousel-react";
 import { cn } from "../../lib/utils";
 import { Button, IconButton } from "../Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 type CarouselApi = UseEmblaCarouselType[1];
