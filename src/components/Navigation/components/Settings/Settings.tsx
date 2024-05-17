@@ -1,31 +1,31 @@
-import { IconButton } from '../../../Button';
-import { IconButtonProps } from '../../../Button/IconButton';
-import { css, cx } from '@emotion/css';
-import { Theme, theme as e2nTheme } from '../../../../theme';
-import { NavigationDropdown } from '../NavigationDropdown';
-import { ReactNode } from 'react';
-import { useTheme } from '../../theme';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { IconButtonProps } from "../../../Button/IconButton";
+import { css, cx } from "@emotion/css";
+import { Theme, theme as e2nTheme } from "../../../../theme";
+import { NavigationDropdown } from "../NavigationDropdown";
+import { ReactNode } from "react";
+import { useTheme } from "../../theme";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function getStyles(theme: Theme) {
   return css({
     fontSize: e2nTheme.size.lg,
-    color: 'green',
-    cursor: 'pointer',
+    color: "green",
+    cursor: "pointer",
     height: 30,
     width: 30,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: '100%',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "100%",
     button: {
       fontSize: 16,
-      ':focus': {
-        outline: 'none',
+      ":focus": {
+        outline: "none",
       },
     },
-    transition: '0.3s',
-    ':hover, :focus-within': {
+    transition: "0.3s",
+    ":hover, :focus-within": {
       backgroundColor: theme.actionState.hover,
       button: {
         color: theme.text.primary,
@@ -42,16 +42,16 @@ function getStyles(theme: Theme) {
 
 export function Settings({
   children,
-  ...props
-}: Omit<IconButtonProps, 'icon'> & { children?: ReactNode }) {
+}: Omit<IconButtonProps, "icon"> & { children?: ReactNode }) {
   const theme = useTheme();
   const styles = getStyles(theme);
 
   const Trigger = (
     <div
       data-testid="navigation-settings"
-      className={cx(styles, 'navigation-settings')}>
-      <IconButton theme={theme} icon={faCog} {...props} />
+      className={cx(styles, "navigation-settings")}
+    >
+      <FontAwesomeIcon icon={faCog} color={theme.text.primary} />
     </div>
   );
 
