@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.0.0 (22-05-2024)
+
+- add Input component
+
 ### 3.0.0 (22-05-2024)
 
 - replace old button + iconButton by shadcn component
