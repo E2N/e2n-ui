@@ -1,10 +1,11 @@
 import { css, cx } from '@emotion/css';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { CSSTransition } from 'react-transition-group';
-import { IconButton } from '..';
+import { Button } from '..';
 import { colorPalette, theme } from '../../theme';
 import { H3 } from '../Headings';
 import './drawer.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type DrawerProps = {
   isOpen?: boolean;
@@ -94,20 +95,23 @@ export function Drawer({
         in={isOpen}
         timeout={300}
         classNames="drawer"
-        unmountOnExit>
+        unmountOnExit
+      >
         <div
           className={cx('drawer-container', drawerStyles.drawerContainer)}
-          role="dialog">
+          role="dialog"
+        >
           <div className={cx('header-wrapper', drawerStyles.headerWrapper)}>
             <div className={cx('header', drawerStyles.header)}>
               <H3>{header}</H3>
-              <IconButton
-                icon={faClose}
-                size="2x"
+              <Button
+                variant="ghost"
                 onClick={() => {
                   onClose();
                 }}
-              />
+              >
+                <FontAwesomeIcon icon={faClose} fixedWidth />
+              </Button>
             </div>
           </div>
           <div className={cx('content-wrapper', drawerStyles.contentWrapper)}>

@@ -1,215 +1,54 @@
-import { css, CSSObject, cx } from '@emotion/css';
-import { forwardRef } from 'react';
-import {
-  colorPalette,
-  lightTheme,
-  theme as e2nTheme,
-  Theme,
-} from '../../theme';
-import { ButtonVariant, ButtonFill, ButtonSize, ButtonProps } from './types';
+import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-const backgroundColor: Record<ButtonVariant, string> = {
-  grey: colorPalette.grey300,
-  primary: colorPalette.primaryMain,
-  secondary: colorPalette.secondaryMain,
-  info: colorPalette.infoMain,
-  success: colorPalette.successMain,
-  warning: colorPalette.warningMain,
-  error: colorPalette.errorMain,
-};
+import { cn } from '../../lib/utils';
 
-const textColor: Record<ButtonVariant, string> = {
-  grey: colorPalette.textLightPrimary,
-  primary: colorPalette.textDarkPrimary,
-  secondary: colorPalette.textDarkPrimary,
-  info: colorPalette.textDarkPrimary,
-  success: colorPalette.textDarkPrimary,
-  warning: colorPalette.textDarkPrimary,
-  error: colorPalette.textDarkPrimary,
-};
-
-const borderColor: Record<ButtonVariant, string> = {
-  grey: colorPalette.grey300,
-  primary: colorPalette.primaryMain,
-  secondary: colorPalette.secondaryMain,
-  info: colorPalette.infoMain,
-  success: colorPalette.successMain,
-  warning: colorPalette.warningMain,
-  error: colorPalette.errorMain,
-};
-
-const hoverColor: Record<ButtonVariant, string> = {
-  grey: colorPalette.grey400,
-  primary: colorPalette.primaryDark,
-  secondary: colorPalette.secondaryDark,
-  info: colorPalette.infoDark,
-  success: colorPalette.successDark,
-  warning: colorPalette.warningDark,
-  error: colorPalette.errorDark,
-};
-
-const softHoverColor: Record<ButtonVariant, string> = {
-  grey: colorPalette.greyTransparent8,
-  primary: colorPalette.primaryTransparent8,
-  secondary: colorPalette.secondaryTransparent8,
-  info: colorPalette.infoTransparent8,
-  success: colorPalette.successTransparent8,
-  warning: colorPalette.warningTransparent8,
-  error: colorPalette.errorTransparent8,
-};
-
-export const getButtonStyles = ({
-  fill,
-  size,
-  disabled,
-  variant = 'primary',
-  theme,
-  stretch,
-}: {
-  fill?: ButtonFill;
-  size?: ButtonSize;
-  disabled?: boolean;
-  variant?: ButtonVariant;
-  theme?: Theme;
-  stretch?: boolean;
-}) => {
-  const variantStyles = getButtonVariantStyles({
-    fill,
-    disabled,
-    variant,
-    theme,
-  });
-  const buttonSizeStyles = getButtonSizeStyles({
-    size,
-  });
-
-  return {
-    button: css({
-      backgroundColor: !disabled
-        ? backgroundColor[variant]
-        : colorPalette.grey200,
-      color: !disabled ? textColor[variant] : colorPalette.grey400,
-      border: !disabled
-        ? `1px solid ${borderColor[variant]}`
-        : '1px solid transparent',
-      display: 'inline-flex',
-      alignItems: 'center',
-      width: !stretch ? 'fit-content' : '100%',
-      justifyContent: stretch ? 'center' : 'unset',
-      fontSize: '14px',
-      fontFamily: e2nTheme.fontFamily.sansSerif,
-      fontWeight: e2nTheme.weight.bold,
-      padding: '6px 16px',
-      lineHeight: '24px',
-      cursor: !disabled ? 'pointer' : 'not-allowed',
-      borderRadius: e2nTheme.borderRadius.sm,
-      transition: '0.3s',
-      whiteSpace: 'nowrap',
-      '&:hover': !disabled
-        ? {
-            backgroundColor: hoverColor[variant],
-            borderColor: hoverColor[variant],
-            color: textColor[variant],
-          }
-        : {},
-      ...variantStyles,
-      ...buttonSizeStyles,
-    }),
-  };
-};
-
-function getButtonVariantStyles({
-  fill,
-  disabled,
-  variant = 'primary',
-  theme,
-}: {
-  fill?: ButtonFill;
-  disabled?: boolean;
-  variant?: ButtonVariant;
-  theme?: Theme;
-}): CSSObject | undefined {
-  if (fill === 'outline') {
-    return {
-      background: !disabled ? 'transparent' : colorPalette.grey200,
-      color: !disabled ? backgroundColor[variant] : colorPalette.grey400,
-      '&:hover': !disabled
-        ? {
-            backgroundColor: backgroundColor[variant],
-            color: textColor[variant],
-          }
-        : {},
-    };
-  } else if (fill === 'text') {
-    return {
-      background: 'none',
-      border: 'none',
-      color: !disabled
-        ? variant === 'grey'
-          ? theme?.text.primary
-          : backgroundColor[variant]
-        : colorPalette.grey400,
-      '&:hover': !disabled
-        ? {
-            backgroundColor: softHoverColor[variant],
-          }
-        : {},
-    };
-  }
-}
-
-function getButtonSizeStyles({ size }: { size?: string }) {
-  if (size === 'small') {
-    return {
-      fontSize: '13px',
-      lineHeight: '22px',
-      padding: '4px 10px',
-    };
-  }
-  if (size === 'large') {
-    return {
-      fontSize: '15px',
-      lineHeight: '26px',
-      padding: '11px 22px',
-    };
-  }
-}
-
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      fill,
-      className,
-      size,
-      disabled,
-      variant,
-      children,
-      theme = lightTheme,
-      stretch,
-      ...otherProps
+const buttonVariants = cva(
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  {
+    variants: {
+      variant: {
+        default: 'bg-primary-main text-white hover:bg-primary-dark',
+        secondary: 'bg-secondary-main text-white hover:bg-secondary-darker',
+        destructive: 'bg-error-main text-white hover:bg-error-dark',
+        outline:
+          'border border-input bg-white hover:bg-primary-8% text-primary-main',
+        ghost: 'hover:bg-primary-8%',
+        link: 'text-black underline-offset-4 hover:underline',
+      },
+      size: {
+        default: 'h-10 px-4 py-2',
+        sm: 'h-9 rounded-md px-3',
+        lg: 'h-11 rounded-md px-8',
+        icon: 'h-10 w-10',
+      },
     },
-    ref,
-  ) => {
-    const styles = getButtonStyles({
-      fill,
-      size,
-      disabled,
-      variant,
-      theme,
-      stretch,
-    });
-
-    return (
-      <button
-        data-testid="button-container"
-        ref={ref}
-        className={cx('e2n-button', styles.button, className)}
-        disabled={disabled}
-        {...otherProps}>
-        {children}
-      </button>
-    );
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
+    },
   },
 );
 
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button';
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
 Button.displayName = 'Button';
+
+export { Button, buttonVariants };

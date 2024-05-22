@@ -21,7 +21,8 @@ export function DropdownMenuLabel({
         className,
         'navigation-dropdown-menu-label',
       )}
-      {...otherProps}>
+      {...otherProps}
+    >
       {children}
     </DropdownMenu.Label>
   );

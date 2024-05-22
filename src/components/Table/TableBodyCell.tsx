@@ -25,7 +25,8 @@ export function TableBodyCell<T>({
         textAlign: isRightAligned ? 'right' : 'start',
         width:
           cell.column.getSize() !== 150 ? cell.column.getSize() : undefined,
-      }}>
+      }}
+    >
       {cell.getIsGrouped() ? (
         <>
           <span
@@ -34,7 +35,8 @@ export function TableBodyCell<T>({
               style: {
                 cursor: row.getCanExpand() ? 'pointer' : 'normal',
               },
-            }}>
+            }}
+          >
             {row.getIsExpanded() ? (
               <FontAwesomeIcon icon={faChevronDown} />
             ) : (

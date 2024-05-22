@@ -52,7 +52,8 @@ export function NavigationButton({
   return (
     <CustomComponent
       className={cx(styles, 'navigation-button')}
-      {...otherProps}>
+      {...otherProps}
+    >
       {children}
     </CustomComponent>
   );

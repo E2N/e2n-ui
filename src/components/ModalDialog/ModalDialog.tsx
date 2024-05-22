@@ -74,7 +74,8 @@ export const ModalDialog = forwardRef<HTMLDivElement, ModalDialogProps>(
           if (isDismissable) {
             onClose(false);
           }
-        }}>
+        }}
+      >
         <div className={cx(styles.modal)}>
           <div className={cx(styles.titel)}>{title}</div>
           <span>{children}</span>

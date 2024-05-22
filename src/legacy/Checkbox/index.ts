@@ -1,1 +1,1 @@
-export { Checkbox as LegacyCheckbox } from "./Checkbox";
+export { Checkbox as LegacyCheckbox } from './Checkbox';

@@ -75,8 +75,8 @@ function getSelectStyles<
           !isValid
             ? colorPalette.errorMain
             : !state.isFocused && !state.menuIsOpen
-            ? colorPalette.grey300
-            : colorPalette.grey500
+              ? colorPalette.grey300
+              : colorPalette.grey500
         }`,
         borderRadius: e2nTheme.borderRadius.sm,
         boxShadow: 'none',

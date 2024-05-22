@@ -1,25 +1,25 @@
-import { useState } from "react";
-import { Select, Tab, TabsBar } from "../..";
-import { Badge } from "../../Badge";
-import { TextField } from "../../TextField";
-import { Table } from "../Table";
-import { defaultColumns } from "./columns";
-import { Data, defaultData } from "./data";
+import { useState } from 'react';
+import { Select, Tab, TabsBar } from '../..';
+import { Badge } from '../../Badge';
+import { TextField } from '../../TextField';
+import { Table } from '../Table';
+import { defaultColumns } from './columns';
+import { Data, defaultData } from './data';
 
 export default {
-  title: "Components/Table",
+  title: 'Components/Table',
 };
 
 const tabs = [
-  { label: "Zahlungsdaten", key: "first", active: true },
-  { label: "Vertragsdaten", key: "second", active: false },
-  { label: "Terminal", key: "third", active: false },
+  { label: 'Zahlungsdaten', key: 'first', active: true },
+  { label: 'Vertragsdaten', key: 'second', active: false },
+  { label: 'Terminal', key: 'third', active: false },
 ];
 
 const options: Array<{ value: string; label: string }> = [
-  { value: "successMain", label: "successMain" },
-  { value: "errorLight", label: "errorLight" },
-  { value: "primaryMain", label: "primaryMain" },
+  { value: 'successMain', label: 'successMain' },
+  { value: 'errorLight', label: 'errorLight' },
+  { value: 'primaryMain', label: 'primaryMain' },
 ];
 
 export const WithTabsAndSearch = {
@@ -45,7 +45,7 @@ export const WithTabsAndSearch = {
                   )
                 }
               >
-                <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                   {tab.label}
                   <Badge variant="success" text="23" />
                 </div>
@@ -55,8 +55,8 @@ export const WithTabsAndSearch = {
         }
         ToolbarComponent={
           <>
-            <div style={{ display: "flex" }}>
-              <div style={{ display: "flex" }}>
+            <div style={{ display: 'flex' }}>
+              <div style={{ display: 'flex' }}>
                 <TextField
                   width={400}
                   placeholder="Suche nach einem Vertrag…"
@@ -64,8 +64,8 @@ export const WithTabsAndSearch = {
               </div>
               <div
                 style={{
-                  marginLeft: "0.5rem",
-                  width: "15rem",
+                  marginLeft: '0.5rem',
+                  width: '15rem',
                 }}
               >
                 <Select isMulti options={options} />

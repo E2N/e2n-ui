@@ -28,6 +28,9 @@ function getButtonGroupStyles() {
   });
 }
 
+/**
+ * @deprecated
+ */
 export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
   ({ children, className, ...otherProps }, ref) => {
     const buttonGroupStyles = getButtonGroupStyles();
@@ -35,7 +38,8 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
       <div
         ref={ref}
         className={cx('e2n-button-group', buttonGroupStyles, className)}
-        {...otherProps}>
+        {...otherProps}
+      >
         {children}
       </div>
     );

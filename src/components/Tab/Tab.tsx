@@ -86,7 +86,8 @@ export const Tab = ({
         href={href}
         className={linkStyles}
         {...otherProps}
-        onClick={onChangeTab}>
+        onClick={onChangeTab}
+      >
         {children}
       </a>
     </div>

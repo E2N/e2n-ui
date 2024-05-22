@@ -1,12 +1,12 @@
 {/* Checkbox.mdx */}
 
-import { Canvas, Meta, Controls } from '@storybook/blocks';
-import * as ButtonStories from './Button.stories';
-import { Button } from './Button';
-import { Badge } from '../Badge';
-import { DocumentationBlock } from '../../helpers/DocumentationBlock.tsx';
-import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
-import { colorPalette } from '../../theme';
+import { Canvas, Meta, Controls } from "@storybook/blocks";
+import * as ButtonStories from "./Button.stories";
+import { Button } from "./Button";
+import { Badge } from "../../components/Badge";
+import { DocumentationBlock } from "../../helpers/DocumentationBlock.tsx";
+import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
+import { colorPalette } from "../../theme";
 
 <Meta of={ButtonStories} />
 
@@ -169,7 +169,8 @@ Die Buttons verfügen über 3 verschiedene Zustände:
       style={{
         backgroundColor: colorPalette.primaryDark,
         borderColor: colorPalette.primaryDark,
-      }}>
+      }}
+    >
       Hovered button
     </Button>
   }

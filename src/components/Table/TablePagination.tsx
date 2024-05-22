@@ -86,7 +86,8 @@ export function TablePaginator<T>({
         />
         <div>
           <div
-            className={cx('alignPagination', paginatiorStyles.alignPagination)}>
+            className={cx('alignPagination', paginatiorStyles.alignPagination)}
+          >
             <div>
               Seite{' '}
               {table.getPageCount() === 0
@@ -110,19 +111,16 @@ export function TablePaginator<T>({
             {!disableFirstLastPagination && (
               <IconButton
                 icon={faAnglesLeft}
-                size="xl"
                 onClick={() => table.setPageIndex(0)}
                 disabled={!table.getCanPreviousPage()}
               />
             )}
             <IconButton
               icon={faAngleLeft}
-              size="xl"
               onClick={() => table.previousPage()}
               disabled={!table.getCanPreviousPage()}
             />
             <IconButton
-              size="xl"
               icon={faAngleRight}
               onClick={() => table.nextPage()}
               disabled={!table.getCanNextPage()}
@@ -130,7 +128,6 @@ export function TablePaginator<T>({
             {!disableFirstLastPagination && (
               <IconButton
                 icon={faAnglesRight}
-                size="xl"
                 onClick={() =>
                   table.setPageIndex(table.getPageOptions().length)
                 }

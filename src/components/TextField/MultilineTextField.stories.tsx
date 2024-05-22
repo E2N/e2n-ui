@@ -1,7 +1,7 @@
-import { MultilineTextField } from "./MultilineTextField";
+import { MultilineTextField } from './MultilineTextField';
 
 export default {
-  title: "Components/TextField/Multiline",
+  title: 'Components/TextField/Multiline',
   component: MultilineTextField,
 };
 

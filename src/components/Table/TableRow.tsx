@@ -48,7 +48,8 @@ export function TableRow({
       {...otherProps}
       onClick={(e) => {
         e.stopPropagation();
-      }}>
+      }}
+    >
       {children}
     </tr>
   );

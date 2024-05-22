@@ -50,7 +50,8 @@ export function NavigationButtonHeader({
           styles.container,
           'navigation-button-container',
           headerStyles,
-        )}>
+        )}
+      >
         <FontAwesomeIcon
           className={cx(styles.icon, 'navigation-button-icon')}
           fixedWidth
@@ -74,7 +75,8 @@ export function NavigationButtonHeader({
               display: 'flex',
               flexDirection: 'column',
               paddingLeft: 16,
-            }}>
+            }}
+          >
             {areChildrenVisible && children}
           </div>
         ) : (

@@ -1,1 +1,1 @@
-export { Switch as LegacySwitch } from "./Switch";
+export { Switch as LegacySwitch } from './Switch';

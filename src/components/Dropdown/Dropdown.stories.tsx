@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { Button } from "../Button";
-import { TextField } from "../TextField";
-import { Dropdown } from "./Dropdown";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
+import { Button } from '../Button';
+import { TextField } from '../TextField';
+import { Dropdown } from './Dropdown';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  title: "Layout/Dropdown",
+  title: 'Layout/Dropdown',
   component: Dropdown,
 };
 

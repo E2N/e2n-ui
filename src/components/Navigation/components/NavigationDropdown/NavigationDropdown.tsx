@@ -85,7 +85,8 @@ export function NavigationDropdown({
         <DropdownMenu.Content
           data-testid="navigation-dropdown-content"
           className={cx(styles.content, 'navigation-dropdown-content')}
-          sideOffset={5}>
+          sideOffset={5}
+        >
           {Children.toArray(children).map((item, index) => {
             return (
               <DropdownMenu.Item
@@ -95,7 +96,8 @@ export function NavigationDropdown({
                 className={cx(
                   styles.dropdownMenuItem,
                   'navigation-dropdown-menu-item',
-                )}>
+                )}
+              >
                 {item}
               </DropdownMenu.Item>
             );

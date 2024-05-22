@@ -94,7 +94,8 @@ export function TableCell({
           isActive: active,
         }),
       )}
-      {...otherProps}>
+      {...otherProps}
+    >
       {children}
     </TableCellWrapper>
   );
