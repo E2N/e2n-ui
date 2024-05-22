@@ -9,7 +9,7 @@ export default {
 };
 
 export const Default: StoryObj<typeof Switch> = {
-  render: (args) => <Switch {...args} />,
+  render: (args) => <Switch {...args} data-testid="switch" />,
   args: {
     disabled: false,
     onCheckedChange: () => console.log('changed'),
