@@ -19,7 +19,8 @@ export function MenuItemsContainer({ items }: MenuItemsContainerProps) {
   return (
     <div
       data-testid="navigation-items-container"
-      className={cx(styles, 'navigation-items-container')}>
+      className={cx(styles, 'navigation-items-container')}
+    >
       {items}
     </div>
   );

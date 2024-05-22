@@ -44,7 +44,8 @@ export function HomeItemContainer({ href, title }: HomeItemContainerProps) {
     <a
       data-testid="navigation-home-container"
       className={cx(styles, 'navigation-home-container')}
-      href={href}>
+      href={href}
+    >
       <FontAwesomeIcon icon={faLocationDot} />
       {title}
     </a>

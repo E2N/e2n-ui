@@ -63,7 +63,8 @@ function ReactRouterNavLink({ item }: { item: ReactRouterSideNavItem }) {
   return (
     <div
       className={cx('nav-item-wrapper', styles.wrapper)}
-      onClick={() => navigate(item.to)}>
+      onClick={() => navigate(item.to)}
+    >
       <Link to={item.to} className={(cx('nav-item-link'), styles.link)}>
         {item.icon && (
           <FontAwesomeIcon
@@ -121,7 +122,8 @@ function ReactRouterSideNavItemHeader({
       <div className={cx('nav-item-header', styles.wrapper)}>
         <div
           onClick={onChangeExpand}
-          className={cx('nav-item-header', styles.header)}>
+          className={cx('nav-item-header', styles.header)}
+        >
           <div>
             {item.icon && (
               <FontAwesomeIcon icon={item.icon} style={{ marginRight: 16 }} />
@@ -167,7 +169,8 @@ function LinkSideNavItemHeader({ item }: { item: LinkSideNavItem }) {
       <div className={cx('nav-item-header', styles.wrapper)}>
         <div
           onClick={onChangeExpand}
-          className={cx('nav-item-header', styles.header)}>
+          className={cx('nav-item-header', styles.header)}
+        >
           <div>
             {item.icon && (
               <FontAwesomeIcon icon={item.icon} style={{ marginRight: 16 }} />

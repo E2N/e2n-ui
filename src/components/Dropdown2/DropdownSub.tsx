@@ -14,7 +14,8 @@ export function DropdownSub({
   return (
     <DropdownMenu.Sub {...others}>
       <DropdownMenu.SubTrigger
-        className={cx(styles.trigger, styles.button, styles.dropdownMenuItem)}>
+        className={cx(styles.trigger, styles.button, styles.dropdownMenuItem)}
+      >
         {trigger}
       </DropdownMenu.SubTrigger>
       <DropdownMenu.Portal>

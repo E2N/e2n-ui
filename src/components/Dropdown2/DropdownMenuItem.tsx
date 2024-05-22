@@ -23,7 +23,8 @@ export function DropdownMenuItem({
         className,
         'navigation-dropdown-menu-item',
       )}
-      {...otherProps}>
+      {...otherProps}
+    >
       {children}
     </DropdownMenu.Item>
   );

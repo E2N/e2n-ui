@@ -1,17 +1,17 @@
-import { StoryObj } from "@storybook/react";
-import { SideNav2 } from ".";
-import { SideNavProps } from "./types";
-import { ContentWithHeader, ContentWithSidenav } from "../Layout";
+import { StoryObj } from '@storybook/react';
+import { SideNav2 } from '.';
+import { SideNavProps } from './types';
+import { ContentWithHeader, ContentWithSidenav } from '../Layout';
 import {
   NavigationHeader,
   Section,
   NavigationButton as SideNavButton,
-} from "./components";
+} from './components';
 import {
   Navigation,
   NavigationDropdownButton,
   NavigationButton,
-} from "../Navigation";
+} from '../Navigation';
 import {
   faBabyCarriage,
   faCar,
@@ -20,13 +20,13 @@ import {
   faPeopleGroup,
   faTerminal,
   faUser,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  title: "Components/SideNav2",
+  title: 'Components/SideNav2',
   component: SideNav2,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
 };
 
@@ -75,7 +75,7 @@ export const Default: StoryObj<SideNavProps> = {
     );
   },
   args: {
-    label: "sidenav",
+    label: 'sidenav',
     isCollapsable: true,
     // theme: darkTheme,
     isDraggable: true,
@@ -102,7 +102,7 @@ export const WithoutHeader: StoryObj<SideNavProps> = {
     );
   },
   args: {
-    label: "sidenav",
+    label: 'sidenav',
     isCollapsable: true,
     isDraggable: true,
     // theme: darkTheme,

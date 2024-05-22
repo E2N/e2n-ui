@@ -1,7 +1,7 @@
-import { Link, LinkProps } from "./Link";
+import { Link, LinkProps } from './Link';
 
 export default {
-  title: "Components/Link",
+  title: 'Components/Link',
   component: Link,
 };
 

@@ -1,8 +1,21 @@
 # Changelog
 
-### 4.0.0 (16-05-2024)
+### 4.0.0 (22-05-2024)
 
 - add Input component
+
+### 3.0.0 (22-05-2024)
+
+- replace old button + iconButton by shadcn component
+- buttonGroup component is no longer available
+
+### 2.0.6 (17-05-2024)
+
+- fix missing data-testid in switch component
+
+### 2.0.5 (06-05-2024)
+
+- fix wrong background of switch in darkmode
 
 ### 2.0.4 (02-05-2024)
 

@@ -36,7 +36,8 @@ function CustomSelectInner<
   return (
     <div
       className={cx(wrapperStyles.wrapper, otherProps.className)}
-      data-testid={otherProps['data-testid']}>
+      data-testid={otherProps['data-testid']}
+    >
       {label && (
         <div className={cx(wrapperStyles.label)}>
           <div>{label}</div>

@@ -22,7 +22,8 @@ export function Dropdown2({
           data-testid="navigation-dropdown-content"
           className={cx(styles.content, 'navigation-dropdown-content')}
           sideOffset={5}
-          {...otherProps}>
+          {...otherProps}
+        >
           {children}
           <DropdownMenu.DropdownMenuGroup />
           <DropdownMenu.Arrow className={cx(styles.arrow)} />

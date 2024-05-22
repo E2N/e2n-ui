@@ -1,12 +1,12 @@
-import { RowSelectionState } from "@tanstack/react-table";
-import { useState } from "react";
-import { Button } from "../../Button";
-import { Table } from "../Table";
-import { columnsSingleSelect } from "./columnsSingleSelect";
-import { data, type Location } from "./data";
+import { RowSelectionState } from '@tanstack/react-table';
+import { useState } from 'react';
+import { Button } from '../../Button';
+import { Table } from '../Table';
+import { columnsSingleSelect } from './columnsSingleSelect';
+import { data, type Location } from './data';
 
 export default {
-  title: "Components/Table",
+  title: 'Components/Table',
 };
 
 const HeaderSlot = ({
@@ -17,9 +17,8 @@ const HeaderSlot = ({
   originalRow: Location[] | undefined;
 }) => {
   return (
-    <div style={{ display: "flex", justifyContent: "flex-end" }}>
+    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
       <Button
-        size="small"
         disabled={disabled}
         onClick={() => alert(JSON.stringify(originalRow))}
       >

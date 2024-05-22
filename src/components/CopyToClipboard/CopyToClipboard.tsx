@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SetStateAction, useState } from "react";
-import { colorPalette } from "../../theme";
-import { cx, css } from "@emotion/css";
-import { faCheck, faCopy } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SetStateAction, useState } from 'react';
+import { colorPalette } from '../../theme';
+import { cx, css } from '@emotion/css';
+import { faCheck, faCopy } from '@fortawesome/free-solid-svg-icons';
 
 type CustomProps = {
   className?: string;
@@ -14,15 +14,15 @@ export type CopyToClipboardProps = CustomProps;
 function getStyles() {
   return {
     wrapper: css({
-      display: "flex",
-      alignItems: "center",
-      gap: "0 0.35rem",
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0 0.35rem',
     }),
     icon: css({
       color: colorPalette.grey500,
-      ":hover": {
+      ':hover': {
         color: colorPalette.textLightPrimary,
-        cursor: "pointer",
+        cursor: 'pointer',
       },
     }),
   };
@@ -37,7 +37,7 @@ export function CopyToClipboard({
   const styles = getStyles();
   const copyToClipboard = (
     value: string,
-    setIsCopyied: React.Dispatch<SetStateAction<boolean>>
+    setIsCopyied: React.Dispatch<SetStateAction<boolean>>,
   ) => {
     navigator.clipboard.writeText(value);
     setIsCopyied(true);
@@ -47,7 +47,7 @@ export function CopyToClipboard({
   };
   return (
     <div
-      className={cx("wrapper-style", styles.wrapper)}
+      className={cx('wrapper-style', styles.wrapper)}
       data-testid="copyToClipboardContainer"
     >
       <div>{value}</div>
@@ -57,7 +57,7 @@ export function CopyToClipboard({
         }}
       >
         <FontAwesomeIcon
-          className={cx("icon-style", styles.icon, className)}
+          className={cx('icon-style', styles.icon, className)}
           icon={!isCopyied ? faCopy : faCheck}
           onClick={() => copyToClipboard(value, setIsCopyied)}
           {...otherProps}

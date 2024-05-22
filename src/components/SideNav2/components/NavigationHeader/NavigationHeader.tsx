@@ -63,7 +63,8 @@ export function NavigationHeader({ children }: NavigationHeaderProps) {
             ...sidenavSize,
             width: !isCollapsed ? minimalWidth : defaultWidth,
           });
-        }}>
+        }}
+      >
         <FontAwesomeIcon icon={faChevronLeft} />
       </div>
     </div>

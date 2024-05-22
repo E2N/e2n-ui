@@ -20,7 +20,8 @@ export function Tooltip({
             <RadixUITooltip.Content
               side={side}
               className={cx(styles.container, 'tooltip')}
-              sideOffset={2}>
+              sideOffset={2}
+            >
               {children}
               <RadixUITooltip.Arrow
                 width={'8px'}
