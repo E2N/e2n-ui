@@ -1,2 +1,2 @@
 export { Callout, type Variant } from './Callout';
-export {NotificationCallout} from './NotificationCallout';
+export { NotificationCallout } from './NotificationCallout';

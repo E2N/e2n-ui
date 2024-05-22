@@ -1,14 +1,14 @@
 import {
   faChevronLeft,
   faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "./Button";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button } from './Button';
 
-import { ButtonGroup } from "./ButtonGroup";
+import { ButtonGroup } from './ButtonGroup';
 
 export default {
-  title: "Legacy/Buttons/ButtonGroup",
+  title: 'Legacy/Buttons/ButtonGroup',
   component: ButtonGroup,
 };
 

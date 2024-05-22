@@ -1,18 +1,18 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
-import { Theme } from "../../theme";
+import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { Theme } from '../../theme';
 
-export type ButtonFill = "outline" | "text";
+export type ButtonFill = 'outline' | 'text';
 
-export type ButtonSize = "small" | "medium" | "large";
+export type ButtonSize = 'small' | 'medium' | 'large';
 
 export type ButtonVariant =
-  | "grey"
-  | "primary"
-  | "secondary"
-  | "info"
-  | "success"
-  | "warning"
-  | "error";
+  | 'grey'
+  | 'primary'
+  | 'secondary'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'error';
 
 export type ButtonProps = {
   /**  The fill property of the button. */

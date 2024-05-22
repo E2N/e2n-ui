@@ -1,11 +1,11 @@
-import { css, cx } from "@emotion/css";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
-import { CSSTransition } from "react-transition-group";
-import { Button } from "..";
-import { colorPalette, theme } from "../../theme";
-import { H3 } from "../Headings";
-import "./drawer.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { css, cx } from '@emotion/css';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
+import { CSSTransition } from 'react-transition-group';
+import { Button } from '..';
+import { colorPalette, theme } from '../../theme';
+import { H3 } from '../Headings';
+import './drawer.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type DrawerProps = {
   isOpen?: boolean;
@@ -13,7 +13,7 @@ type DrawerProps = {
   children: React.ReactNode;
   className?: string;
   onClose: () => void;
-  position?: "left" | "right";
+  position?: 'left' | 'right';
   enableDismiss?: boolean;
   footer?: React.ReactNode;
 };
@@ -21,19 +21,19 @@ type DrawerProps = {
 function getDrawerStyles({ position }: { position?: string }) {
   return {
     drawerContainer: css({
-      background: " #fff",
-      width: "30%",
-      height: "100%",
-      overflow: "auto",
-      position: "fixed",
-      boxShadow: "0 0 15px rgba(0, 0, 0, 0.5)",
+      background: ' #fff',
+      width: '30%',
+      height: '100%',
+      overflow: 'auto',
+      position: 'fixed',
+      boxShadow: '0 0 15px rgba(0, 0, 0, 0.5)',
       zIndex: 1000,
       top: 0,
-      left: position === "left" ? 0 : undefined,
-      right: position === "right" ? 0 : undefined,
+      left: position === 'left' ? 0 : undefined,
+      right: position === 'right' ? 0 : undefined,
     }),
     headerWrapper: css({
-      position: "sticky",
+      position: 'sticky',
       top: 0,
       left: 0,
       backgroundColor: colorPalette.white,
@@ -44,10 +44,10 @@ function getDrawerStyles({ position }: { position?: string }) {
     contentWrapper: css({
       padding: theme.spacing.md,
       paddingBottom: 240,
-      height: "inherit",
+      height: 'inherit',
     }),
     footerWrapper: css({
-      position: "sticky",
+      position: 'sticky',
       bottom: 0,
       left: 0,
       backgroundColor: colorPalette.white,
@@ -56,18 +56,18 @@ function getDrawerStyles({ position }: { position?: string }) {
       zIndex: 100,
     }),
     backdrop: css({
-      background: "rgba(0, 0, 0, 0.5)",
-      width: "100%",
-      height: "100%",
+      background: 'rgba(0, 0, 0, 0.5)',
+      width: '100%',
+      height: '100%',
       top: 0,
       left: 0,
-      position: "fixed",
+      position: 'fixed',
       zIndex: 999,
     }),
     header: css({
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
     }),
   };
 }
@@ -77,16 +77,16 @@ export function Drawer({
   children,
   onClose,
   enableDismiss,
-  position = "left",
+  position = 'left',
   footer,
   isOpen,
 }: DrawerProps) {
   const drawerStyles = getDrawerStyles({ position });
 
   if (isOpen) {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = 'hidden';
   } else {
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = 'auto';
   }
 
   return (
@@ -98,11 +98,11 @@ export function Drawer({
         unmountOnExit
       >
         <div
-          className={cx("drawer-container", drawerStyles.drawerContainer)}
+          className={cx('drawer-container', drawerStyles.drawerContainer)}
           role="dialog"
         >
-          <div className={cx("header-wrapper", drawerStyles.headerWrapper)}>
-            <div className={cx("header", drawerStyles.header)}>
+          <div className={cx('header-wrapper', drawerStyles.headerWrapper)}>
+            <div className={cx('header', drawerStyles.header)}>
               <H3>{header}</H3>
               <Button
                 variant="ghost"
@@ -114,11 +114,11 @@ export function Drawer({
               </Button>
             </div>
           </div>
-          <div className={cx("content-wrapper", drawerStyles.contentWrapper)}>
+          <div className={cx('content-wrapper', drawerStyles.contentWrapper)}>
             {children}
           </div>
           {footer && (
-            <div className={cx("footer-wrapper", drawerStyles.footerWrapper)}>
+            <div className={cx('footer-wrapper', drawerStyles.footerWrapper)}>
               {footer}
             </div>
           )}
@@ -126,7 +126,7 @@ export function Drawer({
       </CSSTransition>
       {isOpen && (
         <div
-          className={cx("e2n-drawer-backdrop", drawerStyles.backdrop)}
+          className={cx('e2n-drawer-backdrop', drawerStyles.backdrop)}
           onClick={() => {
             if (enableDismiss) {
               onClose();

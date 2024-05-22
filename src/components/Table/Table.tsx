@@ -253,7 +253,8 @@ export function Table<T>({
                       <TableRow
                         variant="body"
                         isSelected={row.getIsSelected()}
-                        onClick={row.getToggleSelectedHandler()}>
+                        onClick={row.getToggleSelectedHandler()}
+                      >
                         {row.getVisibleCells().map((cell) => (
                           <TableBodyCell key={cell.id} cell={cell} row={row} />
                         ))}
@@ -267,7 +268,8 @@ export function Table<T>({
                               boxShadow: 'inset 0px 11px 8px -10px #e4e7ec',
                             }}
                             variant="body"
-                            colSpan={table.getAllColumns().length}>
+                            colSpan={table.getAllColumns().length}
+                          >
                             {!renderRowSubComponent ? (
                               <div>Please provide a row subcomponent</div>
                             ) : (

@@ -1,8 +1,8 @@
-import * as RadixUISwitch from "@radix-ui/react-switch";
-import { SwitchProps } from "./types";
-import { cx } from "@emotion/css";
-import { useRef } from "react";
-import { getStyles } from "./styles";
+import * as RadixUISwitch from '@radix-ui/react-switch';
+import { SwitchProps } from './types';
+import { cx } from '@emotion/css';
+import { useRef } from 'react';
+import { getStyles } from './styles';
 
 /**
  * React component that renders a switch. It is used to toggle between two different states, for example
@@ -16,8 +16,8 @@ import { getStyles } from "./styles";
  */
 export function Switch({
   disabled = false,
-  variant = "default",
-  size = "medium",
+  variant = 'default',
+  size = 'medium',
   onCheckedChange,
   checked,
   label,
@@ -33,14 +33,14 @@ export function Switch({
    * Rendering der Komponente oder Veränderung des States (z.B. Size oder Variant) ausgeführt wird.
    */
   function handleClick(checked: boolean) {
-    const state = ref.current?.getAttribute("data-state") ?? "";
-    if (state === "checked" && ref.current) {
-      ref.current.classList.add("animation-unchecked");
-      ref.current.classList.remove("animation-checked");
+    const state = ref.current?.getAttribute('data-state') ?? '';
+    if (state === 'checked' && ref.current) {
+      ref.current.classList.add('animation-unchecked');
+      ref.current.classList.remove('animation-checked');
     }
-    if (state === "unchecked" && ref.current) {
-      ref.current.classList.add("animation-checked");
-      ref.current.classList.remove("animation-unchecked");
+    if (state === 'unchecked' && ref.current) {
+      ref.current.classList.add('animation-checked');
+      ref.current.classList.remove('animation-unchecked');
     }
     if (onCheckedChange) {
       onCheckedChange(checked);
@@ -56,12 +56,12 @@ export function Switch({
         onClick={() => {
           handleClick(!checked);
         }}
-        className={cx(styles.button, styles.root, "switch-root")}
+        className={cx(styles.button, styles.root, 'switch-root')}
         {...otherProps}
       >
         <RadixUISwitch.Thumb
           ref={ref}
-          className={cx(styles.thumb, "switch-thumb")}
+          className={cx(styles.thumb, 'switch-thumb')}
         />
       </RadixUISwitch.Root>
       {label && (

@@ -29,7 +29,8 @@ export const H1 = forwardRef<HTMLHeadingElement, HeadingProps>(
           headingStyles,
           css({ ...typography.header1 }),
           className,
-        )}>
+        )}
+      >
         {children}
       </h1>
     );
@@ -50,7 +51,8 @@ export const H2 = forwardRef<HTMLHeadingElement, HeadingProps>(
           headingStyles,
           css({ ...typography.header2 }),
           className,
-        )}>
+        )}
+      >
         {children}
       </h2>
     );
@@ -72,7 +74,8 @@ export const H3 = forwardRef<HTMLHeadingElement, HeadingProps>(
           css({ ...typography.header3 }),
           className,
         )}
-        {...otherProps}>
+        {...otherProps}
+      >
         {children}
       </h3>
     );
@@ -93,7 +96,8 @@ export const H4 = forwardRef<HTMLHeadingElement, HeadingProps>(
           headingStyles,
           css({ ...typography.header4 }),
           className,
-        )}>
+        )}
+      >
         {children}
       </h4>
     );
@@ -114,7 +118,8 @@ export const H5 = forwardRef<HTMLHeadingElement, HeadingProps>(
           headingStyles,
           css({ ...typography.header5 }),
           className,
-        )}>
+        )}
+      >
         {children}
       </h5>
     );
@@ -135,7 +140,8 @@ export const H6 = forwardRef<HTMLHeadingElement, HeadingProps>(
           headingStyles,
           css({ ...typography.header6 }),
           className,
-        )}>
+        )}
+      >
         {children}
       </h6>
     );

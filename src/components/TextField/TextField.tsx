@@ -88,8 +88,8 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
                     ? passwordIcon
                     : faEyeSlash
                   : passwordIconHidden
-                  ? passwordIconHidden
-                  : faEye
+                    ? passwordIconHidden
+                    : faEye
               }
               onClick={() => setIsPasswordVisible(!isPasswordVisible)}
             />

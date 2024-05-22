@@ -52,10 +52,12 @@ export function Navigation({
     <ThemeProvider value={theme}>
       <header
         data-testid="navigation-container"
-        className={cx(styles.container, 'navigation-container', className)}>
+        className={cx(styles.container, 'navigation-container', className)}
+      >
         <nav
           aria-label={label}
-          className={cx(styles.leftStyles, 'navigation-left-styles')}>
+          className={cx(styles.leftStyles, 'navigation-left-styles')}
+        >
           {Home && <Home />}
           <MenuItemsContainer items={menuItems} />
         </nav>

@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "./Button";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button } from './Button';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 export interface IconButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

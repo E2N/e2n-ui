@@ -28,7 +28,8 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cx('e2n-card', styles, className)}
-        {...otherProps}>
+        {...otherProps}
+      >
         <div>{header}</div>
         <div className={cx(css({ overflow: 'auto' }))}>{content}</div>
       </div>

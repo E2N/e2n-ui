@@ -1,6 +1,6 @@
-import { cx, css } from "@emotion/css";
-import { useEffect, useRef, useState } from "react";
-import { colorPalette, theme } from "../../theme";
+import { cx, css } from '@emotion/css';
+import { useEffect, useRef, useState } from 'react';
+import { colorPalette, theme } from '../../theme';
 
 type CustomProps = {
   className?: string;
@@ -26,13 +26,13 @@ function getStyles({
   return {
     input: css({
       border: 0,
-      clip: "rect(0 0 0 0)",
+      clip: 'rect(0 0 0 0)',
       height: 1,
       margin: -1,
-      overflow: "hidden",
+      overflow: 'hidden',
       padding: 0,
-      position: "absolute",
-      whiteSpace: "nowrap",
+      position: 'absolute',
+      whiteSpace: 'nowrap',
       width: 1,
     }),
     checkbox: css({
@@ -55,22 +55,22 @@ function getStyles({
       }`,
     }),
     wrapper: css({
-      display: "inline-block",
-      verticalAlign: "middle",
-      "&:hover": {
-        cursor: !disabled ? "pointer" : "not-allowed",
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      '&:hover': {
+        cursor: !disabled ? 'pointer' : 'not-allowed',
       },
     }),
     icon: css({
-      fill: "none",
+      fill: 'none',
       stroke: colorPalette.white,
       strokeWidth: 4,
-      visibility: checked ? "visible" : "hidden",
+      visibility: checked ? 'visible' : 'hidden',
     }),
     container: css({
-      display: "flex",
+      display: 'flex',
       gap: theme.spacing.sm,
-      alignItems: "center",
+      alignItems: 'center',
     }),
     label: css({
       paddingTop: 1,
@@ -106,10 +106,10 @@ export function Checkbox({
   }, [checked, value]);
 
   return (
-    <div className={cx("checkbox-container", styles.container, className)}>
+    <div className={cx('checkbox-container', styles.container, className)}>
       <div
         ref={wrapperRef}
-        className={cx("checkbox-wrapper", styles.wrapper)}
+        className={cx('checkbox-wrapper', styles.wrapper)}
         onClick={() => {
           if (!disabled) {
             setChecked(!checked);
@@ -118,20 +118,20 @@ export function Checkbox({
         }}
       >
         <input
-          className={cx("checkbox-hidden", styles.input)}
+          className={cx('checkbox-hidden', styles.input)}
           type="checkbox"
           defaultChecked={checked}
           value={value}
           disabled={disabled}
           {...otherProps}
         />
-        <div className={cx("checkbox", styles.checkbox)}>
+        <div className={cx('checkbox', styles.checkbox)}>
           <svg viewBox="0 0 24 24" className={cx(styles.icon)}>
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
       </div>
-      <div className={cx("label", styles.label)}>{label}</div>
+      <div className={cx('label', styles.label)}>{label}</div>
     </div>
   );
 }

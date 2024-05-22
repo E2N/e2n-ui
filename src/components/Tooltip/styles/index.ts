@@ -1,1 +1,1 @@
-export * from './getStyles'
+export * from './getStyles';

@@ -95,10 +95,12 @@ export function SideNav({
           height: ref.style.height,
         });
       }}
-      size={{ width: sidenavSize.width, height: sidenavSize.height }}>
+      size={{ width: sidenavSize.width, height: sidenavSize.height }}
+    >
       <nav
         className={cx(styles.content, css({ height: '100%' }))}
-        aria-label={label}>
+        aria-label={label}
+      >
         <Content />
       </nav>
     </Rnd>
@@ -109,7 +111,8 @@ export function SideNav({
         styles.content,
         'sidenav-container',
       )}
-      aria-label={label}>
+      aria-label={label}
+    >
       <Content />
     </nav>
   );

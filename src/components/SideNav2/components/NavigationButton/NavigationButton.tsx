@@ -58,7 +58,8 @@ export function NavigationButton({
     <>
       <CustomComponent
         className={cx(styles.container, 'navigation-button-container')}
-        {...otherProps}>
+        {...otherProps}
+      >
         <FontAwesomeIcon
           className={cx(styles.icon, 'navigation-button-icon')}
           fixedWidth
