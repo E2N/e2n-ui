@@ -12,39 +12,39 @@ export interface InputProps
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, startIcon, endIcon, ...props }, ref) => {
     return (
-      <div className='w-full relative'>
+      <div className="w-full relative">
         {startIcon && (
           <FontAwesomeIcon
             icon={startIcon}
-            className='text-gray-400 absolute left-2.5 top-1/2 transform -translate-y-1/2'
+            className="text-gray-400 absolute left-2.5 top-1/2 transform -translate-y-1/2"
           />
         )}
         <input
           type={type}
           className={cn(
             'flex h-9 w-full py-1',
-            `${startIcon ? 'px-8' : 'px-3'}`,
-            `${endIcon && 'pe-9'}`,
+            `${startIcon ? 'ps-8' : 'ps-3'}`,
+            `${endIcon ? 'pe-9' : 'pe-3'}`,
             'rounded-md border border-input',
             'bg-transparent text-sm shadow-sm transition-colors',
             'file:border-0 file:bg-transparent file:text-sm file:font-medium',
             'placeholder:text-muted-foreground',
             'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
             'disabled:cursor-not-allowed disabled:opacity-50',
-            className
+            className,
           )}
           ref={ref}
           {...props}
         />
         {endIcon && (
           <FontAwesomeIcon
-            className='text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2'
+            className="text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2"
             icon={endIcon}
           />
         )}
       </div>
     );
-  }
+  },
 );
 Input.displayName = 'Input';
 
