@@ -25,5 +25,7 @@ export * from './Tab';
 export * from './Table';
 export * from './TextField';
 export * from './Tooltip';
+export * from './Label';
+export * from './Input';
 
 export * from './../legacy';

@@ -1,5 +1,12 @@
 # Changelog
 
+### 4.1.0 (XX-05-2024)
+
+- add Label Component
+- add Form Handling
+  - Example implementation in Strorybook under Forms/Form an
+  - Further details: [react-hook-form](https://react-hook-form.com/), [shadcn-ui](https://ui.shadcn.com/docs/components/form)
+
 ### 4.0.0 (22-05-2024)
 
 - add Input component
