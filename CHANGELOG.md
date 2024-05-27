@@ -1,6 +1,6 @@
 # Changelog
 
-### 4.1.0 (XX-05-2024)
+### 4.1.0 (27-05-2024)
 
 - add Label Component
 - add Form Handling
