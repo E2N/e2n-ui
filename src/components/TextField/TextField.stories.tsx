@@ -14,7 +14,12 @@ export default {
 
 export const Default = {
   render: () => (
-    <TextField placeholder="Type something…" width={300} label="TextField" />
+    <TextField
+      description="DEINE MAMA"
+      placeholder="Type something…"
+      width={300}
+      label="TextField"
+    />
   ),
 };
 

@@ -81,8 +81,7 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
       <div
         className={cx('e2n-badge', badgeStyles, className)}
         {...otherProps}
-        ref={ref}
-      >
+        ref={ref}>
         {icon && <FontAwesomeIcon icon={icon} />}
         <span>{text}</span>
       </div>
