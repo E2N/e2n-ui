@@ -3,11 +3,10 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { cn } from '../../lib/utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   startIcon?: IconDefinition;
   endIcon?: IconDefinition;
-}
+};
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, startIcon, endIcon, ...props }, ref) => {
