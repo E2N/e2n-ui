@@ -3,11 +3,10 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { cn } from '../../lib/utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   startIcon?: IconDefinition;
   endIcon?: IconDefinition;
-}
+};
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, startIcon, endIcon, ...props }, ref) => {
@@ -26,12 +25,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           type={type}
           className={cn(
             'peer',
-            'flex h-9 w-full py-2',
+            'flex w-full py-2',
             `${startIcon ? 'ps-8' : 'ps-4'}`,
             `${endIcon ? 'pe-9' : 'pe-4'}`,
             'rounded-md border border-input',
-            'bg-transparent text-sm shadow-sm transition-colors',
-            'file:border-0 file:bg-transparent file:text-sm file:font-medium',
+            'bg-transparent text-md shadow-sm transition-colors leading-6',
+            'file:border-0 file:bg-transparent file:text-md file:font-medium',
             'placeholder:text-muted-foreground',
             'focus-visible:outline-none focus-visible:border-grey-500',
             'disabled:cursor-not-allowed disabled:opacity-50',
