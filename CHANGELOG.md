@@ -1,5 +1,12 @@
 # Changelog
 
+### 4.1.1 (05-06-2024)
+
+- export types of Button and Input instead of interfaces
+- adjust style of Outline Button to old version of Outline Button
+- adjust height of Input
+- adjust space between Label and Input in Form component
+
 ### 4.1.0 (27-05-2024)
 
 - add Label Component
