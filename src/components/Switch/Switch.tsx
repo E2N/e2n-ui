@@ -3,8 +3,9 @@ import * as SwitchPrimitives from '@radix-ui/react-switch';
 
 import { cn } from '../../lib/utils';
 import { cva } from 'class-variance-authority';
+import { Size, SwitchVariant, ThumbVariant } from './types';
 
-const switchVariants = cva('', {
+const switchVariants = cva<SwitchVariant>('', {
   variants: {
     size: {
       default: 'h-6 w-11',
@@ -16,7 +17,7 @@ const switchVariants = cva('', {
   },
 });
 
-const thumbVariants = cva('', {
+const thumbVariants = cva<ThumbVariant>('', {
   variants: {
     size: {
       default: 'h-5 w-5 data-[state=checked]:translate-x-5',
@@ -31,7 +32,7 @@ const thumbVariants = cva('', {
 export type SwitchProps = React.ComponentPropsWithoutRef<
   typeof SwitchPrimitives.Root
 > & {
-  size?: 'default' | 'sm';
+  size?: Size;
 };
 
 const Switch = React.forwardRef<
@@ -50,8 +51,7 @@ const Switch = React.forwardRef<
       className,
     )}
     {...props}
-    ref={ref}
-  >
+    ref={ref}>
     <SwitchPrimitives.Thumb
       className={cn(
         'pointer-events-none block rounded-full',

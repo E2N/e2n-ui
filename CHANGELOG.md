@@ -1,5 +1,10 @@
 # Changelog
 
+### 4.1.2 (10-06-2024)
+
+- adjust exported Button props
+- adjust styles of disabled buttons
+
 ### 4.1.1 (05-06-2024)
 
 - export types of Button and Input instead of interfaces
