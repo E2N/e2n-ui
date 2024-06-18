@@ -3,8 +3,9 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 
 import { cn } from '../../lib/utils';
+import { ButtonVariant, Size, Variant } from './types';
 
-const buttonVariants = cva(
+const buttonVariants = cva<ButtonVariant>(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
   {
     variants: {
@@ -37,14 +38,8 @@ const buttonVariants = cva(
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   asChild?: boolean;
-  size?: 'default' | 'sm' | 'lg' | 'icon';
-  variant?:
-    | 'default'
-    | 'secondary'
-    | 'outline'
-    | 'destructive'
-    | 'ghost'
-    | 'link';
+  size?: Size;
+  variant?: Variant;
 };
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
