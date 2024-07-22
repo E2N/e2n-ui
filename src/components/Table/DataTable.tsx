@@ -20,6 +20,13 @@ import {
 import { Button } from '../Button';
 import React from 'react';
 import { Input } from '../Input';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faAngleLeft,
+  faAngleRight,
+  faAnglesLeft,
+  faAnglesRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -108,7 +115,7 @@ export function DataTable<TData, TValue>({
             )}
           </TableBody>
         </Table>
-        <div className="flex items-center justify-end space-x-2 py-4">
+        <div className="flex items-center justify-end space-x-2 p-2">
           <Button
             variant="outline"
             size="sm"
@@ -123,6 +130,52 @@ export function DataTable<TData, TValue>({
             disabled={!table.getCanNextPage()}>
             Next
           </Button>
+        </div>
+      </div>
+      <div className="flex items-center justify-between px-2">
+        <div className="flex-1 text-sm text-muted-foreground">
+          {table.getFilteredSelectedRowModel().rows.length} of{' '}
+          {table.getFilteredRowModel().rows.length} row(s) selected.
+        </div>
+        <div className="flex items-center space-x-6 lg:space-x-8">
+          <div className="flex w-[100px] items-center justify-center text-sm font-medium">
+            Page {table.getState().pagination.pageIndex + 1} of{' '}
+            {table.getPageCount()}
+          </div>
+          <div className="flex items-center space-x-2 mt-2">
+            <Button
+              variant="outline"
+              className="hidden h-8 w-8 p-0 lg:flex"
+              onClick={() => table.setPageIndex(0)}
+              disabled={!table.getCanPreviousPage()}>
+              <span className="sr-only">Go to first page</span>
+              <FontAwesomeIcon icon={faAnglesLeft} className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              className="h-8 w-8 p-0"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}>
+              <span className="sr-only">Go to previous page</span>
+              <FontAwesomeIcon icon={faAngleLeft} className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              className="h-8 w-8 p-0"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}>
+              <span className="sr-only">Go to next page</span>
+              <FontAwesomeIcon icon={faAngleRight} className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              className="hidden h-8 w-8 p-0 lg:flex"
+              onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+              disabled={!table.getCanNextPage()}>
+              <span className="sr-only">Go to last page</span>
+              <FontAwesomeIcon icon={faAnglesRight} className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </div>
     </div>

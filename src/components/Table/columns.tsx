@@ -1,6 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { Button } from '../Button';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsUpDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Checkbox } from '../Checkbox';
 
@@ -45,7 +45,7 @@ export const columns: ColumnDef<Payment>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
           Email
-          <FontAwesomeIcon icon={faArrowUp} className="ml-2 h-4 w-4" />
+          <FontAwesomeIcon icon={faArrowsUpDown} className="ml-2 h-4 w-4" />
         </Button>
       );
     },
