@@ -9,11 +9,12 @@ import {
   TableHeader,
   TableRow,
 } from './Table';
+import { DataTable } from './DataTable';
 
 const meta: Meta<typeof Table> = {
   component: Table,
   tags: ['autodocs'],
-  title: 'Components/Input',
+  title: 'Components/Table',
 };
 
 export default meta;
@@ -65,7 +66,7 @@ const invoices = [
 export const Default = {
   render: () => {
     return (
-      <div className="mb-4 w-1/2">
+      <div className="mb-4">
         <Table>
           <TableCaption>A list of your recent invoices.</TableCaption>
           <TableHeader>
@@ -95,6 +96,16 @@ export const Default = {
             </TableRow>
           </TableFooter>
         </Table>
+      </div>
+    );
+  },
+};
+
+export const DataTableDefault = {
+  render: () => {
+    return (
+      <div className="mb-4">
+        <DataTable />
       </div>
     );
   },
