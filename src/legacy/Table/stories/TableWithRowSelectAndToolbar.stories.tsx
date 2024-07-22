@@ -1,9 +1,9 @@
 import { Table } from '../Table';
 import { columns } from './columns';
 import { data, type Location } from './data';
-import { Button } from '../..';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faCheck, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { Button } from '../../../components';
 
 export default {
   title: 'Components/Table',

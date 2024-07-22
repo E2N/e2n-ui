@@ -1,9 +1,9 @@
 import { RowSelectionState } from '@tanstack/react-table';
 import { useState } from 'react';
-import { Button } from '../../Button';
 import { Table } from '../Table';
 import { columnsSingleSelect } from './columnsSingleSelect';
 import { data, type Location } from './data';
+import { Button } from '../../../components';
 
 export default {
   title: 'Components/Table',
@@ -20,8 +20,7 @@ const HeaderSlot = ({
     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
       <Button
         disabled={disabled}
-        onClick={() => alert(JSON.stringify(originalRow))}
-      >
+        onClick={() => alert(JSON.stringify(originalRow))}>
         Sperren
       </Button>
     </div>

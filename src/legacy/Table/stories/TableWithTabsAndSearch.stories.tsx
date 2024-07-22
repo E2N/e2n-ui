@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { Select, Tab, TabsBar } from '../..';
-import { Badge } from '../../Badge';
-import { TextField } from '../../TextField';
 import { Table } from '../Table';
 import { defaultColumns } from './columns';
 import { Data, defaultData } from './data';
+import { Badge, Select, Tab, TabsBar, TextField } from '../../../components';
 
 export default {
   title: 'Components/Table',
@@ -43,8 +41,7 @@ export const WithTabsAndSearch = {
                       active: idx === index,
                     })),
                   )
-                }
-              >
+                }>
                 <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                   {tab.label}
                   <Badge variant="success" text="23" />
@@ -66,8 +63,7 @@ export const WithTabsAndSearch = {
                 style={{
                   marginLeft: '0.5rem',
                   width: '15rem',
-                }}
-              >
+                }}>
                 <Select isMulti options={options} />
               </div>
             </div>

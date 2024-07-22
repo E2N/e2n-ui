@@ -1,4 +1,4 @@
-import { TextField } from '../../TextField';
+import { TextField } from '../../../components';
 import { Table } from '../Table';
 import { defaultColumns } from './columns';
 import { Data, defaultData } from './data';
