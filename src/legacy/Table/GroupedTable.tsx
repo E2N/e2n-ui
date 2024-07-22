@@ -5,7 +5,11 @@ import {
 } from '@tanstack/react-table';
 import { useState } from 'react';
 import { Table } from './Table';
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export function GroupedTable<T>({
   columns,
   data,

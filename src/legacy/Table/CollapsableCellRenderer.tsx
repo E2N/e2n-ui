@@ -22,7 +22,11 @@ function getStyle(open: boolean) {
     }),
   };
 }
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export function CollapsableCellRenderer({ value }: { value: string }) {
   const [open, setOpen] = useState(false);
   const style = getStyle(open);

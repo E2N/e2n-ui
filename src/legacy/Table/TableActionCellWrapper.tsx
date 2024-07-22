@@ -5,7 +5,11 @@ import { theme } from '../../theme/default';
 type TableActionCellWrapperProps = {
   children: React.ReactNode;
 } & HTMLAttributes<HTMLDivElement>;
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export function TableActionCellWrapper({
   children,
 }: TableActionCellWrapperProps) {

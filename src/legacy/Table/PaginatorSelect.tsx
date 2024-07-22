@@ -5,7 +5,11 @@ interface PaginatorSelectProps {
   defaultSelected: number;
   onChange: (value?: number) => void;
 }
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export const PaginatorSelect = (props: PaginatorSelectProps) => {
   const options = [10, 20, 30, 40, 50].map((t) => {
     return {

@@ -46,6 +46,11 @@ function getPaginatorStyles() {
   };
 }
 
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export function TablePaginator<T>({
   table,
   totalEntries,

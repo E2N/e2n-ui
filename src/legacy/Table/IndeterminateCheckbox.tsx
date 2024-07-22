@@ -1,7 +1,11 @@
 import { css, cx } from '@emotion/css';
 import { InputHTMLAttributes, useRef, useEffect } from 'react';
 import { colorPalette } from '../..';
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export function IndeterminateCheckbox({
   indeterminate,
   ...otherProps

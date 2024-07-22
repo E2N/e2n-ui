@@ -1,4 +1,5 @@
-import { css, CSSObject, cx } from '@emotion/css';
+import { css, cx } from '@emotion/css';
+import { CSSObject } from '@emotion/react';
 import { forwardRef } from 'react';
 import {
   colorPalette,

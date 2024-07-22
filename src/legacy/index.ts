@@ -1,4 +1,4 @@
 export * from './Button';
 export * from './Checkbox';
 export * from './Switch';
-export * from './Table';
+export { LegacyTable as LegacyTable } from './Table';

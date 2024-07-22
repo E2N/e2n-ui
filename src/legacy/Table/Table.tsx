@@ -23,6 +23,11 @@ import { TableHeaderCell } from './TableHeaderCell';
 import { TableBodyCell } from './TableBodyCell';
 import { IndeterminateCheckbox } from '.';
 
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 function getTableStyles({
   width,
   isEmpty,
@@ -118,6 +123,9 @@ type CustomProps<T> = {
 export type TableProps<T> = CustomProps<T> &
   Omit<ReactTableOptions<T>, 'getCoreRowModel' | 'data'>;
 
+/**
+ * @deprecated
+ */
 export function Table<T>({
   columns,
   data,
@@ -243,9 +251,9 @@ export function Table<T>({
               {loading ? (
                 <TableLoading colSpan={table.getAllColumns().length} />
               ) : table.getRowModel().rows.length === 0 ? (
-                NoDataComponent ?? (
+                (NoDataComponent ?? (
                   <TableNoData colSpan={table.getAllColumns().length} />
-                )
+                ))
               ) : (
                 table.getRowModel().rows.map((row) => {
                   return (
@@ -253,8 +261,7 @@ export function Table<T>({
                       <TableRow
                         variant="body"
                         isSelected={row.getIsSelected()}
-                        onClick={row.getToggleSelectedHandler()}
-                      >
+                        onClick={row.getToggleSelectedHandler()}>
                         {row.getVisibleCells().map((cell) => (
                           <TableBodyCell key={cell.id} cell={cell} row={row} />
                         ))}
@@ -268,8 +275,7 @@ export function Table<T>({
                               boxShadow: 'inset 0px 11px 8px -10px #e4e7ec',
                             }}
                             variant="body"
-                            colSpan={table.getAllColumns().length}
-                          >
+                            colSpan={table.getAllColumns().length}>
                             {!renderRowSubComponent ? (
                               <div>Please provide a row subcomponent</div>
                             ) : (

@@ -7,13 +7,21 @@ type CustomProps = {
 
 export type TableBodyProps = CustomProps &
   HTMLAttributes<HTMLTableSectionElement>;
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 function getTableBodyStyles() {
   return css({
     display: 'table-row-group',
   });
 }
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export function TableBody({ children, ...otherProps }: TableBodyProps) {
   return (
     <tbody className={cx('body', getTableBodyStyles())} {...otherProps}>

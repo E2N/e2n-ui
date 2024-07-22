@@ -6,6 +6,11 @@ type CustomProps = {
   children: React.ReactNode;
 };
 
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export type TableHeadProps = CustomProps &
   HTMLAttributes<HTMLTableSectionElement>;
 

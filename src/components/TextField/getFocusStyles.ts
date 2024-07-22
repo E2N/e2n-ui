@@ -1,4 +1,4 @@
-import { CSSObject } from '@emotion/css';
+import { CSSObject } from '@emotion/react';
 import { colorPalette } from '../../theme';
 
 export function getFocusAndHoverStyles(

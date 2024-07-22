@@ -1,4 +1,5 @@
-import { ClassNamesArg, css, keyframes } from '@emotion/css';
+import { css, keyframes } from '@emotion/css';
+import { ClassNamesArg } from '@emotion/react';
 import { colorPalette, theme } from '../../../theme';
 import { TooltipVariants } from '../types';
 import { Shadow } from '../../../theme/types';

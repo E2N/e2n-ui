@@ -8,6 +8,11 @@ type CustomProps = {
   variant: 'header' | 'body' | 'details';
 };
 
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 function getTableRowStyles({
   isSelected,
   variant,
@@ -35,7 +40,9 @@ function getTableRowStyles({
 }
 
 export type TableRowProps = CustomProps & HTMLAttributes<HTMLTableRowElement>;
-
+/**
+ * @deprecated
+ */
 export function TableRow({
   children,
   isSelected,
@@ -48,8 +55,7 @@ export function TableRow({
       {...otherProps}
       onClick={(e) => {
         e.stopPropagation();
-      }}
-    >
+      }}>
       {children}
     </tr>
   );

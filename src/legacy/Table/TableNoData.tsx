@@ -27,8 +27,7 @@ export function TableNoData({
         className={cx('data-not-found-cell', styles.cell)}
         variant="body"
         colSpan={colSpan}
-        align="center"
-      >
+        align="center">
         <div className="d-flex flex-column align-items-center gap-32px">
           {message ?? 'Keine Einträge gefunden'}
         </div>

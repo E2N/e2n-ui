@@ -16,6 +16,11 @@ export type TableCellProps = CustomProps &
     | TdHTMLAttributes<HTMLTableCellElement>
   );
 
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 function TableCellWrapper({
   children,
   variant,
@@ -73,7 +78,11 @@ function getTableCellStyles({
       : {},
   });
 }
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export function TableCell({
   variant,
   children,
@@ -94,8 +103,7 @@ export function TableCell({
           isActive: active,
         }),
       )}
-      {...otherProps}
-    >
+      {...otherProps}>
       {children}
     </TableCellWrapper>
   );

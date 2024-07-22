@@ -66,7 +66,11 @@ function getCardStyles(
     }),
   };
 }
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export function TableCard({
   TableComponent,
   ToolbarComponent,

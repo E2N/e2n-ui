@@ -6,7 +6,11 @@ import {
   faChevronDown,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-
+/**
+ *
+ * @param param0 @deprecated
+ * @returns
+ */
 export function TableBodyCell<T>({
   cell,
   row,
@@ -25,8 +29,7 @@ export function TableBodyCell<T>({
         textAlign: isRightAligned ? 'right' : 'start',
         width:
           cell.column.getSize() !== 150 ? cell.column.getSize() : undefined,
-      }}
-    >
+      }}>
       {cell.getIsGrouped() ? (
         <>
           <span
@@ -35,8 +38,7 @@ export function TableBodyCell<T>({
               style: {
                 cursor: row.getCanExpand() ? 'pointer' : 'normal',
               },
-            }}
-          >
+            }}>
             {row.getIsExpanded() ? (
               <FontAwesomeIcon icon={faChevronDown} />
             ) : (
