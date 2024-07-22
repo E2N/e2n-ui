@@ -16,7 +16,16 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { Checkbox } from '@radix-ui/react-checkbox';
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from './Table';
+import { Checkbox } from '../Checkbox';
 import { Button } from '../Button';
 import {
   DropdownMenu,
@@ -28,14 +37,6 @@ import {
   DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu';
 import { Input } from '../Input';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from './Table';
 
 const data: Payment[] = [
   {

@@ -4,7 +4,7 @@ import { defaultColumns } from './columns';
 import { Data, defaultData } from './data';
 
 export default {
-  title: 'Components/Table',
+  title: 'Legacy/Table',
 };
 
 export const WithStickyHeaderAndFooter = {

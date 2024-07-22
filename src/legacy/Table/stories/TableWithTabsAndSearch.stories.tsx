@@ -5,7 +5,7 @@ import { Data, defaultData } from './data';
 import { Badge, Select, Tab, TabsBar, TextField } from '../../../components';
 
 export default {
-  title: 'Components/Table',
+  title: 'Legacy/Table',
 };
 
 const tabs = [

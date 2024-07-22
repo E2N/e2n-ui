@@ -6,7 +6,7 @@ import { data, type Location } from './data';
 import { Button } from '../../../components';
 
 export default {
-  title: 'Components/Table',
+  title: 'Legacy/Table',
 };
 
 const HeaderSlot = ({

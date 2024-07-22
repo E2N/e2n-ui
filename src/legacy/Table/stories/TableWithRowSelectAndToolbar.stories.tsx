@@ -6,7 +6,7 @@ import { faPlus, faCheck, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../../../components';
 
 export default {
-  title: 'Components/Table',
+  title: 'Legacy/Table',
 };
 
 const Example = () => {
