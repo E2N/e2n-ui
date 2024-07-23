@@ -1,5 +1,11 @@
 # Changelog
 
+### 6.0.0 (25-07-2024)
+
+- add toast component
+- add calendar component
+- add datepicker component
+
 ### 5.0.0 (22-07-2024)
 
 - add Table Component
