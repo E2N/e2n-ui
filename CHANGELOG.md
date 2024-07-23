@@ -1,8 +1,15 @@
 # Changelog
 
-### 4.2.0 (23-07-2024)
+### 6.0.0 (23-07-2024)
 
-- add toast component
+- add Toast component
+
+### 5.0.0 (22-07-2024)
+
+- add Table Component
+- add Chart Component
+- bundle zod into e2n-ui
+- bundle rechart into e2n.ui
 
 ### 4.1.2 (10-06-2024)
 

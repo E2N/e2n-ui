@@ -4,8 +4,8 @@ import {
   faChevronCircleUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import { colorPalette } from '../../../theme';
-import { IconButton } from '../../Button';
+import { colorPalette } from '../../theme';
+import { IconButton } from '../../components';
 
 function getStyle(open: boolean) {
   return {

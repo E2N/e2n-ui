@@ -3,7 +3,7 @@ import { defaultColumns } from './columns';
 import { Data } from './data';
 
 export default {
-  title: 'Components/Table',
+  title: 'Legacy/Table',
 };
 
 export const DefaultWithoutData = {
