@@ -1,6 +1,6 @@
 # Changelog
 
-### 4.2.0 (22-07-2024)
+### 5.0.0 (22-07-2024)
 
 - add Table Component
 - add Chart Component
