@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.2.0 (22-07-2024)
+
+- add Table Component
+
 ### 4.1.2 (10-06-2024)
 
 - adjust exported Button props

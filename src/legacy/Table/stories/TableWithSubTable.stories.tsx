@@ -11,7 +11,7 @@ import { defaultColumns } from './columns';
 import { type Data, defaultData } from './data';
 
 export default {
-  title: 'Components/Table',
+  title: 'Legacy/Table',
 };
 
 const subTableColumns: ColumnDef<Data>[] = [

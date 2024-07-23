@@ -1,5 +1,5 @@
+import { Select } from '../../components';
 import { colorPalette } from '../../theme';
-import { Select } from '../Select';
 
 interface PaginatorSelectProps {
   defaultSelected: number;
