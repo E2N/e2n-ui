@@ -1,8 +1,8 @@
 import { ColumnDef } from '@tanstack/react-table';
-import { Badge } from '../../Badge';
 import { IndeterminateCheckbox } from '../IndeterminateCheckbox';
 import { TableColumnDef } from '../types';
 import { type Data, type Contract, type Location } from './data';
+import { Badge } from '../../../components';
 
 export const columns: TableColumnDef<Location>[] = [
   {

@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 import { TableCell } from './TableCell';
 import { TableRow } from './TableRow';
-import { Loading } from '../Loading';
+import { Loading } from '../../components';
 
 function getStyles() {
   return {
@@ -22,8 +22,7 @@ export function TableLoading({ colSpan }: { colSpan: number }) {
         className={cx('data-not-found-cell', styles.cell)}
         variant="body"
         colSpan={colSpan}
-        align="center"
-      >
+        align="center">
         <div className="d-flex flex-column align-items-center gap-32px">
           <Loading />
         </div>

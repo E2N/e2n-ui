@@ -3,7 +3,7 @@ import { defaultColumns } from './columns';
 import { Data, defaultDataWithManyEntries } from './data';
 
 export default {
-  title: 'Components/Table',
+  title: 'Legacy/Table',
 };
 
 export const Default = {

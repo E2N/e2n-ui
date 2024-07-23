@@ -1,6 +1,5 @@
 import { cx, css } from '@emotion/css';
 import { theme } from '../../theme/default';
-import { IconButton } from '../Button';
 import { PaginatorSelect } from './PaginatorSelect';
 import { Table as TableType } from '@tanstack/react-table';
 import {
@@ -10,6 +9,7 @@ import {
   faAnglesRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { colorPalette } from '../../theme';
+import { IconButton } from '../../components';
 
 function getPaginatorStyles() {
   return {
@@ -86,8 +86,7 @@ export function TablePaginator<T>({
         />
         <div>
           <div
-            className={cx('alignPagination', paginatiorStyles.alignPagination)}
-          >
+            className={cx('alignPagination', paginatiorStyles.alignPagination)}>
             <div>
               Seite{' '}
               {table.getPageCount() === 0

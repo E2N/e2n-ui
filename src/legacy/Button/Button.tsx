@@ -208,8 +208,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cx('e2n-button', styles.button, className)}
         disabled={disabled}
-        {...otherProps}
-      >
+        {...otherProps}>
         {children}
       </button>
     );
