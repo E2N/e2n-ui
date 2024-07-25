@@ -1,6 +1,6 @@
 # Changelog
 
-### 6.0.0 (25-07-2024)
+### 5.1.0 (25-07-2024)
 
 - add toast component
 - add calendar component
