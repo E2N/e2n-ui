@@ -5,6 +5,7 @@ export * from './Calendar';
 export * from './Callout';
 export * from './Card';
 export * from './Carousel';
+export * from './Charts';
 export * from './Checkbox';
 export * from './CopyToClipboard';
 export * from './DatePicker';

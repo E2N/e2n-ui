@@ -1,5 +1,9 @@
 # Changelog
 
+### 5.1.3 (26-07-2024)
+
+- export charts
+
 ### 5.1.2 (26-07-2024)
 
 - adjust exported popover props
