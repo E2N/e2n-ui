@@ -1,5 +1,9 @@
 # Changelog
 
+### 5.1.2 (26-07-2024)
+
+- adjust exported popover props
+
 ### 5.1.1 (26-07-2024)
 
 - export popover
