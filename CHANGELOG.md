@@ -1,5 +1,9 @@
 # Changelog
 
+### 5.1.1 (26-07-2024)
+
+- export popover
+
 ### 5.1.0 (25-07-2024)
 
 - add toast component

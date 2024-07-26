@@ -18,6 +18,7 @@ export * from './Navigation';
 export * from './MenuItem';
 export * from './ModalDialog';
 export * from './Layout';
+export * from './Popover';
 export * from './RadioButton';
 export * from './Select';
 export * from './Shimmer';
