@@ -1,5 +1,9 @@
 # Changelog
 
+### 5.1.4 (26-07-2024)
+
+- adjust imports of date-fns and popover
+
 ### 5.1.3 (26-07-2024)
 
 - export charts
