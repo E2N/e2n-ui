@@ -1,95 +1,53 @@
-import { css, cx } from '@emotion/css';
-import { HTMLProps, ReactNode } from 'react';
-import { colorPalette, theme } from '../../theme';
+import * as React from 'react';
+import * as TabsPrimitive from '@radix-ui/react-tabs';
 
-type CustomProps = {
-  children: ReactNode;
-  active?: boolean;
-  onChangeTab?: (event?: React.MouseEvent<HTMLAnchorElement>) => void;
-  href?: string;
-};
+import { cn } from '../../lib/utils';
 
-type TabProps = HTMLProps<HTMLAnchorElement> & CustomProps;
+const Tabs = TabsPrimitive.Root;
 
-function getTabStyles() {
-  return {
-    item: css({
-      display: 'flex',
-      position: 'relative',
-      fontFamily: theme.fontFamily.sansSerif,
-      fontWeight: theme.weight.regular,
-      fontSize: '0.875rem',
-      alignItems: 'center',
-      gap: '0.5rem',
-    }),
-    link: css({
-      color: colorPalette.grey500,
-      padding: '0.8125rem 0rem 0.75rem 0rem',
-      flexDirection: 'column',
-      justifyDontent: 'center',
-      alignItems: 'center',
-      display: 'block',
-      gap: '2.5rem',
-    }),
-    notActive: css({
-      'a:hover, :hover, :focus': {
-        cursor: 'pointer',
-        '::before': {
-          display: 'block',
-          content: '" "',
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          height: 2,
-          borderRadius: 2,
-          bottom: 0,
-          background: colorPalette.grey200,
-        },
-      },
-    }),
-    active: css({
-      color: colorPalette.textLightPrimary,
-      fontWeight: theme.weight.semibold,
-      a: {
-        color: colorPalette.textLightPrimary,
-      },
-      '::before': {
-        display: 'block',
-        content: '" "',
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        height: 4,
-        bottom: 0,
-        background: colorPalette.primaryMain,
-      },
-    }),
-  };
-}
+const TabsList = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.List>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.List
+    ref={ref}
+    className={cn(
+      'inline-flex h-10 items-center justify-center rounded-md bg-slate-100 p-1 text-slate-500 dark:bg-slate-800 dark:text-slate-400',
+      className,
+    )}
+    {...props}
+  />
+));
+TabsList.displayName = TabsPrimitive.List.displayName;
 
-export const Tab = ({
-  children,
-  active,
-  onChangeTab,
-  href,
-  ...otherProps
-}: TabProps) => {
-  const styles = getTabStyles();
-  const linkStyles = cx(
-    'link',
-    styles.link,
-    active ? styles.active : styles.notActive,
-  );
-  return (
-    <div className={cx('item', styles.item)}>
-      <a
-        href={href}
-        className={linkStyles}
-        {...otherProps}
-        onClick={onChangeTab}
-      >
-        {children}
-      </a>
-    </div>
-  );
-};
+const TabsTrigger = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      'inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:text-slate-950 data-[state=active]:shadow-sm dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:data-[state=active]:bg-slate-950 dark:data-[state=active]:text-slate-50',
+      className,
+    )}
+    {...props}
+  />
+));
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
+
+const TabsContent = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Content
+    ref={ref}
+    className={cn(
+      'mt-2 ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300',
+      className,
+    )}
+    {...props}
+  />
+));
+TabsContent.displayName = TabsPrimitive.Content.displayName;
+
+export { Tabs, TabsList, TabsTrigger, TabsContent };
