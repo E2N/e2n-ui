@@ -22,6 +22,7 @@ export * from './Layout';
 export * from './Popover';
 export * from './RadioButton';
 export * from './Select';
+export * from './Sheet';
 export * from './Shimmer';
 export * from './SideNav';
 export * from './Switch';
