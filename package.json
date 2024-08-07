@@ -1,6 +1,6 @@
 {
   "name": "@e2n/e2n-ui",
-  "version": "5.1.5",
+  "version": "6.0.0",
   "type": "module",
   "files": [
     "dist"
@@ -36,6 +36,7 @@
     "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-tabs": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.1",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@tanstack/react-table": "^8.13.2",

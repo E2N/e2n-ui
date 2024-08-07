@@ -1,5 +1,9 @@
 # Changelog
 
+### 6.0.0 (05-08-2024)
+
+- add tabs component
+
 ### 5.1.5 (26-07-2024)
 
 - adjust imports of Charts

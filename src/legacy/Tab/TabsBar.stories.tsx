@@ -4,7 +4,7 @@ import { TabContent } from './TabContent';
 import { TabsBar } from './TabsBar';
 
 export default {
-  title: 'Layout/Tab',
+  title: 'Legacy/Layout/Tab',
   component: TabsBar,
 };
 
@@ -33,8 +33,7 @@ export const Default = {
                         active: idx === index,
                       })),
                     )
-                  }
-                >
+                  }>
                   {tab.label}
                 </Tab>
               </>

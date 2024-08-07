@@ -25,7 +25,6 @@ export * from './Select';
 export * from './Shimmer';
 export * from './SideNav';
 export * from './Switch';
-export * from './Tab';
 export * from './Table';
 export * from './Toast';
 export * from './TextField';
