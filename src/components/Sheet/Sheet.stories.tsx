@@ -117,7 +117,10 @@ export const ComplexSheet = {
             />
           </button>
         </SheetTrigger>
-        <SheetContent className="p-0" style={{ maxWidth: '700px' }}>
+        <SheetContent
+          className="p-0"
+          style={{ maxWidth: '700px' }}
+          removeCloseIcon>
           <SheetHeader className="bg-gray-100 mb-5 p-4">
             <SheetTitle>
               <div className="flex flex-row">
