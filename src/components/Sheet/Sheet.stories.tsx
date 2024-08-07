@@ -120,7 +120,7 @@ export const ComplexSheet = {
         <SheetContent className="p-0" style={{ maxWidth: '700px' }}>
           <SheetHeader className="bg-gray-100 mb-5 p-4">
             <SheetTitle>
-              <div className="flex flex-row align-baseline justify-between">
+              <div className="flex flex-row">
                 <div>
                   <FontAwesomeIcon
                     className="text-blue-500 me-2"
@@ -132,31 +132,28 @@ export const ComplexSheet = {
                     Arbeitszeiten bearbeiten
                   </span>
                 </div>
-                <div>
-                  <span className="text-sm  text-slate-600">
+                <div className="ml-auto">
+                  <span className="text-sm text-slate-600">
                     Letzte Änderungen am 23.08.2024
                   </span>
                 </div>
               </div>
-              <hr className="h-px my-2 bg-gray-400 border-0" />
-              <div className="flex flex-row justify-between">
-                <div>
-                  <div className="border-r-2 border-gray-400 pr-5 text-left">
+              <hr className="h-px my-2 bg-gray-400 border-0 -mx-4" />
+
+              <div className="grid">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label className="text-left py-2 -my-2 border-r-2 h-8 border-gray-400 pr-4 text-sm">
                     Name
-                  </div>
-                </div>
-                <div>
-                  <div className="border-r-2 border-gray-400 pr-5 text-left">
-                    Tag
-                  </div>
-                </div>
-                <div>
-                  <div className="border-r-2 border-gray-400 pr-5 text-left">
+                  </Label>
+                  <Label className="text-left py-2 border-r-2 h-8 border-gray-400 pr-4 text-sm">
+                    Datum
+                  </Label>
+                  <Label className="text-left py-2 border-r-2 h-8 border-gray-400 pr-4 text-sm">
                     Arbeitsbereich
-                  </div>
-                </div>
-                <div>
-                  <div className="pr-5 text-left">Arbeitszeit</div>
+                  </Label>
+                  <Label className="text-left py-2 h-8 text-sm">
+                    Arbeitszeit
+                  </Label>
                 </div>
               </div>
             </SheetTitle>
@@ -175,11 +172,34 @@ export const ComplexSheet = {
                     header="Das ist eine Überschrift"
                     content={<div>Das hier ist Content.</div>}></Card>
                 </div>
-                <div>
-                  <div className="flex flex-row justify-between p-10 bg-gray-100 rounded-lg shadow-lg">
-                    <div className="p-1">Beginn</div>
-                    <div className="p-1">Kommen</div>
-                    <div className="p-1">Plan</div>
+
+                <div className="grid bg-gray-100 rounded-lg shadow-lg p-6">
+                  <div className="grid grid-cols-3 items-center gap-5">
+                    <div className="text-left text-sm">
+                      <div className="text-slate-600 font-semibold mb-1">
+                        Beginn
+                      </div>
+                      <div className="bg-white rounded-lg shadow-lg p-2">
+                        <div className="p-1">09:00</div>
+                      </div>
+                    </div>
+                    <div className="text-left text-sm">
+                      <div className="text-slate-600 font-semibold mb-1">
+                        Kommen
+                      </div>
+                      <div className="bg-white rounded-lg shadow-lg p-2">
+                        <div className="p-1">--:--</div>
+                      </div>
+                    </div>
+
+                    <div className="text-left text-sm ">
+                      <div className="text-slate-600 font-semibold mb-1">
+                        Ende
+                      </div>
+                      <div className="bg-white rounded-lg shadow-lg p-2">
+                        <div className="p-1">17:00</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -190,8 +210,10 @@ export const ComplexSheet = {
 
           <SheetFooter>
             <SheetClose asChild>
-              <div className="p-10">
-                <Button type="submit">Save changes</Button>
+              <div className="p-10 ">
+                <Button type="submit" className="font-semibold">
+                  Save changes
+                </Button>
               </div>
             </SheetClose>
           </SheetFooter>
