@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 
 interface CustomSheetContentProps extends SheetContentProps {
-  removeCloseIcon?: React.ReactNode;
+  removeCloseIcon?: boolean;
+  setWidth?: string;
 }
 
 const Sheet = SheetPrimitive.Root;
