@@ -4,9 +4,9 @@ import { defaultColumns } from './columns';
 import { Data, defaultData } from './data';
 import {
   Badge,
-  Select,
   LegacyTab,
   LegacyTabsBar,
+  Select,
   TextField,
 } from '../../../components';
 
