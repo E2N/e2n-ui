@@ -2,13 +2,9 @@ import { useState } from 'react';
 import { Table } from '../Table';
 import { defaultColumns } from './columns';
 import { Data, defaultData } from './data';
-import {
-  Badge,
-  Select,
-  LegacyTab,
-  LegacyTabsBar,
-  TextField,
-} from '../../../components';
+import { Badge, Select, TextField } from '../../../components';
+import { Tab } from '../../Tab/Tab';
+import { TabsBar } from '../../Tab/TabsBar';
 
 export default {
   title: 'Legacy/Table',
