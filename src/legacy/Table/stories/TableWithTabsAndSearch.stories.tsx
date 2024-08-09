@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { Table } from '../Table';
 import { defaultColumns } from './columns';
 import { Data, defaultData } from './data';
-import { Badge, Select, Tab, TabsBar, TextField } from '../../../components';
+import {
+  Badge,
+  Select,
+  LegacyTab,
+  LegacyTabsBar,
+  TextField,
+} from '../../../components';
 
 export default {
   title: 'Legacy/Table',
@@ -29,9 +35,9 @@ export const WithTabsAndSearch = {
         data={defaultData}
         totalEntries={5}
         TabsBarComponent={
-          <TabsBar>
+          <LegacyTabsBar>
             {state.map((tab, index) => (
-              <Tab
+              <LegacyTab
                 key={index}
                 active={tab.active}
                 onChangeTab={() =>
@@ -46,9 +52,9 @@ export const WithTabsAndSearch = {
                   {tab.label}
                   <Badge variant="success" text="23" />
                 </div>
-              </Tab>
+              </LegacyTab>
             ))}
-          </TabsBar>
+          </LegacyTabsBar>
         }
         ToolbarComponent={
           <>
