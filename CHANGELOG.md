@@ -1,5 +1,9 @@
 # Changelog
 
+### 6.1.0 (07-08-2024)
+
+- add sheet component
+
 ### 6.0.0 (05-08-2024)
 
 - add tabs component
