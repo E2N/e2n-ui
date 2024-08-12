@@ -1,4 +1,3 @@
-import { Avatar } from '../Avatar';
 import { Navigation } from './Navigation';
 import { NavigationProps } from './types';
 import imgSrc from '../../assets/images/defaultAvatar.png';
@@ -13,6 +12,7 @@ import { within, userEvent } from '@storybook/test';
 import { StoryObj } from '@storybook/react';
 import { expect } from '@storybook/test';
 import { lightTheme } from '../../theme';
+import { LegacyAvatar } from '../../legacy';
 
 export default {
   title: 'Components/Navigation',
@@ -63,7 +63,7 @@ export const Default: StoryObj<NavigationProps> = {
   args: {
     label: 'navigation',
     menuItems: PrimaryItems,
-    renderProfile: () => <Avatar imgSrc={imgSrc} />,
+    renderProfile: () => <LegacyAvatar imgSrc={imgSrc} />,
     renderSettings: () => (
       <NavigationSettings>
         <div>
