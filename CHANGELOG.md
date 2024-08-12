@@ -1,5 +1,9 @@
 # Changelog
 
+### 7.0.0 (12-08-2024)
+
+- replace Avatar component by Shadcn Avatar
+
 ### 6.1.0 (07-08-2024)
 
 - add sheet component
