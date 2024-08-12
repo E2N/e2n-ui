@@ -4,6 +4,7 @@ import defaultImage from './defaultAvatar.png';
 export default {
   title: 'Components/Avatar',
   component: Avatar,
+  tags: ['autodocs'],
 };
 
 export const Default = {
