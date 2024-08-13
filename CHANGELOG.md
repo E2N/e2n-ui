@@ -1,5 +1,12 @@
 # Changelog
 
+### 7.1.0 (12-08-2024)
+
+- add combobox component
+- add command component
+- add dialog component
+- add radio group component
+
 ### 7.0.0 (12-08-2024)
 
 - replace Avatar component by Shadcn Avatar
