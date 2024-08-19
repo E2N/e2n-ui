@@ -10,8 +10,10 @@ import {
   CommandItem,
   CommandList,
 } from '../Command/Command';
-import { RadioGroup, RadioGroupItem } from '../RadioGroup';
-import { Label } from '../Label';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { cn } from '../../lib/utils';
+import { RadioButton } from '../../legacy/RadioButton/RadioButton';
 
 type Status = {
   value: string;
@@ -41,6 +43,29 @@ const statuses: Status[] = [
   },
 ];
 
+const frameworks = [
+  {
+    value: 'next.js',
+    label: 'Next.js',
+  },
+  {
+    value: 'sveltekit',
+    label: 'SvelteKit',
+  },
+  {
+    value: 'nuxt.js',
+    label: 'Nuxt.js',
+  },
+  {
+    value: 'remix',
+    label: 'Remix',
+  },
+  {
+    value: 'astro',
+    label: 'Astro',
+  },
+];
+
 export default {
   title: 'Components/Combobox',
   tags: ['autodocs'],
@@ -48,7 +73,74 @@ export default {
 };
 
 export function Default() {
-  return <Combobox></Combobox>;
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState('');
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="w-[200px] justify-between">
+          {value
+            ? frameworks.find((framework) => framework.value === value)?.label
+            : 'Select framework...'}
+          <FontAwesomeIcon
+            icon={faCaretDown}
+            className="ml-2 h-4 w-4 shrink-0 opacity-50"
+          />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[200px] p-0">
+        <Command>
+          <CommandInput placeholder="Search framework..." className="h-9" />
+          <CommandList>
+            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandGroup>
+              {frameworks.map((framework) => (
+                <CommandItem
+                  key={framework.value}
+                  value={framework.value}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? '' : currentValue);
+                    setOpen(true);
+                  }}>
+                  <ul className="list-disc pl-2">
+                    {framework.label === 'Next.js' && (
+                      <li className="text-teal-600"></li>
+                    )}
+                    {framework.label === 'SvelteKit' && (
+                      <li className="text-red-600"></li>
+                    )}
+                    {framework.label === 'Nuxt.js' && (
+                      <li className="text-blue-600"></li>
+                    )}
+                    {framework.label === 'Remix' && (
+                      <li className="text-green-600"></li>
+                    )}
+                    {framework.label === 'Astro' && (
+                      <li className="text-orange-600"></li>
+                    )}
+                  </ul>
+
+                  <span className="text-black">{framework.label}</span>
+                  <input
+                    className={cn(
+                      'ml-auto h-4 w-4',
+                      value === framework.value ? 'opacity-100' : 'opacity-0',
+                    )}
+                    type="radio"
+                    checked></input>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
 }
 
 export function ComboboxPopover() {
@@ -84,55 +176,6 @@ export function ComboboxPopover() {
                       setOpen(false);
                     }}>
                     {status.label}
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
-    </div>
-  );
-}
-
-export function ComboboxRadioGroup() {
-  const [open, setOpen] = React.useState(false);
-  const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(
-    null,
-  );
-
-  return (
-    <div className="flex items-center space-x-4">
-      <p className="text-sm text-muted-foreground">Status</p>
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button variant="outline" className="w-[150px] justify-start">
-            {selectedStatus ? <>{selectedStatus.label}</> : <>+ Set status</>}
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="p-0" side="right" align="start">
-          <Command>
-            <CommandInput placeholder="Ändere den Bereich...." />
-            <CommandList>
-              <CommandEmpty>Keine Ergebnisse gefunden.</CommandEmpty>
-              <CommandGroup>
-                {statuses.map((status) => (
-                  <CommandItem
-                    key={status.value}
-                    value={status.value}
-                    onSelect={(value) => {
-                      setSelectedStatus(
-                        statuses.find((priority) => priority.value === value) ||
-                          null,
-                      );
-                      setOpen(true);
-                    }}>
-                    <RadioGroup>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value={status.value} />
-                        <Label htmlFor={status.value}>{status.label}</Label>
-                      </div>
-                    </RadioGroup>
                   </CommandItem>
                 ))}
               </CommandGroup>
