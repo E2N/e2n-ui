@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { DayPicker } from 'react-day-picker';
 import { cn } from '../../lib/utils';
-import { buttonVariants, IconButton } from '../Button';
+import { buttonVariants } from '../Button';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { de } from 'date-fns/locale/de';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

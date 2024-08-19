@@ -1,5 +1,9 @@
 # Changelog
 
+### 7.0.1 (19-08-2024)
+
+- replace nested buttons by simple icons in calender component
+
 ### 7.0.0 (12-08-2024)
 
 - replace Avatar component by Shadcn Avatar
