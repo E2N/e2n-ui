@@ -4,6 +4,7 @@ import { cn } from '../../lib/utils';
 import { buttonVariants, IconButton } from '../Button';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { de } from 'date-fns/locale/de';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
@@ -55,10 +56,13 @@ function Calendar({
       }}
       components={{
         IconLeft: ({}) => (
-          <IconButton icon={faArrowLeft} className="h-4 w-4 border-none" />
+          <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4 border-none" />
         ),
         IconRight: ({}) => (
-          <IconButton icon={faArrowRight} className="h-4 w-4 border-none" />
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            className="h-4 w-4 border-none"
+          />
         ),
       }}
       locale={de}
