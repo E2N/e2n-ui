@@ -1,5 +1,9 @@
 # Changelog
 
+### 7.0.5 (20-08-2024)
+
+- build ui
+
 ### 7.0.4 (20-08-2024)
 
 - adjust export legacy Table
