@@ -11,9 +11,8 @@ import {
   CommandList,
 } from '../Command/Command';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { cn } from '../../lib/utils';
-import { RadioButton } from '../../legacy/RadioButton/RadioButton';
 
 type Status = {
   value: string;

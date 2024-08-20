@@ -7,6 +7,26 @@
 - add dialog component
 - add radio group component
 
+### 7.0.5 (20-08-2024)
+
+- build ui
+
+### 7.0.4 (20-08-2024)
+
+- adjust export legacy Table
+
+### 7.0.3 (20-08-2024)
+
+- readjust export for Sheet and Tabs
+
+### 7.0.2 (20-08-2024)
+
+- adjust export for Sheet and Tabs
+
+### 7.0.1 (19-08-2024)
+
+- replace nested buttons by simple icons in calender component
+
 ### 7.0.0 (12-08-2024)
 
 - replace Avatar component by Shadcn Avatar

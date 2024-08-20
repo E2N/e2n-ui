@@ -1,8 +1,7 @@
 import { Dropdown2 } from './Dropdown2';
-import { Avatar } from '../Avatar';
 import { DropdownMenuItem } from './DropdownMenuItem';
 import { DropdownMenuLabel } from '.';
-import { darkTheme } from '../..';
+import { darkTheme, LegacyAvatar } from '../..';
 
 export default {
   title: 'Layout/Dropdown2',
@@ -12,7 +11,7 @@ export default {
 export const Default2 = {
   render: () => {
     return (
-      <Dropdown2 theme={darkTheme} trigger={<Avatar imgSrc="" />}>
+      <Dropdown2 theme={darkTheme} trigger={<LegacyAvatar imgSrc="" />}>
         <DropdownMenuItem>Ausblenden</DropdownMenuItem>
         <DropdownMenuLabel>Grösse</DropdownMenuLabel>
         <DropdownMenuItem>Klein</DropdownMenuItem>
