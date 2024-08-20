@@ -1,8 +1,12 @@
 # Changelog
 
+### 7.0.4 (20-08-2024)
+
+- adjust export legacy Table
+
 ### 7.0.3 (20-08-2024)
 
-- adjust export for Sheet and Tabs
+- readjust export for Sheet and Tabs
 
 ### 7.0.2 (20-08-2024)
 
