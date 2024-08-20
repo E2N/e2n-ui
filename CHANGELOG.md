@@ -1,5 +1,9 @@
 # Changelog
 
+### 7.0.2 (20-08-2024)
+
+- adjust export for Sheet and Tabs
+
 ### 7.0.1 (19-08-2024)
 
 - replace nested buttons by simple icons in calender component
