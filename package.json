@@ -1,6 +1,6 @@
 {
   "name": "@e2n/e2n-ui",
-  "version": "7.0.3",
+  "version": "7.0.4",
   "type": "module",
   "files": [
     "dist"
