@@ -1,7 +1,12 @@
 import { Input } from './Input';
 import { Button } from '../Button';
 import type { Meta } from '@storybook/react';
-import { faEdit, faRainbow } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEdit,
+  faLock,
+  faRainbow,
+  faSearch,
+} from '@fortawesome/free-solid-svg-icons';
 
 const meta: Meta<typeof Input> = {
   component: Input,
@@ -59,7 +64,7 @@ export const WithIconStart = {
   render: () => {
     return (
       <div className="mb-4 w-1/2">
-        <Input type="email" placeholder="Email" startIcon={faEdit} />
+        <Input type="email" placeholder="Email suchen" startIcon={faSearch} />
       </div>
     );
   },
@@ -70,7 +75,11 @@ export const WithIconEnd = {
   render: () => {
     return (
       <div className="mb-4 w-1/2">
-        <Input type="email" placeholder="Email" endIcon={faRainbow} />
+        <Input
+          type="password"
+          placeholder="Passwort eingeben"
+          endIcon={faLock}
+        />
       </div>
     );
   },
