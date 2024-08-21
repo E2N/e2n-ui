@@ -1,5 +1,12 @@
 # Changelog
 
+### 7.0.6 (21-08-2024)
+
+- Adjust styles of Input component
+  - Remove Box Shadow
+  - Adjust label + background color
+  - Wrapper width is set to auto
+
 ### 7.0.5 (20-08-2024)
 
 - build ui
