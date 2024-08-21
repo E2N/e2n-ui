@@ -54,7 +54,9 @@ export function Combobox({
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? '' : currentValue);
                     setOpen(true);
-                    setOption;
+                    {
+                      setOption;
+                    }
                   }}>
                   {labelProp} {item.label}
                   <FontAwesomeIcon
