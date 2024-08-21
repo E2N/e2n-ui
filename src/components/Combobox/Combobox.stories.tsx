@@ -83,11 +83,11 @@ export function Default() {
           />
         </Button>
       }
+      itemList={frameworks}
       setOption={(currentValue) => {
         setValue(currentValue === value ? '' : currentValue);
       }}
       placeholder="Framework auswählen"
-      itemList={frameworks}
       icon={faDotCircle}
       labelProp={
         <>

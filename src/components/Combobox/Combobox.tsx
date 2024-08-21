@@ -23,7 +23,7 @@ interface CustomComboBoxProps {
   emptyList?: string;
   trigger: ReactNode;
   icon: IconProp;
-  setOption: (value: React.SetStateAction<string>) => void;
+  setOption: (value: React.SetStateAction<string>) => void | '';
   labelProp?: string | ReactElement;
 }
 
@@ -38,6 +38,7 @@ export function Combobox({
 }: CustomComboBoxProps) {
   const [open, setOpen] = React.useState(true);
   const [value, setValue] = React.useState('');
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>{trigger}</PopoverTrigger>
@@ -55,7 +56,7 @@ export function Combobox({
                     setValue(currentValue === value ? '' : currentValue);
                     setOpen(true);
                     {
-                      setOption;
+                      setOption(value);
                     }
                   }}>
                   {labelProp} {item.label}
