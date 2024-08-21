@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { CaretSortIcon } from '@radix-ui/react-icons';
 import { Popover, PopoverContent, PopoverTrigger } from '../Popover';
-import { Button } from '../Button';
 import { Command } from '../Command';
 import {
   CommandEmpty,
@@ -10,9 +8,10 @@ import {
   CommandItem,
   CommandList,
 } from '../Command/Command';
-import { cn } from '../../lib/utils';
+import { ReactElement, ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { cn } from '../../lib/utils';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export type listItem = {
   value: string;
@@ -20,47 +19,50 @@ export type listItem = {
 };
 interface CustomComboBoxProps {
   itemList: listItem[];
+  placeholder?: string;
+  emptyList?: string;
+  trigger: ReactNode;
+  icon: IconProp;
+  setOption: (value: React.SetStateAction<string>) => void;
+  labelProp?: string | ReactElement;
 }
 
-export function Combobox({ itemList }: CustomComboBoxProps) {
-  const [open, setOpen] = React.useState(false);
+export function Combobox({
+  itemList,
+  trigger,
+  labelProp,
+  icon,
+  placeholder,
+  setOption,
+  emptyList,
+}: CustomComboBoxProps) {
+  const [open, setOpen] = React.useState(true);
   const [value, setValue] = React.useState('');
-
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          role="combobox"
-          aria-expanded={open}
-          className="w-[200px] justify-between">
-          {value
-            ? itemList.find((item) => item.value === value)?.label
-            : 'Select framework...'}
-          <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
-      </PopoverTrigger>
+      <PopoverTrigger asChild>{trigger}</PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search framework..." className="h-9" />
+          <CommandInput placeholder={placeholder} className="h-9" />
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>{emptyList}</CommandEmpty>
             <CommandGroup>
-              {itemList.map((item) => (
+              {itemList?.map((item) => (
                 <CommandItem
                   key={item.value}
                   value={item.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? '' : currentValue);
-                    setOpen(false);
+                    setOpen(true);
+                    setOption;
                   }}>
-                  {item.label}
+                  {labelProp} {item.label}
                   <FontAwesomeIcon
-                    icon={faCheck}
                     className={cn(
-                      'ml-auto h-4 w-4',
+                      'ml-auto h-4 w-4 text-primary-main',
                       value === item.value ? 'opacity-100' : 'opacity-0',
                     )}
+                    icon={icon}
                   />
                 </CommandItem>
               ))}
