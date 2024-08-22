@@ -41,7 +41,9 @@ export function Combobox({
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>{trigger}</PopoverTrigger>
+      <PopoverTrigger asChild value={value}>
+        {trigger}
+      </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandInput placeholder={placeholder} className="h-9" />
@@ -56,7 +58,7 @@ export function Combobox({
                     setValue(currentValue === value ? '' : currentValue);
                     setOpen(true);
                     {
-                      setOption(value);
+                      setOption(currentValue);
                     }
                   }}>
                   {labelProp} {item.label}

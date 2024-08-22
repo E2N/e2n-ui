@@ -100,25 +100,25 @@ export function Default() {
 }
 
 export function ComboboxPopover() {
-  const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(
-    null,
-  );
+  const [value, setValue] = React.useState('');
 
   return (
     <div className="flex items-center space-x-4">
-      <p className="text-sm text-slate-500">Framework</p>
+      <p className="text-sm text-slate-500">Status</p>
       <Combobox
         trigger={
           <Button variant="outline" className="w-[150px] justify-start">
-            {selectedStatus ? <>{selectedStatus.label}</> : <>+ Set status</>}
+            {value ? (
+              statuses.find((status) => status.value === value)?.label
+            ) : (
+              <>+ Set status</>
+            )}
           </Button>
         }
-        itemList={frameworks}
+        itemList={statuses}
         icon={faCheck}
-        setOption={(value) => {
-          setSelectedStatus(
-            statuses.find((priority) => priority.value === value) || null,
-          );
+        setOption={(currentValue) => {
+          setValue(currentValue === value ? '' : currentValue);
         }}
         placeholder="Framework auswählen"></Combobox>
     </div>
