@@ -1,5 +1,9 @@
 # Changelog
 
+### 8.0.1 (23-08-2024)
+
+- adjust propName
+
 ### 8.0.0 (23-08-2024)
 
 - add combobox component

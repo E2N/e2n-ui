@@ -84,7 +84,7 @@ export function Default() {
         </Button>
       }
       itemList={frameworks}
-      setOption={(currentValue) => {
+      onSelect={(currentValue) => {
         setValue(currentValue === value ? '' : currentValue);
       }}
       placeholder="Framework auswählen"
@@ -117,7 +117,7 @@ export function ComboboxPopover() {
         }
         itemList={statuses}
         icon={faCheck}
-        setOption={(currentValue) => {
+        onSelect={(currentValue) => {
           setValue(currentValue === value ? '' : currentValue);
         }}
         placeholder="Framework auswählen"></Combobox>

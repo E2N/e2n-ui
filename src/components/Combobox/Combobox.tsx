@@ -23,7 +23,7 @@ interface CustomComboBoxProps {
   emptyList?: string;
   trigger: ReactNode;
   icon: IconProp;
-  setOption: (value: React.SetStateAction<string>) => void | '';
+  onSelect: (value: React.SetStateAction<string>) => void | '';
   labelProp?: string | ReactElement;
 }
 
@@ -33,7 +33,7 @@ export function Combobox({
   labelProp,
   icon,
   placeholder,
-  setOption,
+  onSelect,
   emptyList,
 }: CustomComboBoxProps) {
   const [open, setOpen] = React.useState(true);
@@ -57,7 +57,7 @@ export function Combobox({
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? '' : currentValue);
                     {
-                      setOption(currentValue);
+                      onSelect(currentValue);
                     }
                   }}>
                   {labelProp} {item.label}
