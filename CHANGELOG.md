@@ -1,8 +1,8 @@
 # Changelog
 
-### 8.0.1 (23-08-2024)
+### 8.0.2 (23-08-2024)
 
-- adjust yarnrc
+- adjust yarnrc, combobox styling
 
 ### 8.0.1 (23-08-2024)
 
