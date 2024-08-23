@@ -9,6 +9,7 @@ export * from './Charts';
 export * from './Charts';
 export * from './Checkbox';
 export * from './Command';
+export * from './Combobox';
 export * from './CopyToClipboard';
 export * from './DatePicker';
 export * from './Drawer';
