@@ -17,13 +17,14 @@ export type listItem = {
   value: string;
   label: string;
 };
+
 interface CustomComboBoxProps {
   itemList: listItem[];
   placeholder?: string;
   emptyList?: string;
   trigger: ReactNode;
   icon: IconProp;
-  setOption: (value: React.SetStateAction<string>) => void | '';
+  onSelect: (value: React.SetStateAction<string>) => void | '';
   labelProp?: string | ReactElement;
 }
 
@@ -33,7 +34,7 @@ export function Combobox({
   labelProp,
   icon,
   placeholder,
-  setOption,
+  onSelect,
   emptyList,
 }: CustomComboBoxProps) {
   const [open, setOpen] = React.useState(true);
@@ -41,9 +42,7 @@ export function Combobox({
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild value={value}>
-        {trigger}
-      </PopoverTrigger>
+      <PopoverTrigger asChild>{trigger}</PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandInput placeholder={placeholder} className="h-9" />
@@ -56,9 +55,8 @@ export function Combobox({
                   value={item.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? '' : currentValue);
-                    setOpen(true);
                     {
-                      setOption(currentValue);
+                      onSelect(value);
                     }
                   }}>
                   {labelProp} {item.label}
