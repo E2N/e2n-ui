@@ -1,6 +1,6 @@
 # Changelog
 
-### 7.1.0 (23-08-2024)
+### 8.0.0 (23-08-2024)
 
 - add combobox component
 - add command component
