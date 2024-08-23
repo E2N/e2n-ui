@@ -36,7 +36,7 @@ export function Combobox({
   onSelect,
   emptyList,
 }: CustomComboBoxProps) {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
 
   return (
