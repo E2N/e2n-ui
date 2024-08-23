@@ -56,7 +56,7 @@ export function Combobox({
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? '' : currentValue);
                     {
-                      onSelect(value);
+                      onSelect(currentValue);
                     }
                   }}>
                   {labelProp} {item.label}
