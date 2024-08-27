@@ -1,11 +1,26 @@
 # Changelog
 
-### 7.0.6 (21-08-2024)
+### 8.0.3 (27-08-2024)
 
 - Adjust styles of Input component
-  - Remove Box Shadow
-  - Adjust label + background color
-  - Wrapper width is set to auto
+    - Remove Box Shadow
+    - Adjust label + background color
+    - Wrapper width is set to auto
+
+### 8.0.2 (23-08-2024)
+
+- adjust yarnrc, combobox styling
+
+### 8.0.1 (23-08-2024)
+
+- adjust propName
+
+### 8.0.0 (23-08-2024)
+
+- add combobox component
+- add command component
+- add dialog component
+- add radio group component
 
 ### 7.0.5 (20-08-2024)
 

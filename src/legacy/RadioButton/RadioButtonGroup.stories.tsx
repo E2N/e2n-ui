@@ -1,7 +1,7 @@
 import { RadioButtonGroup, RadioButtonGroupProps } from './RadioButtonGroup';
 
 export default {
-  title: 'Components/RadioButtonGroup',
+  title: 'Legacy/RadioButtonGroup',
   component: RadioButtonGroup,
   args: {
     disabled: false,
