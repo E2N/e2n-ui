@@ -1,5 +1,12 @@
 # Changelog
 
+### 8.0.3 (27-08-2024)
+
+- Adjust styles of Input component
+    - Remove Box Shadow
+    - Adjust label + background color
+    - Wrapper width is set to auto
+
 ### 8.0.2 (23-08-2024)
 
 - adjust yarnrc, combobox styling
