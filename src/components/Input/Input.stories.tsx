@@ -1,12 +1,7 @@
 import { Input } from './Input';
 import { Button } from '../Button';
 import type { Meta } from '@storybook/react';
-import {
-  faEdit,
-  faLock,
-  faRainbow,
-  faSearch,
-} from '@fortawesome/free-solid-svg-icons';
+import { faLock, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const meta: Meta<typeof Input> = {
   component: Input,
