@@ -1,5 +1,9 @@
 # Changelog
 
+### 8.0.5 (09-09-2024)
+
+- Fix missing border radius in wrapper of Input
+
 ### 8.0.4 (29-08-2024)
 
 - Export all components from Popover + Command
