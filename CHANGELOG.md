@@ -1,5 +1,9 @@
 # Changelog
 
+### 8.0.5 (13-09-2024)
+
+- fix Safari bug for recharts with new version
+
 ### 8.0.4 (29-08-2024)
 
 - Export all components from Popover + Command
