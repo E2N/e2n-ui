@@ -1,6 +1,6 @@
 # Changelog
 
-### 8.0.5 (09-09-2024)
+### 8.0.7 (09-09-2024)
 
 - Fix missing border radius in wrapper of Input
 
