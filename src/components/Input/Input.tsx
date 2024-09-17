@@ -11,7 +11,7 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, startIcon, endIcon, ...props }, ref) => {
     return (
-      <div className="relative group bg-white">
+      <div className="relative group bg-white rounded-md">
         {startIcon && (
           <FontAwesomeIcon
             icon={startIcon}
