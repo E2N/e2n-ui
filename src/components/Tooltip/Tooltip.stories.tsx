@@ -9,6 +9,7 @@ import {
 export default {
   title: 'Components/Tooltip',
   component: Tooltip,
+  tags: ['autodocs'],
 };
 
 export const Default: StoryObj = {
