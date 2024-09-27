@@ -1,5 +1,13 @@
 # Changelog
 
+### 8.0.8 (19-09-2024)
+
+- Adjust colors and borders for command component
+
+### 8.0.7 (09-09-2024)
+
+- Fix missing border radius in wrapper of Input
+
 ### 8.0.4 (29-08-2024)
 
 - Export all components from Popover + Command
