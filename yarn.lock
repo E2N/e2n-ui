@@ -1503,7 +1503,7 @@ __metadata:
     "@radix-ui/react-switch": "npm:^1.0.3"
     "@radix-ui/react-tabs": "npm:^1.1.0"
     "@radix-ui/react-toast": "npm:^1.2.1"
-    "@radix-ui/react-tooltip": "npm:^1.0.7"
+    "@radix-ui/react-tooltip": "npm:^1.1.2"
     "@storybook/addon-essentials": "npm:^8.0.4"
     "@storybook/addon-interactions": "npm:^8.0.4"
     "@storybook/addon-links": "npm:^8.0.4"
@@ -3125,7 +3125,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-tooltip@npm:^1.0.7":
+"@radix-ui/react-tooltip@npm:^1.1.2":
   version: 1.1.2
   resolution: "@radix-ui/react-tooltip@npm:1.1.2"
   dependencies:
