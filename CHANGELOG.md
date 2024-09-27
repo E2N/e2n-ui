@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.0.0 (27-09-2024)
+
+- Add tooltip component
+
 ### 8.0.8 (19-09-2024)
 
 - Adjust colors and borders for command component
