@@ -43,7 +43,7 @@ export const columns: TableColumnDef<Location>[] = [
     header: 'Schlüssel',
     enableSorting: false,
     cell: (info) => {
-      return <Badge text={info.getValue() as string} />;
+      return <Badge>{info.getValue() as string}</Badge>;
     },
   },
   {
@@ -73,7 +73,7 @@ export const columns: TableColumnDef<Location>[] = [
     header: 'Vertragsart',
     cell: (info) => {
       const contract = info.getValue() as Contract;
-      return <Badge text={contract.type} variant="success" />;
+      return <Badge variant="default">{contract.type}</Badge>;
     },
   },
   {

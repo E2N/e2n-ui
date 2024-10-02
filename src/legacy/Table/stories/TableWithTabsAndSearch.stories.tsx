@@ -50,7 +50,7 @@ export const WithTabsAndSearch = {
                 }>
                 <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                   {tab.label}
-                  <Badge variant="success" text="23" />
+                  <Badge variant={'default'}></Badge>
                 </div>
               </LegacyTab>
             ))}
