@@ -1,33 +1,32 @@
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { Badge, BadgeProps } from './Badge';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Badge } from './Badge';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   title: 'Components/Badge',
   component: Badge,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-    textColor: { control: 'color' },
-  },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/dytYKVyXYobjZXq0BDPFsK/e2n-admin.18.04.23?node-id=99%3A10844&t=tOdmpeO4QYOISGNJ-1',
-    },
-  },
 };
 
 export const Default = {
-  render: (args: BadgeProps) => <Badge {...args} />,
-  args: {
-    text: 'Nicht zugewiesen',
-    variant: 'success',
-  },
+  render: () => <Badge>Badge</Badge>,
 };
 
-export const WithIcon = {
-  render: (args: BadgeProps) => <Badge {...args} />,
-  args: {
-    text: 'Download',
-    icon: faDownload,
-  },
+export const Secondary = {
+  render: () => <Badge variant="secondary">Secondary</Badge>,
+};
+
+export const Outline = {
+  render: () => <Badge variant="outline">Outline</Badge>,
+};
+
+export const Destructive = {
+  render: () => <Badge variant="destructive">Destructive</Badge>,
+};
+
+export const Icon = {
+  render: () => (
+    <Badge className="p-3 bg-teal-600 rounded-md">
+      <FontAwesomeIcon icon={faEdit} fixedWidth />
+    </Badge>
+  ),
 };

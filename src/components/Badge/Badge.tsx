@@ -1,92 +1,35 @@
-import { css, cx } from '@emotion/css';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { forwardRef, HTMLAttributes, ReactElement } from 'react';
-import { colorPalette, theme, typography } from '../../theme';
+import * as React from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '../../lib/utils';
 
-type BadgeVariants = 'secondary' | 'error' | 'success' | 'info1' | 'warning';
-
-type CustomProps = {
-  text?: string | ReactElement;
-  icon?: IconDefinition;
-  variant?: BadgeVariants;
-  backgroundColor?: string;
-  textColor?: string;
-};
-
-export type BadgeProps = CustomProps & HTMLAttributes<HTMLDivElement>;
-
-const colorStyleMap = {
-  secondary: {
-    backgroundColor: colorPalette.grey200,
-    textColor: colorPalette.grey500,
-  },
-  error: {
-    backgroundColor: colorPalette.errorLighter,
-    textColor: colorPalette.errorDark,
-  },
-  success: {
-    backgroundColor: colorPalette.successLighter,
-    textColor: colorPalette.successDark,
-  },
-  info1: {
-    backgroundColor: colorPalette.infoLighter,
-    textColor: colorPalette.infoDark,
-  },
-  warning: {
-    backgroundColor: colorPalette.warningLighter,
-    textColor: colorPalette.warningDark,
-  },
-};
-
-function getBadgeStyles(
-  variant: BadgeVariants,
-  backgroundColor: string | undefined,
-  textColor: string | undefined,
-) {
-  return css({
-    padding: `${theme.spacing.xs} ${theme.spacing.sm}`,
-    ...typography.badge,
-    width: 'fit-content',
-    height: 'fit-content',
-    display: 'flex',
-    alignItems: 'center',
-    gap: theme.spacing.xs,
-    borderRadius: theme.borderRadius.sm,
-    fontFamily: theme.fontFamily.sansSerif,
-    whiteSpace: 'nowrap',
-    backgroundColor: backgroundColor
-      ? backgroundColor
-      : colorStyleMap[variant].backgroundColor,
-    color: textColor ? textColor : colorStyleMap[variant].textColor,
-  });
-}
-
-export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
-  (
-    {
-      icon,
-      text,
-      variant = 'secondary',
-      backgroundColor,
-      textColor,
-      className,
-      ...otherProps
+const badgeVariants = cva(
+  'inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  {
+    variants: {
+      variant: {
+        default:
+          'border-transparent bg-primary-main text-blue-50 shadow hover:bg-primary-main/80',
+        secondary:
+          'border-transparent bg-gray-200 text-slate-900 hover:bg-gray-200/80',
+        destructive:
+          'border-transparent bg-error-main text-slate-50 shadow hover:bg-error-main/80',
+        outline: 'text-slate-900',
+      },
     },
-    ref,
-  ) => {
-    const badgeStyles = getBadgeStyles(variant, backgroundColor, textColor);
-
-    return (
-      <div
-        className={cx('e2n-badge', badgeStyles, className)}
-        {...otherProps}
-        ref={ref}>
-        {icon && <FontAwesomeIcon icon={icon} />}
-        <span>{text}</span>
-      </div>
-    );
+    defaultVariants: {
+      variant: 'default',
+    },
   },
 );
 
-Badge.displayName = 'Badge';
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {}
+
+function Badge({ className, variant, ...props }: BadgeProps) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+  );
+}
+
+export { Badge, badgeVariants };
