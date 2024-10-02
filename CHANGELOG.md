@@ -1,6 +1,6 @@
 # Changelog
 
-### 10.0.0 (02-10-2024)
+### 10.0.1(02-10-2024)
 
 - Add badge component
 
