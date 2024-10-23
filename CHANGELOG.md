@@ -1,5 +1,9 @@
 # Changelog
 
+### 10.0.2(10-10-2024)
+
+- react-dom shouldn't be bundled
+
 ### 10.0.1(02-10-2024)
 
 - Add badge component
