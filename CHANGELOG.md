@@ -1,5 +1,9 @@
 # Changelog
 
+### 10.1.0(21-11-2024)
+
+- add scroll area
+
 ### 10.0.2(10-10-2024)
 
 - react-dom shouldn't be bundled
