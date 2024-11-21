@@ -26,6 +26,7 @@ export * from './MenuItem';
 export * from './Navigation';
 export * from './Popover';
 export * from './RadioGroup';
+export * from './ScrollArea';
 export * from './Select';
 export * from './Sheet';
 export * from './Shimmer';
